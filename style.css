@@ -115,38 +115,63 @@ h1 {
 }
 
 /* --- ボタン --- */
+/* ボタンの基本サイズとレイアウトを更新 */
 .cta-buttons {
     display: flex;
     justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap; /* 画面が狭い時に自動で折り返す */
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 40px;
 }
 
 .btn {
-    min-width: 140px; /* ボタンの幅を揃えて整頓された印象に */
-    text-align: center;
+    display: flex;
+    flex-direction: column; /* 上下に並べる */
+    align-items: center;
+    justify-content: center;
+    padding: 20px 30px; /* サイズを大きく */
+    min-width: 200px;   /* 横幅を確保 */
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 英語部分（上段） */
+.btn .en {
+    font-size: 1.2rem;
+    font-family: var(--font-mono);
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* 日本語部分（下段） */
+.btn .jp {
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0.9;
 }
 
 .btn.primary {
     background: var(--accent);
     color: #fff;
-    box-shadow: 0 4px 14px rgba(74, 144, 226, 0.3);
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.2);
 }
 
 .btn.primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(74, 144, 226, 0.4);
 }
 
 .btn.secondary {
     border: 2px solid var(--accent);
     color: var(--accent);
+    background: #fff;
 }
 
 .btn.secondary:hover {
     background: var(--accent-soft);
 }
-
 /* --- 研究の柱 (カードレイアウト) --- */
 .features {
     padding: 80px 0;
