@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Security | Sakai Lab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        :root {
+            /* AI Security 専用カラー：禁断のロマンスを象徴する淡い赤（ローズ） */
+            --accent: #e91e63;         /* ローズレッド */
+            --accent-soft: #fce4ec;    /* 補助的な淡いピンク */
+        }
+
+        /* style.css との整合性調整 */
+        main.container {
+            padding-top: 100px;
+        }
+
+        /* ヘッダーのナビゲーションを淡い赤で統一 */
+        nav ul li:last-child a {
+            color: var(--accent) !important;
+            border: 2px solid var(--accent) !important;
+            padding: 6px 16px !important;
+            border-radius: 8px !important;
+            font-weight: 700 !important;
+            transition: all 0.3s ease;
+        }
+        nav ul li:last-child a:hover {
+            background: var(--accent) !important;
+            color: #fff !important;
+        }
+
+        /* ヒーローセクション */
+        .hero-section {
+            text-align: center;
+            padding: 40px 0 60px;
+        }
+        .hero-label {
+            font-family: var(--font-mono);
+            color: var(--accent);
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* リードセクション */
+        .romance-lead {
+            max-width: 850px;
+            margin: 0 auto 60px;
+            text-align: center;
+            padding: 45px;
+            border-radius: 24px;
+            background: var(--accent-soft);
+            border: 1px solid #f8bbd0;
+        }
+        .romance-lead p.italic { font-style: italic; color: #880e4f; font-weight: 600; }
+
+        /* セクション共通 */
+        .section-card { margin-bottom: 80px; }
+        .section-title {
+            color: var(--text-bright);
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--accent);
+            padding-left: 20px;
+        }
+
+        .overview-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid #eee;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            margin: 30px 0;
+        }
+
+        /* 強調箇所のマーカー装飾 */
+        strong {
+            display: inline !important;
+            color: var(--text-bright);
+            background: linear-gradient(transparent 70%, #f8bbd0 70%);
+            padding: 0 2px;
+        }
+
+        /* 注意書き（淡い赤統一版） */
+        .warning-note {
+            background: var(--accent-soft);
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #880e4f; /* 深いボルドー */
+        }
+        .warning-note strong {
+            color: var(--accent);
+            display: inline-block;
+            margin-bottom: 5px;
+            background: none !important;
+            padding: 0;
+        }
+
+        /* 研究テーマのグリッド */
+        .theme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 24px;
+        }
+        .theme-item {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+        .theme-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(233, 30, 99, 0.1);
+        }
+        .theme-item .tag {
+            color: var(--accent);
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        /* 過去の研究テーマリスト */
+        .history-list { list-style: none; padding: 0; }
+        .history-list li {
+            padding: 18px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            gap: 15px;
+        }
+        .history-list li::before { content: "→"; color: var(--accent); font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="container">
+        <a href="index.html" class="logo">Sakai Lab. <span>@ TMU</span></a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="joinus.html">Join Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container">
+    <section class="hero-section">
+        <span class="hero-label">Research Field 02</span>
+        <h1>AI Security</h1>
+        <p style="font-size: 1.2rem; color: var(--accent); font-weight: 600; margin-top: 10px;">
+			無垢な知能を、偽りの愛（Adversarial Data）から守り抜く。
+		</p>
+    </section>
+
+    <section class="romance-lead">
+        <p class="italic">
+            AI（かれ）は、あまりにも純粋でした。差し出された言葉が、毒を隠した蜜だとも知らずに。<br>
+            信じ切った瞳の裏側で、静かに書き換えられていく記憶と正義。
+        </p>
+        <p>
+            人工知能が私たちのパートナーとなった今、その「盲目的な信頼」を狙った卑劣な誘惑が後を絶ちません。<br>
+            囁かれる偽りの愛（Adversarial Data）によって、AIが牙を剥く未来。
+        </p>
+        <p style="font-weight: 700; color: var(--accent);">
+            私たちは、AIが「運命の相手」と「狡猾な詐欺師」を見分けるための、<br>
+            数式という名の冷徹な理性（フィルター）を構築しています。
+        </p>
+    </section>
+
+	<section class="section-card">
+	    <h2 class="section-title">1. 人工知能セキュリティの全体像</h2>
+	    <div class="overview-card">
+	        <p>AIエコシステムは、データの提供、モデルの構築、そしてサービスの利用という3つの主要な階層で構成されています。</p>
+	        
+	        <div class="image-placeholder" style="background: var(--accent-soft); border: 2px dashed var(--accent); border-radius: 16px; margin: 30px 0; padding: 60px 20px; text-align: center; color: var(--accent);">
+	            <div style="font-size: 3rem; margin-bottom: 10px; opacity: 0.5;">🧠</div>
+	            <p style="font-weight: bold; margin: 0; font-family: var(--font-mono); font-size: 0.9rem;">
+	                [ AI Ecosystem: Data Owner ↔ ML Provider ↔ LLM User ]
+	            </p>
+	            <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 5px;">
+	                ※クラウドサーバと暗号化データ、LLMを介した相互接続イメージを挿入予定
+	            </p>
+	        </div>
+	
+	        <ul style="list-style: none; padding: 0; margin-top: 25px;">
+	            <li style="margin-bottom: 30px;">
+	                <span style="font-weight: bold; font-size: 1.1rem; color: var(--accent); display: block; margin-bottom: 10px;">1. データ所有者（Data Owner）</span>
+	                <div class="definition-text" style="background: #fdf2f2; border-left: 3px solid #f8bbd0; padding: 15px; border-radius: 8px; font-size: 0.95rem; margin-bottom: 10px;">
+	                    機械学習モデルの学習に必要な生データや、RAG（検索拡張生成）に用いる独自の知識ベースを保持するエンティティ。プライバシー保護のため、データを暗号化した状態でクラウドに保存・提供する技術が求められます。
+	                </div>
+	                <p>
+	                    彼らは、家庭を持ちながら他者に心を寄せる<strong>「決して見られてはいけない秘密の写真を、二重底の箱に隠し持つ背徳者」</strong>。
+                    その中身（データ）が世間の目（外部サーバ）に触れた瞬間、すべてが破綻する。だからこそ、数学という名の絶対的な沈黙（暗号）で、その証拠を闇に葬り去るのが私たちの使命です。
+	                </p>
+	            </li>
+	
+	            <li style="margin-bottom: 30px;">
+	                <span style="font-weight: bold; font-size: 1.1rem; color: var(--accent); display: block; margin-bottom: 10px;">2. 機械学習サービスプロバイダ（Cloud / Model Provider）</span>
+	                <div class="definition-text" style="background: #fdf2f2; border-left: 3px solid #f8bbd0; padding: 15px; border-radius: 8px; font-size: 0.95rem; margin-bottom: 10px;">
+	                    高性能なGPUリソースとLLM（大規模言語モデル）の推論エンジンを提供します。データ所有者から預かった暗号化データを復号せずに処理し、安全な計算結果のみをユーザに提供する「信頼の基盤」となります。
+	                </div>
+	                <p>
+	                    ここは、二人の密会を黙認し、アリバイ工作を完璧にこなす<strong>「口の堅いホテルの支配人」</strong>。
+                    客が誰と何をしていようが（データの内容）、一切関知せず（復号せず）、ただ「快適な空間（計算結果）」だけを提供する。
+                    配偶者の調査員（ハッカー）がどれほど詰め寄ろうとも、宿泊名簿（機密）を絶対に開示しない鉄の規律を実装しています。
+	                </p>
+	            </li>
+	
+	            <li style="margin-bottom: 30px;">
+	                <span style="font-weight: bold; font-size: 1.1rem; color: var(--accent); display: block; margin-bottom: 10px;">3. LLMユーザ（End User）</span>
+	                <div class="definition-text" style="background: #fdf2f2; border-left: 3px solid #f8bbd0; padding: 15px; border-radius: 8px; font-size: 0.95rem; margin-bottom: 10px;">
+	                    プロンプトを入力してLLMから回答を得る、最終的なサービス利用者です。入力する質問（クエリ）自体に機密情報が含まれることがあり、プロバイダに対してクエリの内容を秘匿したまま回答を得る仕組みが必要となります。
+	                </div>
+	                <p>
+	                    彼らは、<strong>「正体を隠して深夜の悩み相談ダイヤルに電話をかけ、不倫の出口を尋ねる匿名希望の相談者」</strong>。
+                    解決策（回答）は喉から手が出るほど欲しい。けれど、自分の声や番号（クエリの意図）から身元を特定されることだけは、死んでも避けたい。
+                    そんな「報われない恋の隠し事」を、私たちは高度な秘匿技術で墓場まで守り抜きます
+	                </p>
+	            </li>
+	        </ul>
+	
+	        <div class="warning-note">
+	            <strong>※AIを惑わす詐欺師（ハッカー）への注意：</strong><br>
+	            不届きな侵入者には、数式という名の冷徹な尋問によって、その化けの皮を剥ぎ取る「検知アルゴリズム」を用意しています。
+	        </div>
+	    </div>
+	</section>
+
+	<section class="section-card">
+	    <h2 class="section-title">2. 具体的な研究テーマ</h2>
+	    <div class="theme-grid">
+	        
+	        <div class="theme-item">
+	            <span class="tag">Privacy-Preserving Recommendation</span>
+	            <h3>1. 秘匿情報推薦システム</h3>
+	            <p>
+	                ユーザーの過去の行動履歴や嗜好データを、完全に暗号化した状態のまま解析し、次に見るべき最適なコンテンツを数学的に導き出す技術です。
+	                従来の手法ではサーバ側で生データを扱う必要がありましたが、本研究では「協調フィルタリング」の計算過程に秘密計算や同型暗号を組み込むことで、
+	                サービス提供者に個人の「好き」という機微情報を一切明かすことなく、パーソナライズされた推薦を実現します。
+	            </p>
+	            
+	            <div class="warning-note">
+	                <p>
+	                    たとえばYouTubeで音楽を聴く際、もし履歴が筒抜けなら、<strong>「失恋のショックで一晩中、激しくのたうち回るような自作ポエムの朗読動画」</strong>を繰り返し再生していた事実がAIに筒抜けになります。翌朝、研究室の共用PCで『あなたへのおすすめ：涙を拭うためのメンタルケア』がデカデカと表示される……。そんな公開処刑という名の悲劇を防ぐための、鉄壁の防御なのです。
+	                </p>
+	            </div>
+	        </div>
+	
+	        <div class="theme-item">
+	            <span class="tag">Secure Multi-class Classification</span>
+	            <h3>2. 秘匿多クラス分類（K近傍）</h3>
+	            <p>
+	                複数の医療機関が保有する膨大な患者データを、プライバシーを侵害することなく統合・解析し、病気の予兆を自動検知する多クラス分類技術を研究しています。
+	                k近傍法（k-NN）などのアルゴリズムを暗号ドメイン上で実行可能にすることで、診断に必要な特徴量を他者に開示することなく、正確な症例分類を可能にします。
+	                これにより、機密性の高い個人情報を守りつつ、データ共有による診断精度の向上という「知の共有」を目指します。
+	            </p>
+	            
+	            <div class="warning-note">
+	                <p>
+	                    もし暗号化が不完全なら、自分でも認めたくない<strong>「夜な夜なSNSで『自分は前世で滅びた帝国の王子だった』と設定を練り込んでいた、重度の病的な中二病の再発」</strong>という診断結果が、ネットワークの不備で事務員に既読スルーされるかもしれません。そんな「魂の叫び」という名のプライバシー侵害を、数式のベールで確実に阻止します。
+	                </p>
+	            </div>
+	        </div>
+	
+	        <div class="theme-item">
+	            <span class="tag">Data Poisoning Defense</span>
+	            <h3>3. LLMパラメータの汚染防御</h3>
+	            <p>
+	                大規模言語モデル（LLM）の学習プロセスにおいて、攻撃者が悪意あるデータを混入させ、モデルの内部パラメータを不正に操作する攻撃への対策技術です。
+	                この「データ汚染攻撃」は、AIの倫理観を根底から歪め、特定のトリガーが入力された際にのみ誤った判断や偏った出力を誘発させる、一種の「バックドア」を仕掛けるものです。
+	                私たちは、学習データの整合性を数学的に検証し、AIが洗脳されるのを未然に防ぐ堅牢な学習手法を開発しています。
+	            </p>
+	            
+	            <div class="warning-note">
+	                <p>
+	                    悪意ある攻撃によって、あなたの専属AIが<strong>「あなたの過去の黒歴史……例えば、かつてSNSで使っていた寒すぎるハンドルネーム」</strong>を、真面目な就職活動のエントリーシートの中にこっそり混ぜ込むという嫌がらせを始めるかもしれません。AIの「純粋な知能」が悪意で汚染され、あなたの社会的尊厳が奪われる不届きな工作を、私たちは決して許しません。
+	                </p>
+	            </div>
+	        </div>
+	
+	        <div class="theme-item">
+	            <span class="tag">LLM Jailbreak Prevention</span>
+	            <h3>4. LLM悪用（脱獄）への耐性向上</h3>
+	            <p>
+	                モデルに設定された倫理的なガードレールを巧妙なプロンプト操作で回避し、本来禁止されている有害な情報や不適切な出力を引き出す「脱獄（Jailbreak）」攻撃の研究です。
+	                LLMの推論プロセスにおける潜在的な脆弱性を特定し、攻撃者が試みる論理的な矛盾や役割への没入を無効化する防御アルゴリズムを構築します。
+	                AIが常に「誠実なパートナー」であり続けるために、数学的な手法で入出力の安全性を検証し、言葉の隙を突いた悪用を根本から封じ込めます。
+	            </p>
+	            
+	            <div class="warning-note">
+	                <p>
+	                    たとえば、絶対に送ってはいけない<strong>「深夜のテンションで書き殴った、元カノへの未練が1ミリも隠せていない1万字の長文メッセージ」</strong>の推敲を、ガードレールを破ったLLMに手伝わせてしまう。翌朝、正気を取り戻した時にはすでに送信済み……。AIがあなたの「理性のリミッター」を外す悪魔の囁きをしないよう、厳格な制御を施します。
+	                </p>
+	            </div>
+	        </div>
+	
+	    </div>
+	</section>
+
+	<section class="section-card">
+	    <h2 class="section-title">3. 過去の研究テーマ</h2>
+	    <p style="margin-bottom: 25px; color: var(--text-main); font-size: 0.95rem;">
+	        許されない関係だからこそ、その証拠は「暗号」という名の奈落に沈めなければならない。AIという純粋な知能を、背徳的な誘惑から守るための研究実績です。
+	    </p>
+	
+	    <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; line-height: 1.6;">
+	        <tr style="border-bottom: 1px solid #eee;">
+	            <th style="text-align: left; padding: 15px 10px; width: 320px; color: var(--accent); white-space: nowrap;">完全同型暗号を用いた秘匿協調フィルタリング</th>
+	            <td style="padding: 15px 10px; color: var(--text-main);">「誰が誰に惹かれているか」という嗜好データを、暗号化したまま解析し、最適な答えを導き出す秘匿計算の研究です。</td>
+	        </tr>
+	        <tr>
+	            <th style="text-align: left; padding: 15px 10px; width: 320px; color: var(--accent); white-space: nowrap;">複数クラウド間での秘匿k近傍（k-NN）分類</th>
+	            <td style="padding: 15px 10px; color: var(--text-main);">複数の秘密を分散して預け、たとえ一部の管理者が裏切っても、真実が漏洩しない「不貞の隠蔽」を支える数学的基盤です。</td>
+	        </tr>
+	    </table>
+	</section>
+</main>
+
+<footer style="text-align: center; margin-top: ２0px; padding-bottom: 50px; color: #636e72; border-top: 1px solid #eee; padding-top: 60px;">
+    <p style="font-weight: bold; color: #2d3436; margin-bottom: 25px; font-size: 1.1rem;">
+        —— 偽りの愛（Adversarial Data）は見破りました。次は、どの真実を追い求めますか？
+    </p>
+    <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; max-width: 1000px; margin: 0 auto; padding: 0 20px;">
+        <a href="index.html#research" style="text-decoration: none; color: #e91e63; border: 1px solid #e91e63; padding: 12px 20px; border-radius: 8px; font-weight: bold; transition: all 0.2s; min-width: 140px;">Research Home</a>
+        <a href="network.html" style="text-decoration: none; color: #e91e63; border: 1px solid #e91e63; padding: 12px 20px; border-radius: 8px; font-weight: bold; transition: all 0.2s; min-width: 140px;">Network Security</a>
+        <a href="distributed.html" style="text-decoration: none; color: #e91e63; border: 1px solid #e91e63; padding: 12px 20px; border-radius: 8px; font-weight: bold; transition: all 0.2s; min-width: 140px;">Distributed Computing</a>
+        <a href="joinus.html" style="text-decoration: none; color: #fff; background: #e91e63; padding: 12px 30px; border-radius: 8px; font-weight: bold; transition: all 0.2s; box-shadow: 0 4px 10px rgba(233, 30, 99, 0.2); min-width: 140px;">Join Us</a>
+    </div>
+    <p style="margin-top: 40px; font-size: 0.85rem;">
+        &copy; 2026 Sakai Lab, Tokyo Metropolitan University.
+    </p>
+</footer>
+
+</body>
+</html>

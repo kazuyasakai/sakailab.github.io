@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members | Sakai Lab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .member-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .member-card {
+            background: #fff;
+            border: 1px solid #e1f5fe;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(2, 136, 209, 0.05);
+        }
+        .role-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #f0f9ff;
+            color: #0288d1;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .member-name {
+            font-size: 1.4rem;
+            color: #002d5b;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .member-count {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #0288d1;
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+         <nav>
+            <div class="logo">Sakai Lab<span> @ TMU</span></div>
+			<ul>
+	            <li><a href="index.html">Home</a></li>
+	            <li><a href="about.html">About</a></li>
+	            <li><a href="members.html">Members</a></li>
+	            <li><a href="joinus.html">Join Us</a></li>
+			</ul>
+        </nav>
+    </header>
+
+    <main class="container" style="padding-top: 60px;">
+        <h2 style="text-align: center; color: #0288d1; margin-bottom: 10px;">Year of 2026, Members</h2>
+        <p style="text-align: center; color: #636e72; margin-bottom: 50px;">知性と情熱を共有する、少数精鋭のチーム</p>
+
+        <div class="member-grid">
+            <div class="member-card" style="border-top: 5px solid #0288d1;">
+                <span class="role-badge">Director / Associate Professor</span>
+                <div class="member-name">酒井 和哉</div>
+                <p style="font-size: 0.9rem; color: #636e72; line-height: 1.6;">
+                    The Ohio State University Ph.D.<br>
+                    ネットワーク・AIセキュリティ・分散システムの「死闘」を指揮。
+                </p>
+            </div>
+            <div class="member-card">
+                <span class="role-badge">Administrative Assistant</span>
+                <div class="member-name">事務補佐員</div>
+                <p style="font-size: 0.9rem; color: #636e72;">研究室の円滑な運営と、研究に集中できる環境を支えるプロフェッショナル。</p>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 60px; color: #0277bd; border-bottom: 2px solid #e1f5fe; padding-bottom: 10px; font-family: 'JetBrains Mono', monospace;">
+            Student Roster
+        </h3>
+        <div class="member-grid">
+            <div class="member-card">
+                <span class="role-badge">Doctoral Program</span>
+                <div class="member-count">0</div>
+                <p style="color: #95a5a6; font-size: 0.75rem; font-weight: bold; letter-spacing: 0.1em;">PH.D. CANDIDATES</p>
+            </div>
+            <div class="member-card">
+                <span class="role-badge">Master's Program (M2)</span>
+                <div class="member-count">1</div>
+                <p style="color: #636e72; font-size: 0.75rem; font-weight: bold; letter-spacing: 0.1em;">GRADUATE STUDENT</p>
+            </div>
+            <div class="member-card">
+                <span class="role-badge">Master's Program (M1)</span>
+                <div class="member-count">2</div>
+                <p style="color: #636e72; font-size: 0.75rem; font-weight: bold; letter-spacing: 0.1em;">GRADUATE STUDENTS</p>
+            </div>
+            <div class="member-card">
+                <span class="role-badge">Undergraduate (B4)</span>
+                <div class="member-count">4</div>
+                <p style="color: #636e72; font-size: 0.75rem; font-weight: bold; letter-spacing: 0.1em;">UNDERGRADUATE STUDENTS</p>
+            </div>
+            <div class="member-card">
+                <span class="role-badge">International / Research Students</span>
+                <div class="member-count">2</div>
+                <p style="color: #636e72; font-size: 0.75rem; font-weight: bold; letter-spacing: 0.1em;">RESEARCH STUDENTS</p>
+            </div>
+        </div>
+    </main>
+
+    <footer style="text-align: center; margin-top: 60px; padding-bottom: 50px; color: #636e72;">
+        <p style="font-weight: bold; color: #2d3436; margin-bottom: 25px;">
+            —— 構成（だれが）は見終えました。次は、探究（なにを）を覗く番です。
+        </p>
+        <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; max-width: 900px; margin: 0 auto;">
+			<a href="index.html#research" style="text-decoration: none; color: #0288d1; border: 1px solid #0288d1; padding: 12px 20px; border-radius: 8px; font-weight: bold; transition: all 0.2s;">Research</a>
+            <a href="education.html" style="text-decoration: none; color: #0288d1; border: 1px solid #0288d1; padding: 12px 20px; border-radius: 8px; font-weight: bold; transition: all 0.2s;">Education</a>
+            <a href="philosophy.html" style="text-decoration: none; color: #0288d1; border: 1px solid #0288d1; padding: 12px 20px; border-radius: 8px; font-weight: bold; transition: all 0.2s;">Philosophy</a>
+            <a href="life.html" style="text-decoration: none; color: #0288d1; border: 1px solid #0288d1; padding: 12px 20px; border-radius: 8px; font-weight: bold; transition: all 0.2s;">Lab Life</a>
+            <a href="joinus.html" style="text-decoration: none; color: #fff; background: #0288d1; padding: 12px 30px; border-radius: 8px; font-weight: bold; transition: all 0.2s; box-shadow: 0 4px 10px rgba(2, 136, 209, 0.2);">Join Us</a>
+        </div>
+        <p style="margin-top: 40px; font-size: 0.85rem;">&copy; 2026 Sakai Lab, Tokyo Metropolitan University.</p>
+    </footer>
+</body>
+</html>

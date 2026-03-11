@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosophy | Sakai Lab @ TMU</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Cultureページ専用の装飾 */
+        .quote-box {
+            background: var(--accent-soft);
+            border-left: 5px solid var(--accent);
+            padding: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+        }
+        .joke-text {
+            color: #d63384; /* 少し遊び心のある色 */
+            font-weight: 600;
+        }
+        .status-badge {
+            display: inline-block;
+            background: #e9ecef;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 50px;
+        }
+        @media (max-width: 768px) {
+            .philosophy-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+         <nav>
+            <div class="logo">Sakai Lab<span> @ TMU</span></div>
+			<ul>
+	            <li><a href="index.html">Home</a></li>
+	            <li><a href="about.html">About</a></li>
+	            <li><a href="members.html">Members</a></li>
+	            <li><a href="joinus.html">Join Us</a></li>
+			</ul>
+        </nav>
+    </header>
+
+<main class="container">
+    <section class="hero" style="padding-bottom: 40px;">
+        <h1>フィロソフィー</h1>
+        <p class="subtitle">自由という名の規律、あるいは「本物」になるための教育哲学</p>
+    </section>
+
+    <section>
+		<p>酒井研究室へようこそ。ここでは、日本の伝統的な「研究室」という概念を一度忘れてください。研究室の文化は、私自身が修士課程を過ごした <strong>"Sweet Home" Alabama</strong> の大らかな自律性と、博士号を取得した <strong>"Buckeye State" Ohio</strong> の厳格な知性が融合した、アメリカ流の合理性に基づいています。</p>
+
+        <div class="philosophy-grid">
+            <div class="culture-item">
+                <span class="status-badge">Professionalism</span>
+                <h3>🕊️ 究極の自律：No Core-Time</h3>
+                <p>当研究室には、あなたを縛る「鎖（コアタイム）」は存在しません。時間はすべてあなたのものです。「何時間椅子に座っていたか」ではなく「何を生み出したか」で学生を評価します。</p>
+                <div class="quote-box">
+                    <span class="joke-text">Professor's Joke:</span><br>
+					「酒井先生、明日の朝9時に研究室にいなければなりませんか？」と聞かないでください。答えは常に "No" です。あなたが午前3時に最高のコードを書ける『夜の住民』なら、私はその才能を尊重します。水曜午後のゼミにだけ、プロの顔をして現れてくれれば、それで十分です。
+                </div>
+            </div>
+
+            <div class="culture-item">
+                <span class="status-badge">Focus</span>
+                <h3>🍷 禁欲の美学：No Useless Rituals</h3>
+                <p>私たちは、アルコールを介した「飲み会」という儀式を一切行いません。これは、あなたの貴重な脳細胞と時間を守るための「優しさ」です。私たちは、ビール瓶を酌み交わす代わりに、<strong>Unix環境（Shell, Makefile）</strong> という共通言語で対話します。</p>
+                <div class="quote-box">
+                    <span class="joke-text">Professor's Quote:</span><br>
+                    「もし人生を捧げる大きな目標があるならば、歌舞伎町で飲み歩くという選択肢はありえない」
+				</div>
+			</div>
+			
+			<div class="culture-item">
+			    <span class="status-badge">Education Philosophy</span>
+			    <h3>🇺🇸 アメリカ流の教育指導：学生の意思を尊重する</h3>
+			    <p>私の教育指導の根底には、20代の大半をアラバマ州とオハイオ州で過ごす中で受けた、「学生の意思を尊重し、本当に興味があることを追求させる」というアメリカ流の精神があります 。それは、あなたのポテンシャルを最大限に引き出す最も有効な方法だと確信しています 。</p>
+				<div class="quote-box">
+			        <span class="joke-text">Professor's Commitment:</span><br>
+			        「あなたが自分の人生の一部（学部4年から修士・博士までの3〜6年間）を研究活動にコミットしてもらえるような環境を提供したいと考えています。
+                    かつて小中高学校のとき、誰かに指示されることもなく自発的に同級生に恋をした、あの日の気持ちを思い出してください。ここでは、誰かに決められた問いではなく、あなたが心から熱狂できる『真実の問い』を追求してください。
+			    </div>
+			</div>
+
+			<div class="culture-item">
+			    <span class="status-badge">Top-level Community</span>
+			    <h3>🌐 世界の頂点と、そこへ至る唯一の道</h3>
+			    <p>
+			        GAFAなどの巨大IT企業で働くPh.D.ホルダーの年収は4,000万円が基準となり、人工知能研究者に至っては1億円を超えます。
+			        トップカンファレンスという場所は、こうした完成されたプロフェッショナルたちが知性を競い合う戦場です。
+			        そのレベルは極めて高いですが、銀座高級クラブのNo.1ホステスの心を射止めるのと同様に、決して「どうにもならないレベル」ではありません。
+			    </p>
+			    <div class="quote-box">
+			        <span class="joke-text">Professor's Mindset:</span><br>
+			        「<strong>『小さいことを重ねることが、とんでもないところへ行く、ただ一つの道』 by イチロー</strong> 。
+			        魔法のような近道など、この世には存在しません。基礎科目、問題解決能力、プログラミング、数学、英語。
+			        これら一つひとつの『小さいこと』を死に物狂いで積み重ねた先にしか、世界と渡り合える『一人の個』としてのステージは待っていないのです。」
+			    </div>
+			</div>
+			
+			<div class="culture-item">
+			    <span class="status-badge">Hacker Mindset</span>
+			    <h3>💻 ハッカーマインド：Unix環境への誘い</h3>
+			    <p>ハッカーとは、既存のシステムを単に利用する者ではなく、その構造を深く理解し、自らの手で最適化（ハック）する者を指します。私たちは、マウスのクリック一つで完結するような「与えられた不自由」を拒絶します。CUIの真っ黒な画面こそが、真の自由へと通じる唯一の入り口です。</p>
+				<div class="quote-box">
+			        <span class="joke-text">The Way of the Hacker:</span><br>
+			        「なぜUnixなのか。それは、Unixこそがコンピュータと対話するための最も純粋で、最もエレガントな共通言語だからです。
+                    もしあなたが本気で『一人の個』として世界と渡り合う覚悟があるのなら、<strong>今すぐそのWindows PCをソフマップで売ってきてください。</strong>
+                    退路を断ち、シェルを叩き、 Makefileを綴る。
+                    深夜の静寂の中、キーボードを叩く音だけが響く研究室は、あなたにとって最も自由で、最もクリエイティブな聖域になるはずです。」
+			    </div>
+			</div>
+			
+			<div class="culture-item">
+			    <span class="status-badge">Your Career, Your Choice</span>
+			    <h3>🎓 進路の尊重：Honor Your Ambition</h3>
+			    <p>当研究室は、あなたの「次なるフロンティア」への挑戦を全力で支持します。大学院進学の際、他大学や海外の門を叩きたいという意思を、私は一人の研究者として最大限に尊重します。</p>
+			    <div class="quote-box">
+			        <span class="joke-text">Professor's Advice:</span><br>
+			        「井の中の蛙」になってはいけません。もし都立大よりもエキサイティングな場所を見つけたのなら、はたまた非日常体験を求めて銀座の黄昏に沈むのならば、私は喜んで背中を押します。私の役割はあなたを囲い込むことではなく、あなたが世界中どこへ行っても通用する「翼（スキル）」を授けることです。
+			    </div>
+			</div>
+			
+			<div class="culture-item">
+			    <span class="status-badge">Global Perspective</span>
+			    <h3>🇺🇸 米国留学への誘い：Go West!</h3>
+			    <p>もしあなたが広い世界を見たいなら、私は米国への研究留学を強く勧めます。Auburn や Ohio State で私が経験したような、多様な価値観が衝突し、知性が火花を散らすあの光景を、皆さんにも見てほしいと願っています。</p>
+				<div class="quote-box">
+			        <span class="joke-text">Professor's Insight:</span><br>
+			        「なぜアメリカなのか？ それは、そこが『失敗』を恐れず、『未踏』を愛する開拓者の地だからです。
+			        日本という安全な港を離れ、荒波の向こうにある本物のコンピュータサイエンスに触れてください。
+			        私がかつて手に入れた "Buckeye" の精神（粘り強さと誇り）を、今度はあなたが手に入れる番です。」
+			    </div>
+			</div>
+		</div>
+	</section>
+	
+    <footer style="text-align: center; margin-top: 20px; padding-bottom: 50px; color: #636e72;">
+        <p style="font-weight: bold; color: #2d3436; margin-bottom: 25px;">
+            —— 思考の準備（ロジック）は整いました。次は、研究室の深部（コア）を覗く番です。
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; max-width: 900px; margin: 0 auto;">
+			<a href="index.html#research" style="text-decoration: none; color: #0288d1; border: 1px solid #0288d1; padding: 12px 20px; border-radius: 8px; font-weight: bold; transition: all 0.2s;">Research</a>
+            <a href="education.html" style="text-decoration: none; color: #0288d1; border: 1px solid #0288d1; padding: 12px 20px; border-radius: 8px; font-weight: bold; transition: all 0.2s;">Education</a>
+            <a href="life.html" style="text-decoration: none; color: #0288d1; border: 1px solid #0288d1; padding: 12px 20px; border-radius: 8px; font-weight: bold; transition: all 0.2s;">Lab Life</a>
+            <a href="joinus.html" style="text-decoration: none; color: #fff; background: #0288d1; padding: 12px 30px; border-radius: 8px; font-weight: bold; transition: all 0.2s; box-shadow: 0 4px 10px rgba(2, 136, 209, 0.2);">Join Us</a>
+        </div>
+
+        <p style="margin-top: 60px; font-size: 0.85rem;">&copy; 2026 Sakai Lab, Tokyo Metropolitan University.</p>
+    </footer>
+</main>

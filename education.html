@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education | Sakai Lab @ TMU</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 共通スタイル継承 */
+        .card {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 35px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+        .status-badge {
+            display: inline-block;
+            background: #e9ecef;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .quote-box {
+            background: var(--accent-soft);
+            border-left: 5px solid var(--accent);
+            padding: 20px;
+            margin: 25px 0;
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+        }
+        .joke-text {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .subject-item {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            border-left: 4px solid var(--accent);
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+         <nav>
+            <div class="logo">Sakai Lab<span> @ TMU</span></div>
+			<ul>
+	            <li><a href="index.html">Home</a></li>
+	            <li><a href="about.html">About</a></li>
+	            <li><a href="members.html">Members</a></li>
+	            <li><a href="joinus.html">Join Us</a></li>
+			</ul>
+        </nav>
+    </header>
+
+<main class="container">
+    <section class="hero" style="padding-bottom: 40px;">
+        <h1>研究室で学ぶこと</h1>
+        <p class="subtitle" style="font-size: 1.25rem; color: var(--accent); font-weight: bold;">
+            時代に左右されない「本物の知性」を研磨する
+        </p>
+    </section>
+
+	    <p>
+            流行の技術をなぞるだけなら、独学で十分です。ここでの学びは、生涯にわたってあなたを支え続ける「知のOS」を構築することにあります。
+            不変の原理原則をマスターし、未知の課題に対して自ら問いを立て、武士道の如き勇気を持って切り拓く力を養います。
+        </p>
+
+    <section class="card">
+        <span class="status-badge">Weekly Seminar</span>
+        <h3>1. 週1回のゼミ：時間の尊厳と密度</h3>
+        <p>毎週水曜日15時。ここは進捗を報告する場ではなく、プロフェッショナルとしての「密度」を問う場です。一人3分で現状を伝え、論文解説は10分以内で本質を射抜く。時間は、あなたが持つ唯一にして最大の資本です。</p>
+        <div class="quote-box">
+            <span class="joke-text">The Rule:</span><br>
+            「時間厳守は最低限のマナーです。3分で伝えられない進捗は、思考が整理されていない証拠であり、10分で解説できない論文は、理解が浅い証拠です。ちんたら長話をしている間にイエローストーンが爆発し、世界が終わるかもしれません。他人の時間を奪うことは、その人の命を削る行為だと自覚してください。」
+        </div>
+		<p style="font-size: 0.95rem; color: #d63031; font-weight: bold; margin-top: 20px; line-height: 1.6;">
+            ※Unix哲学（小さく、鋭く）は、あなたの言葉にも適用されます。
+            もし、あなたが年収5000万を超える開業医で意中の相手にプロポーズをするならば、「医者です」の5文字で終わるはずです。
+        </p>
+    </section>
+
+    <section class="card">
+        <span class="status-badge">Specialized Expertise</span>
+        <h3>2. 専門性：世界を救うための「装備」</h3>
+        <p>巨大な組織や悪意ある知能が渦巻くサイバー空間において、あなた自身の尊厳を守り、世界を救うための強力な矛と盾を手に入れてください。</p>
+
+        <div class="subject-grid">
+            <div class="subject-item" style="text-align: center; padding: 20px;">
+                <div style="font-size: 2rem; margin-bottom: 10px;">🔐</div>
+                暗号理論
+            </div>
+            <div class="subject-item" style="text-align: center; padding: 20px;">
+                <div style="font-size: 2rem; margin-bottom: 10px;">🛡️</div>
+                セキュリティとプライバシー
+            </div>
+            <div class="subject-item" style="text-align: center; padding: 20px;">
+                <div style="font-size: 2rem; margin-bottom: 10px;">🌐</div>
+                ネットワーク
+            </div>
+            <div class="subject-item" style="text-align: center; padding: 20px;">
+                <div style="font-size: 2rem; margin-bottom: 10px;">🤖</div>
+                機械学習
+            </div>
+        </div>
+
+        <div class="quote-box">
+            <span class="joke-text">Professor's View:</span><br>
+            「Unix哲学の真髄は『一つのことを行い、それをうまくやれ（Do one thing and do it well）』にあります。<br>
+            あれもこれもと欲張る必要はありません。この4つの領域から、あなたが『これこそは』と思う一振りの刀を選び、研ぎ澄ませてください。
+            その鋭さこそが、巨大な壁を穿つレバレッジとなります。<strong>婚活も同じです。星の数ほど女性がいますが、つまるところ籍を入れることができる女性は一人だけなのです。</strong>」
+        </div>
+    </section>
+
+    <section class="card">
+        <span class="status-badge">The Tools of Freedom</span>
+        <h3>3. UNIX環境：思考を自動化する「聖域の作法」</h3>
+        <p>Unixの哲学は「小さく、鋭い」ツールを組み合わせ、巨大な成果を得ることにあります。マウス操作という「軟弱なUI」を捨て、コマンド一行に魂を込める。それが世界と戦う研究者の作法です。</p>
+
+        <style>
+            .tool-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 25px 0;
+                font-size: 0.95rem;
+            }
+            .tool-table th, .tool-table td {
+                padding: 15px;
+                border: 1px solid #eee;
+                text-align: left;
+            }
+            .tool-table th {
+                background: #f8f9fa;
+                color: var(--accent);
+                font-weight: bold;
+                width: 25%;
+            }
+            .tool-table td strong {
+                color: var(--text-main);
+                display: block;
+                margin-bottom: 5px;
+            }
+        </style>
+
+        <table class="tool-table">
+            <thead>
+                <tr>
+                    <th>ツール</th>
+                    <th>何をするものか</th>
+                    <th>なぜ必要なのか</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Shell (Zsh/Bash)</strong></td>
+                    <td>コンピュータと「対話」するための文字ベースのインターフェースです。</td>
+                    <td>大量のデータ処理や定型作業を一瞬で終わらせるためです。GUIでカチカチとクリックしている間に、シェル使いは100倍の仕事を終えて帰宅します。</td>
+                </tr>
+                <tr>
+                    <td><strong>Makefile</strong></td>
+                    <td>プログラムのビルドや実験の工程を「定義」する自動化ツールです。</td>
+                    <td>「再現性」は科学の命です。半年後の自分が手順を忘れていても、<code>make</code> と打つだけで当時の奇跡を再現できるようにするためです。</td>
+                </tr>
+                <tr>
+                    <td><strong>LaTeX</strong></td>
+                    <td>数式や構造を「論理的」に記述する、世界標準の文書作成システムです。</td>
+                    <td>Wordのレイアウト崩れに発狂するためではありません。内容（論理）に集中し、トップカンファレンスが求める「美しく厳格な論文」を出力するためです。</td>
+                </tr>
+                <tr>
+                    <td><strong>gnuplot</strong></td>
+                    <td>データを「視覚化」するための、コマンド駆動型のグラフ作成ツールです。</td>
+                    <td>Excelの軟弱なグラフで査読者を失望させないためです。再現可能なスクリプトによって、100万個のデータ点からも真理を鮮やかに描き出します。</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="quote-box">
+            <span class="joke-text">Professor's View:</span><br>
+            「これらは単なるソフトではありません。あなたのMacBook Proを、<strong>単にYouTubeで推しアイドルの番組をリピートしたり、「フリーレン」の限定フィギュアをポチったりするためだけの「高価な動画鑑賞機」</strong>から『知の破壊兵器』へと変貌させるOSそのものです。<br><br>
+            初心者はマウスで「推し」のSNSを彷徨い、プロはキーボードで「真理」のディレクトリを突き進みます。これらを使いこなしたとき、あなたは『アルゴリズムに魂を解析される』側から、『論理で世界を再定義する』側へと脱皮します。<br><br>
+            <strong>ちなみに、Unixコマンドに「推しと結婚できるオプション」は実装されていません。投げ銭（スパチャ）は一瞬で済みますが、研究の成果（と真実の愛）を手に入れるには、泥臭いデバッグと、代償を払う覚悟が必要です。</strong>」
+        </div>
+    </section>
+
+    <section class="card">
+        <span class="status-badge">Implementation Power</span>
+        <h3>4. プログラミング：論理を具現化する「共通言語」</h3>
+        <p>
+            プログラミングは単なる「記述」ではなく、コンピュータと、そして世界中の開発者と対話するための手段です。
+            当研究室では、対象とするレイヤーに合わせて、最適な言語を選択する「言語の審美眼」を養います。
+        </p>
+
+        <style>
+            .lang-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 25px 0;
+                font-size: 0.95rem;
+            }
+            .lang-table th, .lang-table td {
+                padding: 15px;
+                border: 1px solid #eee;
+                text-align: left;
+            }
+            .lang-table th {
+                background: #f8f9fa;
+                color: var(--accent);
+                font-weight: bold;
+                width: 20%;
+            }
+        </style>
+
+        <table class="lang-table">
+            <thead>
+                <tr>
+                    <th>言語</th>
+                    <th>必要性（何を学ぶか）</th>
+                    <th>用途（何を作るか）</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>C言語</strong></td>
+                    <td>コンピュータの心臓部であるカーネルとの対話、およびメモリ管理の厳格さを学びます。</td>
+                    <td>OS、ファームウェア、デバイスドライバなど、ハードウェアに近い低レイヤーの記述に使用します。</td>
+                </tr>
+                <tr>
+                    <td><strong>C++ / Java</strong></td>
+                    <td>大規模なシステムを破綻させずに構築するための、オブジェクト指向や構造的設計を学びます。</td>
+                    <td>複雑なセキュリティ機構、企業向けの大規模システム、高速な実行速度が要求されるアプリケーション開発に使用します。研究活動では、シミュレーションの開発やプロトタイプ実装で使用します。</td>
+                </tr>
+                <tr>
+                    <td><strong>Python</strong></td>
+                    <td>アイデアを最速で「形」にする機動力、および膨大なライブラリの活用術を学びます。</td>
+                    <td>機械学習、AIセキュリティ、データ解析、および研究のプロトタイプ作成（PoC）の標準言語として使用します。また、脆弱性のエクスプロイトさえ記述できる多機能な言語です。</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="quote-box">
+            <span class="joke-text" style="font-size: 1.1rem; display: block; margin-bottom: 10px;">Professor's View:</span>
+            <p style="line-height: 1.8;">
+                「流行りの言語を追いかけるのは、移りゆく季節や北新地で高嶺の花を追いかけるようなものです。まずはC言語で、コンピュータが物理的にどう動いているかという『真理』を体に叩き込んでください。<br><br>
+                
+                <strong>YouTubeで【推しの子】のMVを100回再生するスクリプトをPythonで書くのは自由ですが、その背後で動いているC言語の厳格なメモリ管理に思いを馳せられるようになってこそ、本物のエンジニアです。</strong><br><br>
+                
+                複雑なコードも、複雑な人生も、基本（Core）を疎かにしては成功しません。まずは『小さく、鋭い』論理を綴ることから始めてください。」
+            </p>
+        </div>
+    </section>
+	
+    <section class="card">
+        <span class="status-badge">Global Access</span>
+        <h3>5. アカデミック英語：世界基準への唯一の窓</h3>
+        <p>TOEFLをベースとしたアカデミック英語の習得は義務です。なぜなら、あなたが読むべきバイブル（洋書）も、あなたが超えるべきライバルたちの論文も、すべてこの言語で記述されているからです。</p>
+		
+		<style>
+            .english-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 25px 0;
+                font-size: 0.95rem;
+            }
+            .english-table th, .english-table td {
+                padding: 15px;
+                border: 1px solid #eee;
+                text-align: left;
+                line-height: 1.6;
+            }
+            .english-table th {
+                background: #f8f9fa;
+                color: var(--accent);
+                font-weight: bold;
+            }
+            /* 列幅の調整：1列目を最小限に、2列目を広く */
+            .col-task { width: 22%; }
+            .col-reason { width: 78%; }
+            
+            .highlight-text {
+                color: var(--accent);
+                font-weight: bold;
+            }
+        </style>
+
+        <table class="english-table">
+            <thead>
+                <tr>
+					<th class="col-task">学ぶべきこと</th>
+                    <th class="col-reason">理由（なぜ必要なのか）</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>発音記号</strong></td>
+                    <td>
+                        音節の数、アクセント、有声音と無声音の区別を正確に把握するためです。
+                        例えば「Time」はカタカナでは3音節（タ・イ・ム）ですが、英語では1音節です。
+                        この<strong>音節の数の違い</strong>こそが、カタカナ英語が世界で理解されない最大の原因です。
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>リンキングと脱落</strong></td>
+                    <td>
+                        ネイティブのリアルなスピードに対応するためです。
+                        "What do you say" が早口で "Wadaya say?" となったり、"want to" の "t" が省略される仕組みを理解しなければ、リスニングもスピーキングも「本物」には届きません。
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>英英辞典の使用</strong></td>
+                    <td>
+                        日本語と英語を一対一で対応させる限界を超えるためです。
+                        単語の背景にある微妙なニュアンスや文化的な広がりは、英語を英語のまま理解することでしか体得できません。
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>英語で英語を説明する力</strong></td>
+                    <td>
+                        語彙力に頼らず、概念を論理的に再構築するためです。
+                        例えば「セクハラ」を "Sexual" という語を使わずに説明できますか？
+                        私なら <strong>"Unwanted advances with romantic interests"</strong> と説明します。この記述力こそが知性の証です。
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+		
+        <div class="quote-box">
+            <span class="joke-text">Global Standard:</span><br>
+            「英語は単なる言語ではなく、一流研究者のコミュニティに参加するための『入場許可証』です。発音記号を覚え、リンキングを学び、正しいアカデミック・スタイルで思考する。世界とやり合いたいなら、日本語の殻にこもる暇はありません。<strong>ただし、意中の相手に思いを伝えるときだけは、日本語にしてください。</strong>」
+        </div>
+    </section>
+
+	<section class="card">
+        <span class="status-badge">The First Step</span>
+        <h3>6. 論文リーディング：知の頂に触れる</h3>
+        <p>
+            研究活動の第一歩は、世界最高峰の知性が集う<strong>トップカンファレンスやトップ論文誌</strong>を読み解くことから始まります。
+            これらは単なる資料ではなく、<strong>満員電車で通勤するサラリーマンが書いたラブレターでもありません。</strong>
+            年収１億を超える完成された研究者のアーティファクト、すなわち人類が到達した「正解」の最新形です。
+        </p>
+        
+        <div style="background: #f1f2f6; padding: 25px; border-radius: 12px; margin: 25px 0;">
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 15px; display: flex; align-items: start;">
+                    <span style="color: var(--accent); margin-right: 10px;">✔</span>
+                    <span>世界中のトップ層が心血を注いだ論文は、論理、構成、英語、その全てが「最良の教科書」です。</span>
+                </li>
+                <li style="margin-bottom: 15px; display: flex; align-items: start;">
+                    <span style="color: var(--accent); margin-right: 10px;">✔</span>
+                    <span>常に成功例にアクセスできる環境は、極めて恵まれています。その贅沢を存分に享受してください。</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="quote-box">
+            <span class="joke-text" style="color: #d63031; font-size: 1.1rem; display: block; margin-bottom: 10px;">Professor's Final Message:</span>
+            <p style="line-height: 1.8; font-weight: bold; font-size: 1.1rem;">
+                一流の論文が描く鮮やかなロジックに触れ、知的好奇心を震わせてください。<br><br>
+                研究は、感動から始まります。
+            </p>
+        </div>
+    </section>
+
+    <footer style="text-align: center; margin-top: 60px; padding-bottom: 50px; color: #636e72;">
+        <p style="font-weight: bold; color: #2d3436; margin-bottom: 25px;">
+            —— 武器は揃いました。あとは、あなたの「覚悟」だけです。
+        </p>
+        <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; max-width: 900px; margin: 0 auto;">
+            <a href="index.html#research" style="text-decoration: none; color: #0288d1; border: 1px solid #0288d1; padding: 12px 20px; border-radius: 8px; font-weight: bold; transition: all 0.2s;">Research</a>
+            <a href="philosophy.html" style="text-decoration: none; color: #0288d1; border: 1px solid #0288d1; padding: 12px 20px; border-radius: 8px; font-weight: bold; transition: all 0.2s;">Philosophy</a>
+            <a href="life.html" style="text-decoration: none; color: #0288d1; border: 1px solid #0288d1; padding: 12px 20px; border-radius: 8px; font-weight: bold; transition: all 0.2s;">Lab Life</a>
+            <a href="joinus.html" style="text-decoration: none; color: #fff; background: #0288d1; padding: 12px 30px; border-radius: 8px; font-weight: bold; transition: all 0.2s; box-shadow: 0 4px 10px rgba(2, 136, 209, 0.2);">Join Us</a>
+        </div>
+        <p style="margin-top: 40px; font-size: 0.85rem;">&copy; 2026 Sakai Lab, Tokyo Metropolitan University.</p>
+    </footer>
+</main>
+
+</body>
+</html>

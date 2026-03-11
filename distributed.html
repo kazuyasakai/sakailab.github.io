@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distributed Systems | Sakai Lab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        :root {
+            /* Distributed Systems 専用カラー：同期と活気を象徴するアンバー */
+            --accent: #ff8f00;         /* アンバー（琥珀色） */
+            --accent-soft: #fff8e1;    /* 補助的な淡いイエロー */
+        }
+
+        /* style.css との整合性調整 */
+        main.container {
+            padding-top: 100px;
+        }
+
+        /* ヘッダーのナビゲーションをアンバーで統一 */
+        nav ul li:last-child a {
+            color: var(--accent) !important;
+            border: 2px solid var(--accent) !important;
+            padding: 6px 16px !important;
+            border-radius: 8px !important;
+            font-weight: 700 !important;
+            transition: all 0.3s ease;
+        }
+        nav ul li:last-child a:hover {
+            background: var(--accent) !important;
+            color: #fff !important;
+        }
+
+        /* ヒーローセクション */
+        .hero-section {
+            text-align: center;
+            padding: 40px 0 60px;
+        }
+        .hero-label {
+            font-family: var(--font-mono);
+            color: var(--accent);
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* リードセクション：遠距離恋愛のロマンス */
+        .romance-lead {
+            max-width: 850px;
+            margin: 0 auto 60px;
+            text-align: center;
+            padding: 45px;
+            border-radius: 24px;
+            background: var(--accent-soft);
+            border: 1px solid #ffecb3;
+        }
+        .romance-lead p.italic { font-style: italic; color: #ff6f00; font-weight: 600; }
+
+        /* セクション共通 */
+        .section-card { margin-bottom: 80px; }
+        .section-title {
+            color: var(--text-bright);
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--accent);
+            padding-left: 20px;
+        }
+
+        .overview-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid #eee;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            margin: 30px 0;
+        }
+
+        /* 強調箇所のマーカー装飾 */
+        strong {
+            display: inline !important;
+            color: var(--text-bright);
+            background: linear-gradient(transparent 70%, #ffe082 70%);
+            padding: 0 2px;
+        }
+
+        /* 注意書き（アンバー統一版） */
+        .warning-note {
+            background: var(--accent-soft);
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #5f4339; /* 深いブラウン */
+        }
+        .warning-note strong {
+            color: var(--accent);
+            display: inline-block;
+            margin-bottom: 5px;
+            background: none !important;
+            padding: 0;
+        }
+
+        /* 研究テーマのグリッド */
+        .theme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 24px;
+        }
+        .theme-item {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+        .theme-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(255, 143, 0, 0.1);
+        }
+        .theme-item .tag {
+            color: var(--accent);
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        /* 過去の研究テーマリスト */
+        .history-list { list-style: none; padding: 0; }
+        .history-list li {
+            padding: 18px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            gap: 15px;
+        }
+        .history-list li::before { content: "→"; color: var(--accent); font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="container">
+        <a href="index.html" class="logo">Sakai Lab. <span>@ TMU</span></a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="joinus.html">Join Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container">
+    <section class="hero-section">
+        <span class="hero-label">Research Field 03</span>
+        <h1>Distributed Computing</h1>
+        <p style="font-size: 1.2rem; color: var(--accent); font-weight: 600; margin-top: 10px;">
+			遠く離れた数多の鼓動を、一糸乱れぬリズムで同期させる。
+		</p>
+    </section>
+
+    <section class="romance-lead">
+        <p class="italic">
+            物理的な距離は、時として残酷です。けれど、互いの想いが正確に重なったとき、<br>
+            二人は場所を超えて「ひとつの存在」になれる。
+        </p>
+        <p>
+            何千、何万というコンピュータが点在する現代のネットワーク。<br>
+            一方が囁けば、もう一方が即座に頷く。その当たり前の「シンクロ（同期）」こそが、世界を動かす魔法です。
+        </p>
+        <p style="font-weight: 700; color: var(--accent);">
+            私たちは、どれだけ離れていても「心はひとつ」であるための、<br>
+            絶対に嘘をつかない（一貫性のある）約束のアルゴリズムを設計しています。
+        </p>
+    </section>
+
+	<section class="section-card">
+	    <h2 class="section-title">1. 分散システムの全体像</h2>
+	    <div class="overview-card">
+	        <p>分散システムは、中央の巨大な力に頼るのではなく、末端の知能が連携し合うことで、強固で柔軟なネットワークを形成します。</p>
+	        
+	        <div class="image-placeholder" style="background: var(--accent-soft); border: 2px dashed var(--accent); border-radius: 16px; margin: 30px 0; padding: 60px 20px; text-align: center; color: var(--accent);">
+	            <div style="font-size: 3rem; margin-bottom: 10px; opacity: 0.5;">📱⚡🏢</div>
+	            <p style="font-weight: bold; margin: 0; font-family: var(--font-mono); font-size: 0.9rem;">
+	                [ Edge Computing Architecture: Mobile ↔ Agent ↔ Edge Server ]
+	            </p>
+	            <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 5px;">
+	                ※エッジサーバと自律分散的なモバイル端末の相互接続イメージを挿入予定
+	            </p>
+	        </div>
+	
+	        <ul style="list-style: none; padding: 0; margin-top: 25px;">
+	            <li style="margin-bottom: 30px;">
+	                <span style="font-weight: bold; font-size: 1.1rem; color: var(--accent); display: block; margin-bottom: 10px;">1. モバイル端末（Mobile & Wearable Devices）</span>
+	                <div class="definition-text" style="background: #fffdf2; border-left: 3px solid #ffe082; padding: 12px; border-radius: 8px; font-size: 0.9rem; margin-bottom: 10px;">
+	                    ユーザーが常に携帯するスマートフォンやウェアラブル端末です。現実世界の膨大なコンテキストを収集する「窓口」であり、制約のあるリソース内で効率的にデータを処理する役割を担います。
+	                </div>
+	                <p>
+	                    彼らは、<strong>「恋人の一挙一動を見逃したくない、健気な片思いの当事者」</strong>のような存在。
+	                    常に周囲の変化に敏感で、小さなサイン（データ）を拾い集めては、その想いを誰かに伝えようと必死に鼓動（通信）を繰り返しています。
+	                </p>
+	            </li>
+	
+	            <li style="margin-bottom: 30px;">
+	                <span style="font-weight: bold; font-size: 1.1rem; color: var(--accent); display: block; margin-bottom: 10px;">2. エッジサーバ（Edge Server）</span>
+	                <div class="definition-text" style="background: #fffdf2; border-left: 3px solid #ffe082; padding: 12px; border-radius: 8px; font-size: 0.9rem; margin-bottom: 10px;">
+	                    物理的にユーザーの近くに配置された計算拠点です。LLMサービスなどを提供し、クラウドまで行かずに低遅延で高度な処理を行うことで、リアルタイムなインタラクションを支えます。
+	                </div>
+	                <p>
+	                    ここは、遠く離れた親よりも頼りになる<strong>「近所に住むお節介で有能な恋の相談役」</strong>。
+	                    遠方のクラウドへ相談（通信）する時間を待てないあなたのために、すぐそばで的確な助言（LLM推論）を授け、二人の距離を最短で縮めるための道標となります。
+	                </p>
+	            </li>
+	
+	            <li style="margin-bottom: 30px;">
+	                <span style="font-weight: bold; font-size: 1.1rem; color: var(--accent); display: block; margin-bottom: 10px;">3. エージェント（AI Program / Autonomous Agent）</span>
+	                <div class="definition-text" style="background: #fffdf2; border-left: 3px solid #ffe082; padding: 12px; border-radius: 8px; font-size: 0.9rem; margin-bottom: 10px;">
+	                    モバイル端末内で自律的に動作するAIプログラムです。状況に応じて最適なサーバを選択し、他の端末と自律分散的に協調しながら、ユーザーの意図を汲み取った高度な判断を実行します。
+	                </div>
+	                <p>
+	                    彼らは、<strong>「恋人のために裏で完璧なデートプランを練り、根回しを欠かさない名軍師」</strong>。
+	                    表立って目立つことはありませんが、自律的に最善のルート（通信経路）を選び、周囲と阿吽の呼吸で同期することで、あなたの想いが一糸乱れぬリズムで届くよう、舞台裏で奔走しています。
+	                </p>
+	            </li>
+	        </ul>
+	
+	        <div class="warning-note">
+	            <strong>※輪を乱す身勝手なノードへの注意：</strong><br>
+	            全体の同期を無視する不届き者には、分散アルゴリズムという名の「厳しい規律」によって、集団からの孤立を宣告します。
+	        </div>
+	    </div>
+	</section>
+	
+	<section class="section-card">
+	    <h2 class="section-title">2. 具体的な研究テーマ</h2>
+	    <div class="theme-grid">
+	        
+	        <div class="theme-item">
+	            <span class="tag">Distributed Reinforcement Learning</span>
+	            <h3>1. 分散型強化学習アルゴリズム</h3>
+	            <p>
+	                複数のエージェントが各々の環境で試行錯誤し、得られた経験を同期・統合することで、単一の知能では到達できない高度な戦略を高速に学習する技術です。
+	                膨大な計算リソースを分散配置し、通信遅延やデータの偏りを考慮しながら効率的に「集合知」を構築する最適化アルゴリズムを研究しています。
+	            </p>
+	            
+	            <div class="warning-note">
+	                <p>
+	                    たとえば、複数のAIが<strong>「意中の相手をスマートにデートに誘う必勝法」</strong>を分散学習しているとします。
+	                    ある個体が「強引すぎるアプローチ」で玉砕した苦い経験が、ネットワークを通じて即座に全ノードに共有される。
+	                    翌朝、あなたのスマホのAIが『昨夜の失敗に基づき、二度と同じ過ちを繰り返さないよう制御します』と、全ノードの総意として憐れみの通知を送ってくる……。そんな「失恋の共有」を防ぎつつ、賢く学ぶ仕組みです。
+	                </p>
+	            </div>
+	        </div>
+	
+	        <div class="theme-item">
+	            <span class="tag">LLM Routing</span>
+	            <h3>2. 適応的LLMルーティング</h3>
+	            <p>
+	                ユーザーのクエリの内容や緊急度、各エッジサーバの負荷状況をリアルタイムに解析し、最適なLLMモデルや計算拠点へ処理を振り分ける（ルーティング）技術です。
+	                計算リソースが限られたモバイル環境において、消費電力とレスポンス速度のトレードオフを動的に解決し、常に「ちょうどいい知能」をオンデマンドで提供することを目指します。
+	            </p>
+	            
+	            <div class="warning-note">
+	                <p>
+	                    もしルーティングが狂って、親に送るはずの「今から帰る」という連絡が、間違って<strong>「初恋の相手に贈るために推敲を重ねた、悶絶するほどポエジーな自作ラブソング」</strong>を処理中の超高性能サーバに飛ばされたら最悪です。
+	                    AIが気を利かせて『より情熱的な表現に修正して送信しました』と余計なホスピタリティを発揮し、取り返しのつかない誤送信を誘発する。そんな「宛先不明の情熱」が生まれないよう、厳密な交通整理を行います。
+	                </p>
+	            </div>
+	        </div>
+	
+	        <div class="theme-item">
+	            <span class="tag">Mobile Crowdsourcing</span>
+	            <h3>3. モバイルクラウドソーシングの最適化</h3>
+	            <p>
+	                街中に散らばる膨大な数のモバイル端末ユーザーに対し、タスク（位置情報の収集や周辺状況の確認など）を効率的に割り当て、都市全体のデータを収集する仕組みです。
+	                ユーザーの移動パターンを予測し、適切なインセンティブ（報酬）を設計することで、最小のコストで最大の「情報の網」を広げる手法を追求しています。
+	            </p>
+	            
+	            <div class="warning-note">
+	                <p>
+	                    もしインセンティブ設計のバランスが崩れると、あなたが<strong>「ダイエットのために深夜、必死に公園を何周も走り込んでいる、あまり他人には見られたくない孤独な努力」</strong>が、システムに『貴重な深夜の歩行者データ』として高く評価されてしまいます。
+	                    AIから『あなたの涙ぐましい往復運動は、都市開発に非常に有用です！』と感謝のバッジが贈られ、隠していた努力が統計として可視化される……。そんな、そっとしておいてほしい「秘密の活動」を適切に保護する設計が不可欠です。
+	                </p>
+	            </div>
+	        </div>
+	
+	        <div class="theme-item">
+	            <span class="tag">Decentralized Infrastructure</span>
+	            <h3>4. 分散型自律ネットワーク基盤</h3>
+	            <p>
+	                中央サーバを介さず、端末同士がメッシュ状に繋がり合うことで、巨大なデータ配信や信頼性の高い通信を実現する次世代の基盤技術です。
+	                特定の拠点が脱落してもシステム全体が維持される「自己組織化」のメカニズムを研究し、いかなる障害や検閲にも屈しない、自由で堅牢な、そして参加者全員が主役となる通信環境を構築します。
+	            </p>
+	            
+	            <div class="warning-note">
+	                <p>
+	                    このネットワークでは、一人のデータが全員の支えになります。しかし、もしあなたが<strong>「深夜の勢いで作成した、意中の相手との架空の結婚披露宴の座席表」</strong>という超重要機密ファイルを、共有設定のミスで放流してしまったら？
+	                    分散型ネットワークの強力な拡散力によって、その座席表が世界中の端末に「消去不可能な思い出」として複製・保存され続ける。そんな、デジタルなタトゥーとして一生残り続ける「若気の至り」からあなたを守るための、確かな制御技術が必要です。
+	                </p>
+	            </div>
+	        </div>
+	
+	    </div>
+	</section>
+
+	<section class="section-card">
+	    <h2 class="section-title">3. 過去の研究テーマ</h2>
+	    <p style="margin-bottom: 25px; color: var(--text-main); font-size: 0.95rem;">
+	        遠く離れた場所にいる、手の届かない相手。その距離（遅延）をもどかしく思いながら、それでも一糸乱れぬ同期を求める、切実な連携の記録です。
+	    </p>
+	
+	    <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; line-height: 1.6;">
+	        <tr style="border-bottom: 1px solid #eee;">
+	            <th style="text-align: left; padding: 15px 10px; width: 320px; color: var(--accent); white-space: nowrap;">モバイルクラウドソーシングのタスク割当</th>
+	            <td style="padding: 15px 10px; color: var(--text-main);">街中に散らばる数多の協力者に、最も効率的な移動ルートを提示し、街全体の情報を一挙に集約する「群衆の統制」に関する研究です。</td>
+	        </tr>
+	        <tr style="border-bottom: 1px solid #eee;">
+	            <th style="text-align: left; padding: 15px 10px; width: 320px; color: var(--accent); white-space: nowrap;">ドローン活用型モバイルソーシャルネットワーク</th>
+	            <td style="padding: 15px 10px; color: var(--text-main);">地上では届かない想いを、空飛ぶ使者が中継し、遮断されたネットワークを再び繋ぎ止める、献身的なルーティングの研究です。</td>
+	        </tr>
+	        <tr style="border-bottom: 1px solid #eee;">
+	            <th style="text-align: left; padding: 15px 10px; width: 320px; color: var(--accent); white-space: nowrap;">オポチュニスティック環境でのワイヤレス給電</th>
+	            <td style="padding: 15px 10px; color: var(--text-main);">行きずりの出会いの中で、枯渇しかけた相手のエネルギーを密かに分け与える、究極の献身アルゴリズムの研究です。</td>
+	        </tr>
+	        <tr>
+	            <th style="text-align: left; padding: 15px 10px; width: 320px; color: var(--accent); white-space: nowrap;">ランデブー回避キャッシュ同期</th>
+	            <td style="padding: 15px 10px; color: var(--text-main);">直接会うリスクを避けながらも、必要な情報をあらかじめ適切な場所に配置しておく、先回りした「愛の伏線」の設計技術です。</td>
+	        </tr>
+	    </table>
+	</section>
+</main>
+
+<footer style="text-align: center; margin-top: 80px; padding-bottom: 50px; color: #636e72; border-top: 1px solid #eee; padding-top: 60px;">
+    <p style="font-weight: bold; color: #2d3436; margin-bottom: 25px; font-size: 1.1rem;">
+        —— 遠く離れた鼓動は重なりました。次は、どの絆を確かめに行きますか？
+    </p>
+    <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; max-width: 1000px; margin: 0 auto; padding: 0 20px;">
+        <a href="index.html#research" style="text-decoration: none; color: #ff8f00; border: 1px solid #ff8f00; padding: 12px 20px; border-radius: 8px; font-weight: bold; transition: all 0.2s; min-width: 140px;">Research Home</a>
+        <a href="network.html" style="text-decoration: none; color: #ff8f00; border: 1px solid #ff8f00; padding: 12px 20px; border-radius: 8px; font-weight: bold; transition: all 0.2s; min-width: 140px;">Network Security</a>
+        <a href="ai.html" style="text-decoration: none; color: #ff8f00; border: 1px solid #ff8f00; padding: 12px 20px; border-radius: 8px; font-weight: bold; transition: all 0.2s; min-width: 140px;">AI Security</a>
+        <a href="joinus.html" style="text-decoration: none; color: #fff; background: #ff8f00; padding: 12px 30px; border-radius: 8px; font-weight: bold; transition: all 0.2s; box-shadow: 0 4px 10px rgba(255, 143, 0, 0.2); min-width: 140px;">Join Us</a>
+    </div>
+    <p style="margin-top: 40px; font-size: 0.85rem;">
+        &copy; 2026 Sakai Lab, Tokyo Metropolitan University.
+    </p>
+</footer>
+
+</body>
+</html>

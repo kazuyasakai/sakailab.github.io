@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Security | Sakai Lab</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --accent: #00897b;
+            --accent-soft: #e0f2f1;
+            --text-main: #2d3436;
+            --text-bright: #004d40;
+        }
+        
+        main.container { padding-top: 100px; }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: #fff;
+        }
+        .hero .label {
+            font-family: var(--font-mono);
+            color: var(--accent);
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            margin-bottom: 15px;
+            display: block;
+            font-size: 0.9rem;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--text-main);
+            margin: 0;
+        }
+
+        /* Lead Section */
+        .lead-section {
+            max-width: 850px;
+            margin: 0 auto 80px;
+            text-align: center;
+            padding: 45px;
+            border-radius: 24px;
+            background: var(--accent-soft);
+            border: 1px solid #b2dfdb;
+        }
+        .lead-section p.italic { font-style: italic; color: var(--text-bright); font-weight: 600; margin-bottom: 20px; }
+
+        /* Section Styling */
+        .section-card { margin-bottom: 80px; }
+        .section-title { border-left: 5px solid var(--accent); padding-left: 15px; margin-bottom: 30px; }
+
+        /* 1. 全体像 */
+        .system-overview-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid #eee;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        }
+        .diagram-placeholder {
+            background: var(--accent-soft);
+            border: 2px dashed var(--accent);
+            border-radius: 12px;
+            padding: 60px 20px;
+            text-align: center;
+            color: var(--accent);
+            font-family: var(--font-mono);
+            font-weight: bold;
+            margin: 30px 0;
+        }
+        .definition-text {
+            font-size: 0.9rem;
+            color: var(--text-bright);
+            background: var(--accent-soft);
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin: 10px 0 15px 0;
+            line-height: 1.6;
+            border-left: 3px solid var(--accent);
+        }
+
+        /* 2. 研究テーマ */
+        .theme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+        }
+        .theme-item {
+            background: #fff;
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid #eee;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+        }
+        .theme-item .tag {
+            display: inline-block;
+            align-self: flex-start;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--accent);
+            border-radius: 6px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .theme-item h3 { 
+            color: var(--text-main); 
+            font-size: 1.5rem; 
+            margin: 0 0 20px 0;
+            white-space: nowrap;
+        }
+        .warning-note {
+            background: #f8f9fa;
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin-top: auto;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* 3. 過去の研究テーマ */
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .history-table th {
+            text-align: left;
+            padding: 15px;
+            width: 320px;
+            color: var(--accent);
+            white-space: nowrap;
+            border-bottom: 1px solid #eee;
+        }
+        .history-table td { padding: 15px; color: var(--text-main); border-bottom: 1px solid #eee; }
+
+        footer {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid #eee;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="container">
+        <a href="index.html" class="logo">Sakai Lab. <span>@ TMU</span></a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="joinus.html">Join Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <span class="label">Research Field 01</span>
+        <h1>Network Security</h1>
+        <p style="font-size: 1.2rem; color: #00695c; font-weight: 600; margin-top: 10px;">
+            誰にも邪魔されない、二人の密会（プロトコル）のために。
+        </p>
+    </section>
+
+    <section class="lead-section">
+        <p class="italic">
+            かつて、愛の言葉は一通の手紙に託され、届くまでの時間を慈しむものでした。<br>
+            しかし現代（いま）、街中のセンサーが私たちの吐息を拾い上げ、<br>手元のデバイスは休むことなく世界と密会を繰り返しています。
+        </p>
+        <p>
+            この「つながりすぎた世界」では、純粋な想い（データ）ほど、無粋な視線（サイバー攻撃）に晒されます。<br>
+            誰にも知られず、誰にも汚されず、ただ愛する目的地（ホスト）へと辿り着く——。
+        </p>
+        <p style="display: block; margin-top: 20px; color: var(--accent); font-weight: 700; font-size: 1.2rem;">
+            私たちは、迷路のようなIoTの闇を駆け抜ける「一途なプロトコル」を設計し、<br>
+            二人の密会を永遠の秘密にする「数式の仮面（匿名化）」を編み上げています。
+        </p>
+    </section>
+
+    <section class="section-card">
+        <h2 class="section-title">1. IoTシステムにおけるセキュリティの全体像</h2>
+        <div class="system-overview-card">
+            <p>
+                現代の社会基盤を支えるIoTシステム。その安全性は、単一のデバイスではなく「システム全体の循環」の中にあります。これを理解するのは、悪名高い<strong>「梅田の地下迷宮」</strong>で遭難せずに地上へ脱出するよりはずっと簡単です。
+            </p>
+            
+            <div class="diagram-placeholder">
+                [ IoT Publish-Subscribe Architecture Diagram ]
+            </div>
+            
+            <ul style="list-style: none; padding: 0;">
+                <li>
+                    <span style="display: block; font-size: 1.1rem; color: var(--accent); font-weight: 700;">1. IoT端末（センサー端末や情報機器）</span>
+                    <div class="definition-text">
+                        IoT端末とは、物理世界の情報（温度、湿度、加速度、映像など）をデジタルデータとして取得（センシング）し、ネットワークを介して送信（Publish）する機能を備えた末端のデバイス群を指します。計算リソースや電力に制約があるものが多く、高度なセキュリティ機能を単体で実装することが困難なケースが一般的です。
+                    </div>
+                    <p style="line-height: 1.8; margin-bottom: 25px;">
+                        彼らは24時間文句も言わずに働き続ける極めて模範的な従業員ですが、そのガードの固さは、<strong>「見知らぬハッカーにナンパされて3秒でついていく彼女」</strong>並みに絶望的です。誘惑（不正なアクセス）に負けて大切な情報を安売りさせないよう、数学的な口封じ（軽量暗号）によって「貞操観念」を徹底的に叩き込むのが、私たちの設計するプロトコルです。
+                    </p>
+                </li>
+                <li>
+                    <span style="display: block; font-size: 1.1rem; color: var(--accent); font-weight: 700;">2. IoTブローカー（サーバ）</span>
+                    <div class="definition-text">
+                        IoTブローカーは、出版購読モデルにおける中継役を担うサーバです。多数の端末から送信（Publish）されるデータを集約し、特定のトピックを購読（Subscribe）している購読者（ユーザ）へと適切にルーティングする、システムの「心臓部」として機能します。
+                    </div>
+                    <p style="line-height: 1.8; margin-bottom: 25px;">
+                        まさに情報のコンシェルジュですが、同時に攻撃者にとっては情報の「宝の山」でもあります。ここを守り抜くことは、<strong>「ベッドの下に隠したアイドル雑誌を、母親の抜き打ち掃除攻撃から死守する」</strong>のと同じくらい重要です。万が一突破されれば、私たちの社会的尊厳と研究予算が音を立てて崩れ去る……そんな緊張感の中で鉄壁の要塞を設計しています。
+                    </p>
+                </li>
+                <li>
+                    <span style="display: block; font-size: 1.1rem; color: var(--accent); font-weight: 700;">3. 購読者（スマートフォンやPCを使用するユーザ）</span>
+                    <div class="definition-text">
+                        購読者は、ブローカーから配信されるデータを最終的に消費するエンドユーザやアプリケーションを指します。必要な情報のみをフィルタリングして受け取ることで、通信帯域を節約しながらリアルタイムな情報更新を実現します。
+                    </div>
+                    <p style="line-height: 1.8;">
+                        ここでは、<strong>「夜の街で複数のテーブルを同時に沸かせる伝説のキャスト」</strong>のように、華麗で無駄のない接客（データ配信）が行われます。どの「客（デバイス）」に対しても、「自分だけが特別に扱われている」と感じさせる完璧なレスポンスを返しつつ、裏側では一糸乱れぬ効率で大量のデータを捌き切る。そんな究極の「おもてなし（通信制御）」を追求しています。
+                    </p>
+                </li>
+            </ul>
+
+            <div class="warning-note">
+                <strong>※ハッカー（および詮索好きな母親）への注意：</strong>
+                <p>このシステムに侵入しようとする不届き者には、梅田の地下で永遠に出口を探し続けるような、終わりのない絶望（計算コスト）をプレゼントしています。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-card">
+        <h2 class="section-title">2. 具体的な研究テーマ</h2>
+        <div class="theme-grid">
+            <div class="theme-item">
+                <span class="tag">Secure Communications</span>
+                <h3>安全性の担保</h3>
+                <p>
+                    ネットワークの設計段階からセキュリティ要件を組み込む、高信頼な次世代プロトコルの研究開発に取り組んでいます。
+                    従来のIoT通信プロトコルは効率性を優先するあまり、暗号化や認証が後付けになることが多く、それが実装上の脆弱性や設計ミスによる重大な情報漏洩を招く原因となっていました。
+                    私たちは、厳密な形式手法を用いてプロトコルの安全性を数学的に証明し、サービス妨害攻撃（DoS）や中間者攻撃に対しても揺らぐことのない、強固な通信基盤の確立を目指します。
+                </p>
+                
+                <div class="warning-note" style="background-color: #e0f2f1; border-left: 4px solid #00897b; color: #004d40;">
+                    <p>
+                        お互いの気持ちを確かめ合う前に<strong>教室の黒板に相合傘を書いてしまう</strong>ような、無防備で危うい放課後の恋。
+                        そんな切実な想いを狙う無粋な邪魔者（攻撃者）から、二人を数学という名の絶対的な防衛線で守り抜き、DoSを仕掛けることさえ許さない絆を構築します。
+                    </p>
+                </div>
+            </div>
+
+            <div class="theme-item">
+                <span class="tag">Anonymity</span>
+                <h3>プライバシー保護</h3>
+                <p>
+                    通信データの内容だけでなく、トラフィック解析によって漏洩する「誰が・いつ・どこで」通信したかというメタデータの秘匿技術を研究しています。
+                    たとえ強力な暗号で中身を隠しても、通信の頻度やタイミングからユーザーの行動パターンや物理的な位置情報が推定されてしまうリスクは残ります。
+                    本研究では、パケットの経路を複雑化する匿名ルーティングやダミートラフィックの注入技術を駆使し、ネットワーク上の足跡を完全に消し去ることで、究極のプライバシー保護を実現します。
+                </p>
+                
+                <div class="warning-note" style="background-color: #e0f2f1; border-left: 4px solid #00897b; color: #004d40;">
+                    <p>
+                        <strong>放課後の街に沈む教師と生徒の禁断の恋</strong>。現場を目撃された時点で、その清らかな夢は終わりを迎えます。
+                        無粋な邪魔者の視線から二人の足跡を新宿の巨大迷宮の中に消し去るために、データだけでなく「つながり」そのものを秘密のベールで包み込みます。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="theme-item">
+                <span class="tag">Authentication</span>
+                <h3>デバイス真正性</h3>
+                <p>
+                    IoT環境において、悪意ある第三者が物理的に設置した「不正な端末」を排除するための、軽量かつ高信頼なデバイス認証プロトコルを開発しています。
+                    スマートホームやインフラ拠点では、ネットワークの内部に直接攻撃端末を紛れ込ませる攻撃が顕在化しており、従来の中央集権的な管理だけでは限界があります。
+                    私たちは、端末が持つ計算力に合わせた最適な認証スキームを設計し、リソースの制約が厳しいデバイス同士であっても、互いの正当性を一瞬で検証できる仕組みを構築します。
+                </p>
+                
+                <div class="warning-note" style="background-color: #e0f2f1; border-left: 4px solid #00897b; color: #004d40;">
+                    <p>
+                        不正端末という名の<strong>間男</strong>は、家庭内の平穏を壊す不貞の証拠（ジャンクデータ）を撒き散らします。
+                        <strong>百戦錬磨のナンパ師も一瞬のハンドシェイクで見破り</strong>、その不貞な通信を即座に遮断することで、あなたのプライバシーと家庭内の平穏を蹂躙させません。
+                    </p>
+                </div>
+            </div>
+
+            <div class="theme-item">
+                <span class="tag">Data Integrity</span>
+                <h3>データ完全性</h3>
+                <p>
+                    絶え間なく流れるストリームデータに対し、その情報の「出処」と「一貫性」を数学的に保証する検証技術の研究に取り組んでいます。
+                    通信の途中でデータの一部が書き換えられたり、古いデータが再利用（リプレイ攻撃）されたりすることを防ぐために、軽量なデジタル署名やメッセージ認証コード（MAC）を導入します。
+                    デバイスの計算リソースや電力消費を最小限に抑えつつ、受信したデータが送信者の意図した通りの純粋な状態であることを、リアルタイムで証明する技術を追求します。
+                </p>
+                
+                <div class="warning-note" style="background-color: #e0f2f1; border-left: 4px solid #00897b; color: #004d40;">
+                    <p>
+                        必死に書いた<strong>ラブレターの「好き」という一文字が、配送の途中で「嫌い」に改ざんされていないか</strong>。
+                        限られた予算（リソース）の中で、いかにして愛の真実を証明するか。相手に届いた言葉が、あなたの想った通りの温度であることを、裏切りのない数式によって保証します。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-card" style="margin-bottom: 0;">
+        <h2 class="section-title">3. 過去の研究テーマ</h2>
+        <p style="margin-bottom: 25px; color: var(--text-main); font-size: 0.95rem;">
+            放課後の誰もいない教室で交わされる、誰にも知られてはいけない内緒話。そんな「秘め事」を、無粋な盗聴者から守り抜いた研究実績です。
+        </p>
+        <table class="history-table">
+            <tr>
+                <th>匿名MQTT通信プロトコルの解析</th>
+                <td>誰が何を囁いたかを完全に隠蔽する、現代の「覆面での文通」を守る研究です。</td>
+            </tr>
+            <tr>
+                <th>オニオンルーティングによる匿名経路制御</th>
+                <td>パケットの足跡を複雑な迷路の中に消し去る、まさに「放課後の逃避行」を支える技術です。</td>
+            </tr>
+            <tr>
+                <th>マルチパス回避ルーティング</th>
+                <td>悪意あるスパイセンサーが待ち構える道を数学的に予見し、大切な想いを守り届ける護衛戦略です。</td>
+            </tr>
+            <tr>
+                <th>大規模RFIDシステムの高速民間認証</th>
+                <td>数千枚のタグの中から、本物の「特別な一人」を見つけ出し、第三者にその正体を悟らせない高度な照合技術です。</td>
+            </tr>
+        </table>
+    </section>
+</main>
+
+<footer>
+    <p style="font-weight: bold; color: #2d3436; margin-bottom: 25px; font-size: 1.1rem;">
+        さて、次なる『愛の防衛戦』を覗きますか？ それとも、共に戦う仲間になりますか？
+    </p>
+    <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+        <a href="index.html#research" style="text-decoration: none; color: #00897b; border: 1px solid #00897b; padding: 12px 20px; border-radius: 8px; font-weight: bold; min-width: 140px;">Research Home</a>
+        <a href="ai.html" style="text-decoration: none; color: #00897b; border: 1px solid #00897b; padding: 12px 20px; border-radius: 8px; font-weight: bold; min-width: 140px;">AI Security</a>
+        <a href="distributed.html" style="text-decoration: none; color: #00897b; border: 1px solid #00897b; padding: 12px 20px; border-radius: 8px; font-weight: bold; min-width: 140px;">Distributed Computing</a>
+        <a href="joinus.html" style="text-decoration: none; color: #fff; background: #00897b; padding: 12px 30px; border-radius: 8px; font-weight: bold; min-width: 140px;">Join Us</a>
+    </div>
+    <p style="margin-top: 40px; font-size: 0.85rem;">&copy; 2026 Sakai Lab, Tokyo Metropolitan University.</p>
+</footer>
+
+</body>
+</html>

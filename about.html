@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Sakai Lab @ TMU</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .profile-container {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        .profile-image {
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+		section.card {
+        margin-bottom: 40px; /* ここを調整するとカード間の隙間が広がります */
+        padding: 30px;
+        border-radius: 15px;
+        background: #fff;
+	        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+	    }
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: #636e72;
+        }
+        .history-line {
+            border-left: 2px solid #eee;
+            padding-left: 25px;
+            margin-left: 10px;
+        }
+        .status-badge {
+            display: inline-block;
+            background: #e9ecef;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+         <nav>
+            <div class="logo">Sakai Lab<span> @ TMU</span></div>
+			<ul>
+	            <li><a href="index.html">Home</a></li>
+	            <li><a href="about.html">About</a></li>
+	            <li><a href="members.html">Members</a></li>
+	            <li><a href="joinus.html">Join Us</a></li>
+			</ul>
+        </nav>
+    </header>
+
+<main class="container">
+    <section class="hero" style="padding-bottom: 40px;">
+        <h1>研究室について</h1>
+        <p class="subtitle" style="font-size: 1.25rem; color: var(--accent); font-weight: bold;">研究室の歩みと指導指針の概要</p>
+    </section>
+
+	<br>
+
+    <section class="card">
+        <span class="status-badge">Director</span>
+        <h3>1. 指導教員紹介</h3>
+        
+        <div class="profile-container" style="display: flex; flex-direction: column; gap: 30px;">
+            
+            <div class="academic-profile" style="background: #f8f9fa; padding: 25px; border-radius: 12px; border-left: 5px solid #0288d1;">
+                <h4 style="font-size: 1.4rem; margin-bottom: 15px; color: #2d3436;">酒井 和哉 <span style="font-size: 0.9rem; color: #636e72; font-weight: normal;">(Kazuya Sakai, Ph.D.)</span></h4>
+                <p style="line-height: 1.8; color: #2d3436;">
+                    オハイオ州立大学（The Ohio State University, USA）より Ph.D. を取得。2014年より東京都立大学にて教鞭を執り、現在は准教授を務める。
+                    専門はネットワークセキュリティ、AIセキュリティ、及び分散コンピューティング。
+                    2016年には、その優れた研究業績により <strong>IEEE Computer Society Japan Chapter Young Author Award</strong> を受賞。
+                    世界水準の学術的バックボーンを基盤に、次世代のセキュリティエンジニア・研究者の育成に注力している。
+                </p>
+            </div>
+
+            <div class="director-message">
+                <h4 style="font-size: 1.2rem; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 1.5rem;">✉️</span> 指導教員からのメッセージ
+                </h4>
+                <div style="line-height: 1.8; color: #2d3436; padding: 0 10px;">
+                    <p>
+                        「天国にはコンピュータなんてない。なぜなら、Windowsのアップデートが永遠に終わらないからさ」。
+                        そんなアメリカン・ジョークを本気で信じそうになるほど、私はオハイオでのPh.D.生活で、コンピュータの「気まぐれ」と「真理」に向き合ってきました。
+                    </p>
+                    <p style="margin-top: 15px;">
+                        皆さんがYouTubeで推しを愛でている間、私はその背後で蠢く悪意あるアルゴリズムと死闘を繰り広げ、いまは亡き母親に「<strong>なんでお母さんの言うことが聞けないの</strong>」と言われ続けた少年期に思いを馳せながら、「まるで10代の反抗期のように言うことを聞かない」分散システムたちを手懐ける方法を研究しています。
+                        学問の世界は、デバッグ（自分磨き）の連続です。一度や二度のエラー（失敗）、ましてや失恋ごときで落ち込む必要はありません。
+                        コンパイルが通らない深夜、最後に頼れるのはスタック・オーバーフローではなく、あなた自身の<strong>「未知へ飛び込む勇気」</strong>なのです。
+                    </p>
+                    <p style="margin-top: 15px; border-bottom: 1px solid #eee; padding-bottom: 25px;">
+                        研究の詳細は、私の「聖域」である個人ページを覗いてみてください。
+                        そこには、論文という名の戦績と、私が歩んできた旅の軌跡が記されています。
+                    </p>
+                </div>
+
+                <div style="margin-top: 25px; text-align: left;">
+                    <a href="https://kazuyasakai.fpark.tmu.ac.jp/" target="_blank" class="subject-item" style="text-decoration: none; padding: 12px 25px; display: inline-flex; align-items: center; gap: 10px; background: #fff; border: 1px solid #0288d1; border-left-width: 5px; font-weight: bold; color: #0288d1; transition: all 0.2s;">
+                        <span>🌐</span> Kazuya Sakai Personal Page
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+    <section class="card">
+    <span class="status-badge">History &amp; Achievement</span>
+    <h3>2. 研究室の歴史と実績</h3>
+    <p style="margin-bottom: 30px; line-height: 1.8; color: #636e72;">
+        2018年、東京都立大学 日野キャンパス2号館802号室にて酒井研究室は産声を上げました。
+        以来、少数精鋭の体制ながら、グローバルスタンダードを塗り替える成果を出し続けています。
+    </p>
+    
+    <style>
+        .stats-button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .stat-btn {
+            /* 他のページと同じ淡いブルーの背景 */
+            background: #f0f9ff; 
+            border: 1px solid #e1f5fe;
+            border-top: 4px solid #002d5b; /* ここにindex.htmlのブランドカラーを配置 */
+            border-radius: 12px;
+            padding: 25px 10px;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .stat-btn:hover {
+            transform: translateY(-5px);
+            background: #ffffff;
+            border-color: #0288d1;
+            box-shadow: 0 10px 20px rgba(2, 136, 209, 0.1);
+        }
+        .stat-btn-value {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #002d5b; /* 数字は視認性の高いブランドカラー */
+            margin-bottom: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+        .stat-btn-label {
+            display: block;
+            font-size: 0.75rem;
+            color: #546e7a; /* ブルーに馴染む落ち着いたグレー */
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+
+    <div class="stats-button-grid">
+        <div class="stat-btn">
+            <span class="stat-btn-value">2018</span>
+            <span class="stat-btn-label">LAB FOUNDED</span>
+        </div>
+        <div class="stat-btn">
+            <span class="stat-btn-value">0</span>
+            <span class="stat-btn-label">PH.D. STUDENTS</span>
+        </div>
+        <div class="stat-btn">
+            <span class="stat-btn-value">13</span>
+            <span class="stat-btn-label">MASTERS GRADUATED</span>
+        </div>
+        <div class="stat-btn">
+            <span class="stat-btn-value">23</span>
+            <span class="stat-btn-label">IEEE/ACM TRANS.</span>
+        </div>
+        <div class="stat-btn">
+            <span class="stat-btn-value">7</span>
+            <span class="stat-btn-label">TOP CONFERENCES</span>
+        </div>
+    </div>
+
+    <div class="history-line" style="margin-top: 40px; border-left: 4px solid #e1f5fe; padding-left: 25px;">
+        <p style="line-height: 2; color: #2d3436; font-size: 0.95rem;">
+            特筆すべきは、<strong>博士課程の学生が不在（0人）</strong>という環境下で、13名の修士課程学生たちが一丸となり、世界最高峰の学術誌（IEEE/ACM Transactions）23編、および最難関国際会議（Top Conferences）7編という驚異的な戦績を収めてきた事実です。
+            これは、当研究室の指導方針がいかに実戦的であり、短期間で学生を「世界と戦える研究者」へと変貌させるかを示す何よりの証左です。
+        </p>
+    </div>
+	</section>
+
+    <section class="card">
+        <span class="status-badge">Activity &amp; Policy</span>
+        <h3>3. 研究活動を進めるためのマインドセット</h3>
+        
+        <div class="narrative-content" style="line-height: 2; color: #2d3436; padding: 10px 5px;">
+            <p style="margin-bottom: 25px;">
+				当研究室の門を叩いた学生が最初に直面するのは、最新の英語論文という名の「解読不能な古文書」です。夜な夜な日本語で書いたラブレターというぬるま湯を飛び出し、英語で思考を強制同期させる作業は、OSのクリーンインストール（<strong>もし経験がおありなら自己破産手続き</strong>）に似ています。 最初は脳内がカーネルパニックを起こすかもしれませんが、大丈夫。「What time is it now?」を「ほったイモいじるな」だと言い張るカタカナ英語の呪縛を解いたとき、あなたの世界は一気にグローバル・スケールへとアップデートされます。
+            </p>
+
+            <p style="margin-bottom: 25px;">
+                理論の波に揉まれた後は、いよいよ実装という名の「泥沼」が待っています。
+                「ホワイトボードの上では完璧だった数式」が、いざコードにすると反抗期の子供のように牙を剥く。
+                深夜、ディスプレイに映る謎のエラーコードと見つめ合い、「<strong>なんで私の気持ち分かってくれないの</strong>」と男ながら女性に近い感情を抱きつつ、デバッグ作業を繰り返す。
+                そうして流行りの言語や<strong>歌舞伎町のネオンにも惑わされない</strong>、C言語レベルの強靭な「折れない骨格（CS Core）」とPythonが持つ柔軟な「実践能力（Practice）」が形成されていくのです。
+            </p>
+
+            <p style="margin-bottom: 25px;">
+                毎週のゼミ（進捗報告）は、もはや忖度抜きの「愛の修羅場」です。
+                あなたが「一生大切にする」と誓って持参した仮説も、私の前では一瞬にして浮気が発覚した恋人のように、論理の矛盾を問い詰められます。
+                「あの時と言ってることが違うじゃない！」「そのデータ、誰の差し金なの？」
+                そんな昼ドラさながらの激しい追及に、あなたの論理はボロボロに崩れ去るかもしれません。
+                しかし、これは決して「別れ話」ではありません。
+                互いの認識のズレを埋め、曖昧な妥協を許さず、最後に残った難攻不落のセキュリティ機構と研ぎ澄まされたセキュリティプロトコルを再構築するための、あまりに熱い対話なのです。
+                この過酷な昼間のゼミを経て、あなたの思考は安っぽい一夜限りの火遊びから、どんな逆風にも揺るがない真実の絆（レジリエンス）へと昇華されていきます。
+            </p>
+			
+			<p style="margin-bottom: 25px;">
+				こうして磨き上げられたアイデアは、やがて「論文」というアーティファクトへ結実し、世界最難関の舞台（Top Conferences）へと放たれます。
+			</p>
+			<p style="margin-bottom: 25px;">
+				私たちが育てたいのは、既存の知識をなぞるだけの「フォロワー」ではありません。
+				<strong>
+                    流行に左右されない圧倒的な「基礎体力（CS Core）」、
+                    未知の脅威を論理で解き明かす「問題解決能力」、
+                    そして理論を現実に実装し切る「高度なコーディング力」。
+                    </strong>
+                    この三位一体の力を備え、世界のどこにいても自らの足で立ち、価値を証明できる「自立した研究者」です。
+			</p>
+			</p>
+        </div>
+    </section>
+	
+	<footer style="text-align: center; margin-top: 20px; padding-bottom: 50px; color: #636e72;">
+        <p style="font-weight: bold; color: #2d3436; margin-bottom: 25px;">
+           —— これまでの軌跡（データ）は読み終えました。次は、研究室の実態（リアル）を覗く番です。
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; max-width: 900px; margin: 0 auto;">
+			<a href="index.html#research" style="text-decoration: none; color: #0288d1; border: 1px solid #0288d1; padding: 12px 20px; border-radius: 8px; font-weight: bold; transition: all 0.2s;">Research</a>
+            <a href="education.html" style="text-decoration: none; color: #0288d1; border: 1px solid #0288d1; padding: 12px 20px; border-radius: 8px; font-weight: bold; transition: all 0.2s;">Education</a>
+            <a href="philosophy.html" style="text-decoration: none; color: #0288d1; border: 1px solid #0288d1; padding: 12px 20px; border-radius: 8px; font-weight: bold; transition: all 0.2s;">Philosophy</a>
+            <a href="life.html" style="text-decoration: none; color: #0288d1; border: 1px solid #0288d1; padding: 12px 20px; border-radius: 8px; font-weight: bold; transition: all 0.2s;">Lab Life</a>
+            <a href="joinus.html" style="text-decoration: none; color: #fff; background: #0288d1; padding: 12px 30px; border-radius: 8px; font-weight: bold; transition: all 0.2s; box-shadow: 0 4px 10px rgba(2, 136, 209, 0.2);">Join Us</a>
+        </div>
+
+        <p style="margin-top: 60px; font-size: 0.85rem;">&copy; 2026 Sakai Lab, Tokyo Metropolitan University.</p>
+    </footer>
+
+</main>
+
+</body>
+</html>
