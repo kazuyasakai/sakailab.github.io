@@ -14,7 +14,46 @@
             --text-bright: #004d40;
         }
         
-        main.container { padding-top: 100px; }
+        main.container {
+		    padding-top: 120px; /* 80px(header) + 40px(margin) 程度が理想的です */
+		}
+		
+		/* ヘッダー全体の高さを他ページと統一 */
+		header {
+		    background: rgba(255, 255, 255, 0.95);
+		    backdrop-filter: blur(10px);
+		    position: fixed;
+		    width: 100%;
+		    top: 0;
+		    z-index: 1000;
+		    border-bottom: 1px solid #eee;
+		}
+		
+		nav.container {
+		    display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		    padding: 20px 0; /* 上下の余白を 20px に固定して統一 */
+		    height: 80px;    /* 高さを明示的に指定すると安定します */
+		}
+		
+		/* ロゴの基本色を黒に固定 */
+		.logo {
+		    color: #2d3436 !important;
+		    text-decoration: none;
+		    font-weight: 800;
+		    font-size: 1.5rem;
+		}
+		
+		/* ナビゲーションメニューの余白 */
+		nav ul {
+		    display: flex;
+		    list-style: none;
+		    gap: 24px; /* 他のページと同じ間隔に設定 */
+		    margin: 0;
+		    padding: 0;
+		    align-items: center;
+		}
 
         /* Hero Section */
         .hero {
@@ -138,6 +177,26 @@
         }
         .history-table td { padding: 15px; color: var(--text-main); border-bottom: 1px solid #eee; }
 
+	     /* 1段組み用画像スタイル */
+        .image-placeholder { 
+            width: 100%; 
+            height: 400px; /* 1段組みに合わせて高さを調整 */
+            background: #f8f9fa; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            border-radius: 12px; 
+            margin-bottom: 25px;
+            color: #adb5bd;
+            border: 1px solid #eee;
+            overflow: hidden;
+        }
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         footer {
             text-align: center;
             padding: 60px 0;
@@ -150,7 +209,7 @@
 
 <header>
     <nav class="container">
-        <a href="index.html" class="logo">Sakai Lab. <span>@ TMU</span></a>
+        <a href="index.html" class="logo" style="color: #2d3436; text-decoration: none; font-weight: 800; font-size: 1.5rem;">Sakai Lab. <span style="color: var(--accent); font-size: 0.9rem; margin-left: 5px;">@ TMU</span></a>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -191,9 +250,10 @@
                 現代の社会基盤を支えるIoTシステム。その安全性は、単一のデバイスではなく「システム全体の循環」の中にあります。これを理解するのは、悪名高い<strong>「梅田の地下迷宮」</strong>で遭難せずに地上へ脱出するよりはずっと簡単です。
             </p>
             
-            <div class="diagram-placeholder">
-                [ IoT Publish-Subscribe Architecture Diagram ]
-            </div>
+			<div class="photo-frame" style="background: var(--accent-soft); border: 2px dashed var(--accent); border-radius: 16px; margin: 30px 0; padding: 10px 10px; text-align: center; color: var(--accent);">
+			    <img src="images/network.jpg" alt="IoTネットワークの全体像" class="life-photo">
+			    <p class="photo-caption">[IoTネットワークの全体像]</p>
+			</div>
             
             <ul style="list-style: none; padding: 0;">
                 <li>
@@ -246,7 +306,7 @@
                 
                 <div class="warning-note" style="background-color: #e0f2f1; border-left: 4px solid #00897b; color: #004d40;">
                     <p>
-                        お互いの気持ちを確かめ合う前に<strong>教室の黒板に相合傘を書いてしまう</strong>ような、無防備で危うい放課後の恋。
+                        甘酸っぱくも切実な中高生の記憶。お互いの気持ちを確かめ合う前に<strong>教室の黒板に相合傘を書いてしまう</strong>ような、無防備で危うい放課後の恋。
                         そんな切実な想いを狙う無粋な邪魔者（攻撃者）から、二人を数学という名の絶対的な防衛線で守り抜き、DoSを仕掛けることさえ許さない絆を構築します。
                     </p>
                 </div>

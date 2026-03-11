@@ -6,6 +6,33 @@
     <title>Sakai Lab | Tokyo Metropolitan University</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+	<style>
+		/* 研究紹介リンクをボタン化 */
+		.research-btn {
+		    display: inline-block;
+		    margin-top: 15px;
+		    padding: 8px 20px;
+		    color: var(--accent); /* 既存のアクセントカラーを使用 */
+		    text-decoration: none;
+		    font-weight: 600;
+		    font-size: 0.85rem;
+		    border: 1.5px solid var(--accent);
+		    border-radius: 6px;
+		    transition: all 0.2s ease;
+		}
+		
+		/* ホバー時に色を反転 */
+		.research-btn:hover {
+		    background-color: var(--accent);
+		    color: #ffffff;
+		    transform: translateY(-2px); /* 軽い浮き上がり */
+		}
+		
+		/* 親要素（Research Areaの各項目）への微調整 */
+		#research div {
+		    margin-bottom: 30px; /* 項目間の余白 */
+		}
+	</style>
 </head>
 <body>
     <header>
@@ -75,7 +102,7 @@
                     <div class="card-content">
                         <h3>Network Security</h3>
                         <p>IoT・モバイル環境における、設計段階からセキュリティを考慮したプロトコル開発。</p>
-                        <a href="network.html" class="research-link">Explore More →</a>
+                        <a href="network.html" class="research-btn">Explore More →</a>
                     </div>
                 </div>
 
@@ -83,7 +110,7 @@
                     <div class="card-content">
                         <h3>AI Security</h3>
                         <p>準同型暗号を用いた「中身を見せない機械学習」や、LLMの安全性を研究。</p>
-                        <a href="ai.html" class="research-link">Explore More →</a>
+                        <a href="ai.html" class="research-btn">Explore More →</a>
                     </div>
                 </div>
 
@@ -91,7 +118,7 @@
                     <div class="card-content">
                         <h3>Distributed Comp.</h3>
                         <p>強化学習と分散コンピューティングを融合し、現実世界のサービスを最適化。</p>
-                        <a href="distributed.html" class="research-link">Explore More →</a>
+                        <a href="distributed.html" class="research-btn">Explore More →</a>
                     </div>
                 </div>
             </div>

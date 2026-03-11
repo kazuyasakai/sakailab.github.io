@@ -47,6 +47,63 @@
             color: #0288d1;
             font-family: 'JetBrains Mono', monospace;
         }
+		
+		/* 円グラフのベース（男子の色：淡い青） */
+		.ratio-circle {
+		    width: 80px;
+		    height: 80px;
+		    border-radius: 50%;
+		    /* 女子の色（淡い赤）を --percentage の分だけ描画し、残りを男子の色に */
+		    background: conic-gradient(
+		        #f8bbd0 0% var(--percentage), 
+		        #bbdefb var(--percentage) 100%
+		    );
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    position: relative;
+		}
+		
+		/* ::before で真ん中を白く抜く（ドーナツ状にする） */
+		.ratio-circle::before {
+		    content: "";
+		    position: absolute;
+		    width: 54px;
+		    height: 54px;
+		    background-color: #ffffff; /* 背景色に合わせて変更してください */
+		    border-radius: 50%;
+		    z-index: 1;
+		}
+		
+		/* 中央のテキストを最前面に表示 */
+		.ratio-text {
+		    position: relative;
+		    z-index: 2;
+		    font-size: 0.85rem;
+		    font-weight: 800;
+		    color: #2d3436;
+		    font-family: var(--font-mono);
+		}
+		
+		/* 既存のレイアウトを維持しつつ、ボタンを配置 */
+		.personal-web-btn {
+		    display: inline-block;
+		    margin-top: 15px;
+		    padding: 6px 16px;
+		    color: var(--accent); /* 変数 --accent（ティール）を使用 */
+		    text-decoration: none;
+		    font-weight: 600;
+		    font-size: 0.85rem;
+		    border: 1.5px solid var(--accent);
+		    border-radius: 4px;
+		    transition: all 0.2s ease;
+		}
+		
+		.personal-web-btn:hover {
+		    background-color: var(--accent);
+		    color: #ffffff;
+		    box-shadow: 0 2px 8px rgba(0, 137, 123, 0.2);
+		}
     </style>
 </head>
 <body>
@@ -69,16 +126,19 @@
         <div class="member-grid">
             <div class="member-card" style="border-top: 5px solid #0288d1;">
                 <span class="role-badge">Director / Associate Professor</span>
-                <div class="member-name">酒井 和哉</div>
+                <div class="member-name">酒井 和哉 (Kazuya Sakai)</div>
                 <p style="font-size: 0.9rem; color: #636e72; line-height: 1.6;">
                     The Ohio State University Ph.D.<br>
                     ネットワーク・AIセキュリティ・分散システムの「死闘」を指揮。
                 </p>
+				<a href="https://kazuyasakai.fpark.tmu.ac.jp/" target="_blank" rel="noopener noreferrer" class="personal-web-btn">
+					Personal Web Page →
+				</a>
             </div>
             <div class="member-card">
                 <span class="role-badge">Administrative Assistant</span>
                 <div class="member-name">事務補佐員</div>
-                <p style="font-size: 0.9rem; color: #636e72;">研究室の円滑な運営と、研究に集中できる環境を支えるプロフェッショナル。</p>
+                <p style="font-size: 0.9rem; color: #636e72;">介護という過酷な現実を背負いながら、時給制の限界に挑む。研究室の円滑な運営と、教員や学生が研究に集中できる環境を支える。</p>
             </div>
         </div>
 
@@ -86,6 +146,16 @@
             Student Roster
         </h3>
         <div class="member-grid">
+			<div class="card student-roster">
+			    <div style="display: flex; justify-content: space-between; align-items: center;">
+			        <div>
+			            <h3>構成員比率</h3>
+						<p>男子学生: 8名</p>
+			            <p>女子学生: 1名</p>
+			        </div>
+			        <div class="ratio-circle" style="--percentage: 25%;"></div>
+			    </div>
+			</div>
             <div class="member-card">
                 <span class="role-badge">Doctoral Program</span>
                 <div class="member-count">0</div>
@@ -112,7 +182,160 @@
                 <p style="color: #636e72; font-size: 0.75rem; font-weight: bold; letter-spacing: 0.1em;">RESEARCH STUDENTS</p>
             </div>
         </div>
-    </main>
+		
+		
+		<div class="alumni-section">
+		    <h3 style="margin-top: 60px; color: #0277bd; border-bottom: 2px solid #e1f5fe; padding-bottom: 10px; font-family: 'JetBrains Mono', monospace;">
+		        Alumni
+		    </h3>
+		    
+		    <p class="description" style="margin-bottom: 20px;">
+		        これまでに本研究室を卒業・修了し、社会へと羽ばたいた学生たちの記録です。
+		    </p>
+		
+		    <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
+		        
+				 <div class="card" style="flex: 1 1 calc(25% - 15px); min-width: 200px; padding: 20px; box-sizing: border-box;">
+		            <h4 style="color: #0277bd; margin-top: 0; font-family: 'JetBrains Mono', monospace; border-left: 3px solid #0277bd; padding-left: 12px; font-size: 1rem; margin-bottom: 15px;">
+		                2025年度
+		            </h4>
+		            <div style="display: flex; flex-direction: column; gap: 8px;">
+		                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+		                    <span style="font-weight: bold; color: #666; font-size: 0.8rem;">修士修了</span>
+		                    <span style="font-size: 1.1rem; font-weight: 700; color: #2d3436;">1 <small style="font-size: 0.75rem; font-weight: normal;">名</small></span>
+		                </div>
+		                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+		                    <span style="font-weight: bold; color: #666; font-size: 0.8rem;">学部卒業</span>
+		                    <span style="font-size: 1.1rem; font-weight: 700; color: #2d3436;">3 <small style="font-size: 0.75rem; font-weight: normal;">名</small></span>
+		                </div>
+		            </div>
+		        </div>
+				
+		        <div class="card" style="flex: 1 1 calc(25% - 15px); min-width: 200px; padding: 20px; box-sizing: border-box;">
+		            <h4 style="color: #0277bd; margin-top: 0; font-family: 'JetBrains Mono', monospace; border-left: 3px solid #0277bd; padding-left: 12px; font-size: 1rem; margin-bottom: 15px;">
+		                2024年度
+		            </h4>
+		            <div style="display: flex; flex-direction: column; gap: 8px;">
+		                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+		                    <span style="font-weight: bold; color: #666; font-size: 0.8rem;">修士修了</span>
+		                    <span style="font-size: 1.1rem; font-weight: 700; color: #2d3436;">0 <small style="font-size: 0.75rem; font-weight: normal;">名</small></span>
+		                </div>
+		                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+		                    <span style="font-weight: bold; color: #666; font-size: 0.8rem;">学部卒業</span>
+		                    <span style="font-size: 1.1rem; font-weight: 700; color: #2d3436;">3 <small style="font-size: 0.75rem; font-weight: normal;">名</small></span>
+		                </div>
+		            </div>
+		        </div>
+		
+		        <div class="card" style="flex: 1 1 calc(25% - 15px); min-width: 200px; padding: 20px; box-sizing: border-box;">
+		            <h4 style="color: #0277bd; margin-top: 0; font-family: 'JetBrains Mono', monospace; border-left: 3px solid #0277bd; padding-left: 12px; font-size: 1rem; margin-bottom: 15px;">
+		                2023年度
+		            </h4>
+		            <div style="display: flex; flex-direction: column; gap: 8px;">
+		                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+		                    <span style="font-weight: bold; color: #666; font-size: 0.8rem;">修士修了</span>
+		                    <span style="font-size: 1.1rem; font-weight: 700; color: #2d3436;">1 <small style="font-size: 0.75rem; font-weight: normal;">名</small></span>
+		                </div>
+		                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+		                    <span style="font-weight: bold; color: #666; font-size: 0.8rem;">学部卒業</span>
+		                    <span style="font-size: 1.1rem; font-weight: 700; color: #2d3436;">4 <small style="font-size: 0.75rem; font-weight: normal;">名</small></span>
+		                </div>
+		            </div>
+		        </div>
+		
+				<div class="card" style="flex: 1 1 calc(25% - 15px); min-width: 200px; padding: 20px; box-sizing: border-box;">
+		            <h4 style="color: #0277bd; margin-top: 0; font-family: 'JetBrains Mono', monospace; border-left: 3px solid #0277bd; padding-left: 12px; font-size: 1rem; margin-bottom: 15px;">
+		                2022年度
+		            </h4>
+		            <div style="display: flex; flex-direction: column; gap: 8px;">
+		                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+		                    <span style="font-weight: bold; color: #666; font-size: 0.8rem;">修士修了</span>
+		                    <span style="font-size: 1.1rem; font-weight: 700; color: #2d3436;">4 <small style="font-size: 0.75rem; font-weight: normal;">名</small></span>
+		                </div>
+		                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+		                    <span style="font-weight: bold; color: #666; font-size: 0.8rem;">学部卒業</span>
+		                    <span style="font-size: 1.1rem; font-weight: 700; color: #2d3436;">3 <small style="font-size: 0.75rem; font-weight: normal;">名</small></span>
+		                </div>
+		            </div>
+		        </div>
+				
+				
+				 <div class="card" style="flex: 1 1 calc(25% - 15px); min-width: 200px; padding: 20px; box-sizing: border-box;">
+		            <h4 style="color: #0277bd; margin-top: 0; font-family: 'JetBrains Mono', monospace; border-left: 3px solid #0277bd; padding-left: 12px; font-size: 1rem; margin-bottom: 15px;">
+		                2021年度
+		            </h4>
+		            <div style="display: flex; flex-direction: column; gap: 8px;">
+		                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+		                    <span style="font-weight: bold; color: #666; font-size: 0.8rem;">修士修了</span>
+		                    <span style="font-size: 1.1rem; font-weight: 700; color: #2d3436;">1 <small style="font-size: 0.75rem; font-weight: normal;">名</small></span>
+		                </div>
+		                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+		                    <span style="font-weight: bold; color: #666; font-size: 0.8rem;">学部卒業</span>
+		                    <span style="font-size: 1.1rem; font-weight: 700; color: #2d3436;">2 <small style="font-size: 0.75rem; font-weight: normal;">名</small></span>
+		                </div>
+		            </div>
+		        </div>
+				
+		        <div class="card" style="flex: 1 1 calc(25% - 15px); min-width: 200px; padding: 20px; box-sizing: border-box;">
+		            <h4 style="color: #0277bd; margin-top: 0; font-family: 'JetBrains Mono', monospace; border-left: 3px solid #0277bd; padding-left: 12px; font-size: 1rem; margin-bottom: 15px;">
+		                2020年度
+		            </h4>
+		            <div style="display: flex; flex-direction: column; gap: 8px;">
+		                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+		                    <span style="font-weight: bold; color: #666; font-size: 0.8rem;">修士修了</span>
+		                    <span style="font-size: 1.1rem; font-weight: 700; color: #2d3436;">5 <small style="font-size: 0.75rem; font-weight: normal;">名</small></span>
+		                </div>
+		                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+		                    <span style="font-weight: bold; color: #666; font-size: 0.8rem;">学部卒業</span>
+		                    <span style="font-size: 1.1rem; font-weight: 700; color: #2d3436;">3 <small style="font-size: 0.75rem; font-weight: normal;">名</small></span>
+		                </div>
+		            </div>
+		        </div>
+		
+		        <div class="card" style="flex: 1 1 calc(25% - 15px); min-width: 200px; padding: 20px; box-sizing: border-box;">
+		            <h4 style="color: #0277bd; margin-top: 0; font-family: 'JetBrains Mono', monospace; border-left: 3px solid #0277bd; padding-left: 12px; font-size: 1rem; margin-bottom: 15px;">
+		                2019年度
+		            </h4>
+		            <div style="display: flex; flex-direction: column; gap: 8px;">
+		                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+		                    <span style="font-weight: bold; color: #666; font-size: 0.8rem;">修士修了</span>
+		                    <span style="font-size: 1.1rem; font-weight: 700; color: #2d3436;">0 <small style="font-size: 0.75rem; font-weight: normal;">名</small></span>
+		                </div>
+		                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+		                    <span style="font-weight: bold; color: #666; font-size: 0.8rem;">学部卒業</span>
+		                    <span style="font-size: 1.1rem; font-weight: 700; color: #2d3436;">2 <small style="font-size: 0.75rem; font-weight: normal;">名</small></span>
+		                </div>
+		            </div>
+		        </div>
+		
+				<div class="card" style="flex: 1 1 calc(25% - 15px); min-width: 200px; padding: 20px; box-sizing: border-box;">
+		            <h4 style="color: #0277bd; margin-top: 0; font-family: 'JetBrains Mono', monospace; border-left: 3px solid #0277bd; padding-left: 12px; font-size: 1rem; margin-bottom: 15px;">
+		                2018年度
+		            </h4>
+		            <div style="display: flex; flex-direction: column; gap: 8px;">
+		                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+		                    <span style="font-weight: bold; color: #666; font-size: 0.8rem;">修士修了</span>
+		                    <span style="font-size: 1.1rem; font-weight: 700; color: #2d3436;">0 <small style="font-size: 0.75rem; font-weight: normal;">名</small></span>
+		                </div>
+		                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+		                    <span style="font-weight: bold; color: #666; font-size: 0.8rem;">学部卒業</span>
+		                    <span style="font-size: 1.1rem; font-weight: 700; color: #2d3436;">2 <small style="font-size: 0.75rem; font-weight: normal;">名</small></span>
+		                </div>
+		            </div>
+		        </div>
+				
+		    </div>
+		
+		    <div class="alumni-message" style="background-color: #f0f8ff; border-left: 4px solid #0277bd; color: #01579b; margin-top: 30px; padding: 20px; border-radius: 8px; font-size: 0.9rem; line-height: 1.7;">
+		        <p style="margin: 0;">
+		            <strong>【旅立ちのロマンス】</strong><br>
+		            研究室という名の「温室」を飛び出し、厳しい社会の荒波へと漕ぎ出したかつての戦友たち。
+		            たとえ物理的な接続（セッション）は切れても、彼らと共有したデバッグの夜や議論の熱量は、分散ネットワークのログのように私たちの胸に刻まれ続けています。
+		        </p>
+		    </div>
+		</div>
+		
+	</main>
 
     <footer style="text-align: center; margin-top: 60px; padding-bottom: 50px; color: #636e72;">
         <p style="font-weight: bold; color: #2d3436; margin-bottom: 25px;">

@@ -249,6 +249,30 @@ h2 {
     margin-bottom: 0;
 }
 
+/* 画像を枠いっぱいに綺麗に表示する設定 */
+.photo-frame {
+    margin-bottom: 30px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.life-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    object-fit: cover; /* 比率を保ったまま枠に収める */
+}
+
+.photo-caption {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #666;
+    text-align: center;
+}
+
 /* --- フッター --- */
 footer {
     padding: 50px 0;

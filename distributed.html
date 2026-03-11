@@ -16,8 +16,45 @@
 
         /* style.css との整合性調整 */
         main.container {
-            padding-top: 100px;
+            padding-top: 120px;
         }
+		
+		/* ヘッダー全体の高さを他ページと統一 */
+		header {
+		    background: rgba(255, 255, 255, 0.95);
+		    backdrop-filter: blur(10px);
+		    position: fixed;
+		    width: 100%;
+		    top: 0;
+		    z-index: 1000;
+		    border-bottom: 1px solid #eee;
+		}
+		
+		nav.container {
+		    display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		    padding: 20px 0; /* 上下の余白を 20px に固定して統一 */
+		    height: 80px;    /* 高さを明示的に指定すると安定します */
+		}
+		
+		/* ロゴの基本色を黒に固定 */
+		.logo {
+		    color: #2d3436 !important;
+		    text-decoration: none;
+		    font-weight: 800;
+		    font-size: 1.5rem;
+		}
+		
+		/* ナビゲーションメニューの余白 */
+		nav ul {
+		    display: flex;
+		    list-style: none;
+		    gap: 24px; /* 他のページと同じ間隔に設定 */
+		    margin: 0;
+		    padding: 0;
+		    align-items: center;
+		}
 
         /* ヘッダーのナビゲーションをアンバーで統一 */
         nav ul li:last-child a {
@@ -140,6 +177,27 @@
             gap: 15px;
         }
         .history-list li::before { content: "→"; color: var(--accent); font-weight: bold; }
+		
+		/* 1段組み用画像スタイル */
+        .image-placeholder { 
+            width: 100%; 
+            height: 400px; /* 1段組みに合わせて高さを調整 */
+            background: #f8f9fa; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            border-radius: 12px; 
+            margin-bottom: 25px;
+            color: #adb5bd;
+            border: 1px solid #eee;
+            overflow: hidden;
+        }
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
     </style>
 </head>
 <body>
@@ -185,19 +243,15 @@
 	    <div class="overview-card">
 	        <p>分散システムは、中央の巨大な力に頼るのではなく、末端の知能が連携し合うことで、強固で柔軟なネットワークを形成します。</p>
 	        
-	        <div class="image-placeholder" style="background: var(--accent-soft); border: 2px dashed var(--accent); border-radius: 16px; margin: 30px 0; padding: 60px 20px; text-align: center; color: var(--accent);">
-	            <div style="font-size: 3rem; margin-bottom: 10px; opacity: 0.5;">📱⚡🏢</div>
-	            <p style="font-weight: bold; margin: 0; font-family: var(--font-mono); font-size: 0.9rem;">
-	                [ Edge Computing Architecture: Mobile ↔ Agent ↔ Edge Server ]
-	            </p>
-	            <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 5px;">
-	                ※エッジサーバと自律分散的なモバイル端末の相互接続イメージを挿入予定
-	            </p>
-	        </div>
+			<div class="photo-frame" style="background: var(--accent-soft); border: 2px dashed var(--accent); border-radius: 16px; margin: 30px 0; padding: 10px 10px; text-align: center; color: var(--accent);">
+			    <img src="images/distributed.jpg" alt="モバイルエッジアーキテクチャの全体像" class="life-photo">
+			    <p class="photo-caption">[モバイルエッジアーキテクチャの全体像：モバイル端末・ユーザ・AIエージェント]</p>
+			</div>
+			
 	
 	        <ul style="list-style: none; padding: 0; margin-top: 25px;">
 	            <li style="margin-bottom: 30px;">
-	                <span style="font-weight: bold; font-size: 1.1rem; color: var(--accent); display: block; margin-bottom: 10px;">1. モバイル端末（Mobile & Wearable Devices）</span>
+	                <span style="font-weight: bold; font-size: 1.1rem; color: var(--accent); display: block; margin-bottom: 10px;">1. モバイル端末（Mobile &amp; Wearable Devices）</span>
 	                <div class="definition-text" style="background: #fffdf2; border-left: 3px solid #ffe082; padding: 12px; border-radius: 8px; font-size: 0.9rem; margin-bottom: 10px;">
 	                    ユーザーが常に携帯するスマートフォンやウェアラブル端末です。現実世界の膨大なコンテキストを収集する「窓口」であり、制約のあるリソース内で効率的にデータを処理する役割を担います。
 	                </div>
