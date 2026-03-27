@@ -17,9 +17,49 @@
 </header>
 
 <main class="container" style="padding-top: 140px;">
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #003 // ANONYMOUS_RELATIONSHIP - 2026.03.28</div>
+	    
+	    <h3>Log #003: 匿名MQTTと「三股」のブローカー ―― 物理レイヤーの修羅場</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Commit Message: Multi-broker sync: Testing anonymous protocols on AArch64
+	    </p>
+	
+	    <p>見てほしい、この健気な姿を。MacBook Pro の横にちょこんと佇む <strong>Raspberry Pi</strong>。
+	    現在、我々が開発している「匿名MQTTプロトコル」の実証実験中なのだが、画面の中はさながら<strong>「愛の同時並行処理」</strong>状態だ。</p>
+	
+	    <div class="log-image-frame">
+	        <img src="log003_amqtt.jpg" alt="Anonymous MQTT Demo with Raspberry Pi">
+	    </div>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">💔 誰にも言えない（匿名）パケット</h4>
+	    <p>画面に並ぶ3つのターミナル。これらはすべて、異なる「ブローカー」インスタンスだ。
+	    Raspberry Pi（パブリッシャー）は、自分の正体を隠したまま、この3つのインスタンスに対して同時にメッセージを投げている。いわば、<strong>相手に自分の名前を明かさずに三股をかけている状態</strong>である。セキュリティの世界ではこれを「プライバシー保護」と呼ぶが、現実世界でやれば「即・パケット破棄（絶縁）」案件だ。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🚀 AArch64：修羅場でも「静寂」</h4>
+	    <p>驚くべきは、最新のAArch64環境のスループットだ。
+	    3つの恋（インスタンス）を同時に捌き、複雑な暗号演算を回していても、MacBook Pro のファンはピクリとも動かない。
+	    かつてのIntel環境なら、<strong>「ちょっと話があるんだけど」</strong>と詰め寄られたときのように CPU が爆熱を発していたはずだが、今は驚くほどクールだ。どんなに重い処理も、秒で ACK（承認）を返す。これが AArch64 がもたらした「余裕」という名の知性である。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">📍 最後に</h4>
+	    <p>学生諸君。匿名性は大切だが、それはあくまでネットワークのレイヤーでの話だ。
+	    研究室の進捗報告（ステータスコード）に関しては、常に透過性の高い「明示的なパブリッシュ」を期待している。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        誰にも正体を知られず、しかし確実にメッセージを届ける。<br>
+	        この究極の片想い（One-way Communication）を制御できてこそ、真のハッカーだ。<br>
+	        さあ、自分の運命の Return Address を探しに、さらに西へ向かおう。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― 匿名なら、浮気もプロトコルの一部だ
+	    </p>
+	</article>
     
     <article class="log-card">
-        <div class="log-meta">LOG_ENTRY #002 // SECURITY_ANALYSIS - 2026.03.28</div>
+        <div class="log-meta">LOG_ENTRY #002 // SECURITY_ANALYSIS - 2026.03.27</div>
         <h3>メモリの深淵と「愛」のオーバーフロー</h3>
         
         <p>2013年のシミュレーターを捨て、私は再びターミナルに戻ってきた。最新のMacBook Pro (AArch64) の上で、 Kali Linuxの仮想環境をマウントする。</p>
@@ -49,7 +89,7 @@ Breakpoint 1, check_serial at bypass2.c:9
     </article>
 	
 	<article class="log-card">
-	    <div class="log-meta">LOG_ENTRY #001 // SYSTEM_MIGRATION - 2026.03.27</div>
+	    <div class="log-meta">LOG_ENTRY #001 // SYSTEM_MIGRATION - 2026.03.26</div>
 	    
 	    <h3>Log #001: Migrating the Sacred Code to AArch64 — 爆速の同期、そして新天地へ</h3>
 	    
