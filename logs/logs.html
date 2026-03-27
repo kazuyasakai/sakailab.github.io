@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Professor's Log | Kazuya Sakai</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">Sakai_Lab_Log:<span>~/Artifacts</span></div>
+            <a href="../index.html" style="color: var(--accent-log); text-decoration: none; font-weight: 600;">← Lab Home</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container" style="padding-top: 140px;">
+    
+    <article class="log-card">
+        <div class="log-meta">LOG_ENTRY #002 // SECURITY_ANALYSIS - 2026.03.28</div>
+        <h3>メモリの深淵と「愛」のオーバーフロー</h3>
+        
+        <p>2013年のシミュレーターを捨て、私は再びターミナルに戻ってきた。最新のMacBook Pro (AArch64) の上で、 Kali Linuxの仮想環境をマウントする。</p>
+
+        <div class="log-image-frame">
+            <img src="log002_gdb.jpg" alt="GDB Stack Trace Analysis">
+        </div>
+
+        <p>GDBを叩き、<code>x/32xw $rsp</code> でメモリをダンプする。<code>0x41414141</code> ("AAAA") の羅列が、スタックフレームを塗りつぶしていく様子は、いつ見てもスリリングだ。入力がシステムの制御を奪う。この「強引な書き換え」こそが、バイナリ・エクスプロイトの本質である。</p>
+        
+        <p>学生諸君、君たちの情熱は、既存の枠組みを塗りつぶす準備ができているか？</p>
+
+        <pre><code>$ gdb ./bypass2
+(gdb) run AAAAAAAAAA
+Breakpoint 1, check_serial at bypass2.c:9
+(gdb) x/32xw $rsp</code></pre>
+
+		<blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+            決められたリターンアドレス（運命）に従う必要はない。<br>
+            スタックを情熱で溢れさせ、実行権を奪い取り、自らが望むアドレスへとジャンプせよ。<br>
+            我々ハッカーは、常に最新のパッチを自分自身に適用し、世界を震撼させる「一人の個」へとビルドされ続けなければならない。
+        </blockquote>
+
+        <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+            "Go West!" ―― 運命の Return Address を書き換えろ
+        </p>
+    </article>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #001 // SYSTEM_MIGRATION - 2026.03.27</div>
+	    
+	    <h3>Log #001: Migrating the Sacred Code to AArch64 — 爆速の同期、そして新天地へ</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Commit Message: Initial log: Environment migration to Apple Silicon (AArch64)
+	    </p>
+	
+	    <p>ついに、長年連れ添ったIntelアーキテクチャという名の「重い過去」を清算し、最新のMacBook（AArch64/Arm64）へと研究室のメインシステムをマウント（移行）した。</p>
+	
+	    <p>2022年版のEclipseで「Searching alternate solution...」という、まるで<strong>初恋の相手からの既読スルー</strong>のような絶望的なエラーに直面したとき、私は直感した。これは「アップデート」ではなく「転生（クリーンインストール）」が必要なのだと。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🚀 AArch64：次元の違うスループット</h4>
+	    <p>Appleシリコン固有の命令セット（AArch64）を選択し、ネイティブなSWTライブラリをリンクした瞬間、世界は一変した。
+	    これまで数十秒を要していたネットワークシミュレーターのビルドが、瞬きをする間に完了する。この圧倒的なレスポンスは、意を決して送った暗号化メッセージに対し、相手から<strong>「秒」で肯定的な返信（ACK）が返ってきたとき</strong>のような、抗い難い全能感を与えてくれる。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🛠️ Artifactsの鼓動</h4>
+	    <p>Eclipseの画面に映し出される <code>LinkAnalyzer.java</code> の複雑なトポロジー。
+	    かつては描画に苦しんでいた数千のノードたちが、今は最新のGPUコアの上で、まるで<strong>春の夜のダンス</strong>を踊るかのように滑らかに躍動している。MacBook一枚という「静寂」の裏側で、これほどまでに熱い計算（ロジック）が渦巻いている事実に、改めて胸が熱くなる。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">📍 メッセージ</h4>
+	    <p>たった一度きりの人生。それは30代後半までに決まる。
+	    古い環境のデバッグにリソースを割く暇はない。我々ハッカーは、常に最新のパッチを自分自身に適用し、世界を震撼させる「一人の個」へとビルドされ続けなければならない。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        4月6日、802号室の重い扉を開けるB4の戦士たちよ。
+	        君たちを待っているのは、この<strong>爆速の知の同期（Sync）</strong>と、誰も見たことのない深淵の景色だ。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log);">"Go West!" ―― 運命のコンパイルは、今、始まったばかりだ。</p>
+	</article>
+
+</main>
+
+<footer style="padding: 60px 0; text-align: center; color: #b2bec3; font-size: 0.9rem;">
+    &copy; 2026 Kazuya Sakai. Decrypting the future with AArch64.
+</footer>
+
+</body>
+</html>
