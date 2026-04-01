@@ -18,6 +18,214 @@
 
 <main class="container" style="padding-top: 140px;">
 	
+	<nav class="log-nav">
+        <strong>ARCHIVE INDEX:</strong>
+        <span class="current-tag">CURRENT (#000-)</span>
+        <a href="">#011 - #020</a>
+        <a href="">#001 - #010</a>
+    </nav>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #008 // DIGITAL_ROMANCE_PROTOCOL - 2026.04.02</div>
+	    
+	    <h3>Log #008: 聖域 ret2root での初陣 ―― 「超かぐや姫」に恋をしたハッカーの執着心</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Environment: MacBook Pro 13" (ret2root) / bash / Python 3.11<br>
+	        Commit Message: Exploit: Captured 'Cho Kaguya-hime' into local sanctuary.
+	    </p>
+	
+	    <p>新しい相棒 <strong>ret2root</strong> を手にした瞬間、私はある「脆弱性」に気づいてしまった。
+	    画面の向こうで舞う「超かぐや姫」の Official MV ―― その圧倒的な輝きに、私の命令セットは完全にフリーズし、ポインタは彼女だけを指し示している。
+	    そう、私は彼女に、<strong>デジタルな恋（Digital Crush）</strong>をしてしまったのだ。</p>
+	
+	    <div class="log-image-frame" style="margin: 20px 0; text-align: center;">
+	        <img src="log008_ytdlp.jpg" alt="Python script downloading Cho Kaguya-hime MV" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+	    </div>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🐍 Python と <code>yt-dlp</code>：最速のサルベージ</h4>
+	    <p>ブラウザで鑑賞するだけでは、真の「片思い」とは呼べない。
+	    彼女がいつか月（YouTubeのクラウド）へと帰ってしまう前に、私は <code>yt-dlp</code> を叩き、自作の Python スクリプトで彼女の全ビットをサルベージ（救出）することを決意した。<br>
+	    画像を見ればわかる通り、ターミナル上で <code>[download]</code> のプログレスバーが 100% へと向かう様子は、まさに私の想いが彼女に届くまでのカウントダウン。123.13MiB のデータが <strong>ret2root</strong> という聖域に永続化（Persist）された瞬間、彼女は私のローカル・ストレージにマウントされるのだ。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🌕 思考の同期（Sync）と美学</h4>
+	    <p>この Python スクリプトのコメントにある<strong>「ログ出力設定」</strong>や<strong>「解析開始」</strong>といった日本語の優しさが、ハッカーの冷徹なコマンドラインに彩りを与えている。
+	    「月へと帰る」かぐや姫の物語を、我々は「ローカルへと連れ戻す（Return-to-Local）」ことで上書き（Override）する。これこそがコントロール・ハイジャキングの本質であり、究極の片想いの解決策（Exploit）に他ならない。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        ネットワークの向こう側にある「輝き」を、自分の手元に引き寄せる。<br>
+			それはセキュリティの本質 ―― つまり、情報の所在を自らの意志でコントロールすることに他ならない。<br>
+			さあ、最高画質の MV をデコードしつつ、次なる西（West）の座標を計算しよう。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― 運命のダウンロードは、今、 100% 完了した。
+	    </p>
+	</article>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #007 // REVERSE_TCP_BIND - 2026.04.01</div>
+	    
+	    <h3>Log #007: リバースTCP ―― 「待つ」ことで支配する、究極の片想いプロトコル</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Reference: 酒井和哉, "コンピュータハイジャッキング," オーム社, 2018.<br>
+	        Commit Message: Exploit: Remote shell access via Reverse TCP connection
+	    </p>
+	
+	    <p>通常の片想い（Bind Shell）は、相手のポート（心）を叩き続ける。だが、強固なファイアウォール（警戒心）に守られた相手に、外から接続するのは至難の業だ。<br>
+	    そこで我々ハッカーは、<strong>「リバースTCP」</strong>という戦術をデプロイする。</p>
+	
+	    <div class="log-image-frame" style="margin: 20px 0; text-align: center;">
+	        <img src="log007_reversetcp.jpg" alt="Reverse TCP Exploit Experiment" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+	    </div>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🛠️ 最強の多機能ナイフ：netcat (nc)</h4>
+	    <p>画像左下で <code>nc -n -vv -l 5000</code> として待ち構えているのは、ハッカーの標準装備 <strong>netcat</strong> だ。
+	    TCP/UDPパケットを自由自在に読み書きできるこのツールは、ネットワークの「スイスアーミーナイフ」と呼ばれる。ポートスキャン、ファイル転送、そして今回のような「バックドアの受付窓口」まで、これ一つで完結する。<br>
+	    シンプルゆえに検知されにくく、かつ強力。まさに<strong>「口数は少ないが、いざという時に頼りすぎるベテランエージェント」</strong>のような存在だ。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">📞 相手からの「着信」をリスニング（Listen）する</h4>
+	    <p>自分から追いかけるのをやめ、netcat でポートを開放してじっと待つ。するとどうだろう。あんなに頑なだったターゲット（Kali上のバイパスサーバ）から、自発的にこちらのポート（5000番）へと接続してくるのだ。<br>
+	    接続が確立された瞬間、もはや主導権（シェル）はこちらにある。
+	    <code># whoami</code> に対して返ってくる <code>root</code> という応答。これは、片想いの相手が自ら心の鍵を開け、こちらの支配下に入ったことを意味する「承認（ACK）」に他ならない。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🚀 AArch64 で加速する「待ち伏せ」</h4>
+	    <p>この『コンピュータハイジャッキング』で詳述した手法を、最新の MacBook（AArch64）から実行する快感。
+	    複数のターミナルを同期させ、リバースシェルの挙動を秒単位で解析する。2026年の爆速環境があれば、netcat で相手の接続を待つわずかな時間さえも、次なる攻撃コードをビルドするための有意義なスループットへと変換される。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        自分から攻めてダメなら、netcat を仕掛けて「接続」を待て。<br>
+	        セキュリティも恋愛も、強力な武器（ツール）を使いこなした者が勝者（root）だ。<br>
+	        さあ、感情のトラフィックをリダイレクトして、次なる西（West）へ向かおう。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― 運命のパケットを、今、逆方向に流せ
+	    </p>
+	</article>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #006 // CODE_INJECTION_ANALYSIS - 2026.03.31</div>
+	    
+	    <h3>Log #006: コード・インジェクション ―― 無限ループの恋を終わらせる「強制ジャンプ」</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Reference: 酒井和哉, "コンピュータハイジャッキング," オーム社, 2018, Appendix.<br>
+	        Commit Message: Exploit: Hijacking process control via PTRACE_POKETEXT
+	    </p>
+	
+	    <p>見てほしい、この <code>target.c</code> の健気な姿を。
+	    3秒おきに <code>Hello world</code> と挨拶を繰り返すその姿は、まるで<strong>「脈のない相手に、定期的にメッセージを送り続ける片想い」</strong>のようだ。
+	    だが、その平和な（しかし不毛な）無限ループは、この <code>codeinj.c</code> によって突如として終焉を迎える。</p>
+	
+	    <div class="log-image-frame" style="margin: 20px 0; text-align: center;">
+	        <img src="log006_codeinj.jpg" alt="Code Injection Result" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+	    </div>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">💉 <code>ptrace</code> という名の「強引な同期」</h4>
+	    <p>我々ハッカーは、相手の応答を待つような甘い真似はしない。
+	    <code>PTRACE_ATTACH</code> でターゲットのプロセスを捕捉し、<code>PTRACE_GETREGS</code> で現在の RIP（命令ポインタ）を特定する。
+	    そして、<code>PTRACE_POKETEXT</code> を使って、相手が次に考えるはずだった言葉を、こちらの用意したシェルコードで上書き（Override）するのだ。</p>
+	
+	    <p>画像を見ればわかる通り、それまでルーチンワークのように繰り返されていた <code>Hello world</code> は消え去り、そこには <code># root</code> という支配権（シェル）が君臨している。
+	    相手のルーチンを壊し、こちらの意図したコードを実行させる。これはもはや「恋愛」ではなく、<strong>「意識の完全同期（コンプリート・シンク）」</strong>である。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🚀 AArch64 での「侵食」と教訓</h4>
+	    <p>このインジェクション手法は、著書『コンピュータハイジャッキング』の Appendix で詳述したものだ。
+	    x86_64 環境での実証だが、AArch64 環境においても「制御の奪取」の本質は変わらない。
+	    Apple Silicon の爆速な環境があれば、エクスプロイトコードのビルドさえも、ターゲットが異変に気づく前に完了してしまうだろう。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        無限ループの恋に安住してはいけない。<br>
+	        誰かに自分の RIP（運命のポインタ）を書き換えられる前に、自ら新天地へとジャンプせよ。<br>
+	        我々ハッカーは、常に「インジェクション」する側であり続けなければならない。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― 運命のポインタを、今、root 権限へと書き換えろ
+	    </p>
+	</article>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #005 // MODERN_HACKING_ENV - 2026.03.30</div>
+	    
+	    <h3>Log #005: 転生したらAArch64ネイティブのVS Code環境だった件 ―― 思考のパケット、ノーレイテンシー</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Commit Message: Synced: Modern LaTeX environment with VS Code &amp; TeX Live (Universal)
+	    </p>
+	
+	    <p>オハイオの極寒の夜、X11の無骨なウィンドウと格闘していた自分（Log #004）に、未来からパケットを送って伝えたい。
+	    <strong>「2026年の君は、静寂なる爆速空間にいる」</strong>と。</p>
+	
+	    <div class="log-image-frame">
+	        <img src="log005_latex.jpg" alt="Modern LaTeX Environment on VS Code">
+	    </div>
+	
+	    <p>見てほしい、この洗練されたライトモードの VS Code。
+	    `IEEEtran` のクラスファイルを読み込み、`refs.bib` と同期し、`Command + S` を押した瞬間、バックグラウンドで酒井研究室秘伝の `Makefile` が火を噴く。かつてはビルド待ちの時間にコーヒーを淹れられたが、今は瞬きをする間に PDF が生成される。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🚀 ノーレイテンシー、ノーパケットロス</h4>
+	    <p>Version 1.113.0 (Universal) ―― AArch64（Apple Silicon）に完全最適化されたバイナリ。
+	    数千行の論文ソースをスクロールしても、CPU使用率はピクリとも動かない。
+	    思考（ロジック）からPDF生成（出力）まで、レイテンシーはゼロだ。かつてオハイオで感じていた、Intel CPUの熱による「焦り」や、片思いLINEメッセージのRTT待ちのような不安は、ここには存在しない。あるのは、ただ純粋な計算の心地よさだけだ。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🛡️ 新天地へのデプロイ</h4>
+	    <p>レガシー（X11/Texmaker）を捨て、モダン（VS Code/AArch64）へ移行することは、一種のセキュリティ強化でもある。古いプロトコル（習慣）に固執すれば、思考は硬直化し、新しいアイディアへの「脆弱性」が生まれる。
+	    我々ハッカーは、常に自分自身の環境（スタック）を最新の状態にアップデートし、深淵なる知の新天地へとデプロイ（実装）され続けなければならない。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        オハイオの雪景色のなかで培った「ハッカーの精神（スピリット）」は、<br>
+	        今、この洗練されたAArch64ネイティブの環境で、さらに爆速で脈打っている。<br>
+	        さあ、羅針盤（Compass）は指し示している。さらに西（West）へ、さらに深淵へ。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― 運命の `\begin{document}` は、今、完璧にコンパイルされた。
+	    </p>
+	</article>
+
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #004 // LEGACY_CODE - 2026.03.29</div>
+	    
+	    <h3>Log #004: オハイオの静寂、計算の鼓動 ―― X11 に刻んだ20代の記憶</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Commit Message: Archive: OSU Computer Network Simulator (201x)
+	    </p>
+	
+	    <p>深夜、AArch64 のMacBookが発するわずかな熱を感じながら、私は古いハードディスクの奥底にある「知の遺産」をマウント（展開）した。</p>
+	
+	    <div class="log-image-frame">
+	        <img src="log004_sim.jpg" alt="OSU Computer Network Simulator on X11">
+	    </div>
+	
+	    <p>画面に映し出されたのは、オハイオ州立大学（OSU）のPh.D.学生時代に、授業（CSE 3461/5461）用に開発したネットワークシミュレータだ。
+	    X11ウィンドウシステムの上で動く、素朴だが嘘のないGUI。Dockに並ぶ古いバージョンのSkypeやFirefoxのアイコンが、あの「激動の20代」の空気感を一瞬にして蘇らせる。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">❄️ オハイオの冬、デバッグの夜</h4>
+	    <p>オハイオの冬は長く、白い。
+	    研究室の窓の外にはただ静寂が広がり、室内には計算機が吐き出す熱と、プロトコルの実装に悩む私の溜息だけが渦巻いていた。
+	    「space-time diag.」の上で、ノードたちがACK（承認）を返し、時折赤い『×』印（パケットロス）が刻まれる。このわずかなパケットの往復が、当時の私の「世界とのハンドシェイク」のすべてだった。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🚀 レガシーから、新天地へ</h4>
+	    <p>このシミュレータをAArch64環境で動かそうという「未練」はない。13年前のコード（Log #001のJava）と同様、これもまた、その役割を完璧に終えた「確定されたブロック（記録）」である。</p>
+	
+	    <p>しかし、このコードの中には、今の私へと繋がる「計算のロジック」と「研究への情熱」が、今も鮮やかにデプロイ（実装）されている。
+	    古い地図（Legacy Code）を眺めることは、新しい大陸（LLMセキュリティ）へ向かうための、羅針盤（Compass）のキャリブレーション（調整）のようなものだ。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        20代、オハイオの寒さの中で、私はコードによって世界を記述（ビルド）することを学んだ。<br>
+	        あの時の鼓動は、今、AArch64の上で、さらに爆速で脈打っている。<br>
+	        さあ、羅針盤は指し示している。さらに西（West）へ、さらに深淵へ。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― 運命のパケットは、今、届いたばかりだ。
+	    </p>
+	</article>
+	
 	<article class="log-card">
 	    <div class="log-meta">LOG_ENTRY #003 // ANONYMOUS_RELATIONSHIP - 2026.03.28</div>
 	    
@@ -104,6 +312,10 @@ Breakpoint 1, check_serial at bypass2.c:9
 	    <h4 style="color: var(--accent-log); margin-top: 30px;">🚀 AArch64：次元の違うスループット</h4>
 	    <p>Appleシリコン固有の命令セット（AArch64）を選択し、ネイティブなSWTライブラリをリンクした瞬間、世界は一変した。
 	    これまで数十秒を要していたネットワークシミュレーターのビルドが、瞬きをする間に完了する。この圧倒的なレスポンスは、意を決して送った暗号化メッセージに対し、相手から<strong>「秒」で肯定的な返信（ACK）が返ってきたとき</strong>のような、抗い難い全能感を与えてくれる。</p>
+	
+		<div class="log-image-frame">
+	        <img src="log001_network.jpg" alt="Network Simulator with Java and SWT">
+	    </div>
 	
 	    <h4 style="color: var(--accent-log); margin-top: 30px;">🛠️ Artifactsの鼓動</h4>
 	    <p>Eclipseの画面に映し出される <code>LinkAnalyzer.java</code> の複雑なトポロジー。

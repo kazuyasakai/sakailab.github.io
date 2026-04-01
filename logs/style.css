@@ -97,3 +97,48 @@ code {
     border-radius: 4px;
     color: var(--accent-log);
 }
+
+/* --- アーカイブ・ナビゲーション（ライトモード最適化） --- */
+.log-nav {
+    background: var(--card-log); /* わずかに青みがかった背景 */
+    border: 1px solid var(--border-log); /* 繊細な境界線 */
+    border-radius: 12px;
+    padding: 15px 25px;
+    margin: 0px auto 40px auto; /* ヘッダーの固定位置を考慮 */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.log-nav strong {
+    color: var(--text-log);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 現在のページを示すタグ */
+.current-tag {
+    background: var(--accent-log); /* アズールブルー */
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+/* アーカイブリンクのスタイル */
+.log-nav a {
+    color: var(--text-log);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    transition: color 0.2s ease;
+}
+
+.log-nav a:hover {
+    color: var(--accent-log);
+    text-decoration: underline;
+}
