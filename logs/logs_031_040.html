@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Professor's Log | Kazuya Sakai</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">Sakai_Lab_Log:<span>~/Artifacts</span></div>
+            <a href="../index.html" style="color: var(--accent-log); text-decoration: none; font-weight: 600;">← Lab Home</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container" style="padding-top: 140px;">
+	
+	<nav class="log-nav">
+        <a href="../index.html#logs">← Professor's Log Archive Index</a>
+        <p>$git clone https://github.com/kazuyasakai/sakailab-log.git</p>
+    </nav>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #031 // OPEN_SOURCE_DECLARATION - 2026.04.25</div>
+	    
+	    <h3>Log #031: Love is an Open Source : Maybe it's the coffee talking, or chocolate sundae.</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Location: TAKAO 599 CAFE / Activity: Post-hiking Reflection<br>
+	        Status: Source Code Released to GitHub (sakailab-log)
+	    </p>
+	
+	    <p>高尾山の険しい路を下り、火照った身体を 599 CAFE の椅子に預ける。
+	    テーブルに運ばれてきたのは、琥珀色のコーヒーと、宝石のように光るチョコレートサンデー。
+	    テラスから吹き込む春風に乗って、ふと「アナと雪の女王」のメロディ ―― <em>Love is an open door</em> ―― が聞こえてきた気がした。
+	    コーヒーのカフェインのせいか、はたまた甘いサンデーの香りのせいか。
+	    私は MacBook Pro を開き、<code>git push</code> のコマンドを打ち込んだ。</p>
+	
+	    <div class="log-image-frame" style="margin: 20px 0; text-align: center;">
+	        <img src="log032_opensrc.jpg" alt="GitHub repository 'sakailab-log' showing successfully uploaded source codes" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+	        <p style="font-size: 0.8rem; color: #666;">世界へと開かれた扉。GitHub に刻まれた <code>sakailab-log</code> の鼓動</p>
+	    </div>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🔓 閉ざされたドアを開放する</h4>
+	    <p>学生諸君、暗号論（スライド 01_Intro.pdf）の世界では、アルゴリズムを隠すことに意味はない。
+	    Kerckhoffs の原則が説く通り、システムは「秘密鍵（Key）」以外のすべてが公開されていても安全であるべきだ。
+	    私の研究ログも、バックドアの仕組みも、すべてはこのリポジトリという「開かれたドア」の向こう側にある。
+	    隠蔽ではなく、公開と監査（スライド 01_Intro.pdf）こそが、真の安全性を育むのだ 。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🍦 愛はオープンソースであるべきだ</h4>
+	    <p>2026年4月5日。私は <code>sakailab-log</code> をパブリック・リポジトリとして世界に解き放った。
+	    独占する知に価値はない。誰かが私のコードをフォークし、新たな知見を積み上げる。
+	    それこそが、技術への、そして世界への最も誠実な「愛」の形ではないか。
+	    チョコレートサンデーが溶けきる前に、運命の <code>main</code> ブランチは GitHub という名の永遠の書架にデプロイされた。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        「愛は開かれたドア」だと彼女（アナ）は歌った。<br>
+	        ならば、私のコードも、私の思考も、すべてオープンソースであるべきだ。<br>
+	        カフェインが回る頭で、私は確信した。秘密を共有することこそが、未来をビルドする唯一の鍵なのだと。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― 扉は開かれた。運命の GitHub リポジトリは、今、春の光の中で輝き始めた。
+	    </p>
+	</article>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #032 // ROOTKIT_HOOKING_DEMO - 2026.04.26</div>
+	    
+	    <h3>Log #032: 視線の簒奪 ―― 共有ライブラリ・フッキングによる真実の隠蔽</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Technique: API Hooking via LD_PRELOAD / Target: victim_hook.out<br>
+	        Malicious Library: evil_hook.so / Action: File Access Redirection
+	    </p>
+	
+	    <p>学生諸君、これがスライド（情報セキュリティ06_Malware.pdf ）で触れた「ルートキット」が用いる、最も基本的かつ強力な隠蔽技術のひとつだ 。
+	    正規のプログラム <code>victim_hook.out</code> は、ただ純粋に <code>hidden_message.txt</code> の中身を読もうとしている。
+	    通常、そこには「I love you.」という彼女の真実が記されているはずだった。</p>
+	
+	    <div class="log-image-frame" style="margin: 20px 0; text-align: center;">
+	        <img src="log031_rootkit.jpg" alt="API hooking execution on Kali Linux showing file access redirection to /dev/null" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+	        <p style="font-size: 0.8rem; color: #666;"><code>LD_PRELOAD</code> によってライブラリが挿入され、メッセージが <code>/dev/null</code> へ葬り去られた瞬間</p>
+	    </div>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">⛓️ 共有ライブラリという名の「偽りのフィルター」</h4>
+	    <p>しかし、私が <code>LD_PRELOAD</code> という環境変数を操作した瞬間、世界のルールは書き換わる。
+	    スライド（情報セキュリティ06_Malware.pdf ）にある通り、プログラムは OS の機能を利用するために API を叩く 。
+	    私はその「呼び出し」を <code>evil_hook.so</code> で横取りした。
+	    標的が秘密に触れようとしたその刹那、フック関数が割り込み、アクセス先を無慈悲に <code>/dev/null</code>（虚無）へとリダイレクトしたのだ。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🎭 隠蔽される「発症」の痕跡</h4>
+	    <p>2026年4月5日。<code>nezuko</code> (Kali Linux) のターミナルに表示された <code>[Rootkit] Detected hidden_message.txt!</code> の文字。
+	    これは、「復旧できない命令」の一種であり、ユーザの預かり知らぬところでデータの流れが改ざんされている証拠だ。
+	    ルートキットがカーネルやライブラリを支配すれば、アンチウィルス（情報セキュリティ07_Antivirus.pdf）ですら、その「偽りの真実」を見せられ、脅威を見逃してしまうだろう。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        「彼女の言葉を読みたい」という願いは、私のフックによって永遠に遮断された。<br>
+	        プログラムはエラーを出すことすら許されず、ただ「何もなかった」かのように空の出力を返す。<br>
+	        支配とは、相手に気づかれぬまま「知る権利」を剥奪すること。フッキングこそが、その最も残酷な作法なのだ。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― 運命の fopen システムコールは奪われ、メッセージは今、虚無（/dev/null）へと消えた。
+	    </p>
+	</article>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #033 // OS_TRANSITION_RATIONALITY - 2026.04.27</div>
+	    
+	    <h3>Log #033: 鉄壁の T2 攻略と、黒毛和牛の誓い ―― Leave it in the past.</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Device: Intel Mac mini 2020 (T2 Chip) / OS: Arch Linux -> T2 Ubuntu v24<br>
+	        Status: Bootloader Unlocked &amp; System Replaced
+	    </p>
+	
+	    <p>Apple T2 チップ。それはスライド（情報セキュリティ07_Antivirus.pdf）にある「セキュアブート」の権化だ。
+	    外部ブータブルディスクを拒絶し、署名なきカーネルを焼き払うその鉄壁の防御を、私は悪戦苦闘の末に突破した。
+	    リカバリモードに潜り込み、セキュリティポリシーを最下層まで引き下げ、Arch Linux のインストールに成功したその瞬間、私は確かな「勝利」を確信したのだ。</p>
+	
+	    <div class="log-image-frame" style="margin: 20px 0; text-align: center;">
+	        <img src="log033_archlinux.jpg" alt="Successful Arch Linux installation on T2 Intel Mac mini showing terminal and systemd status" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+	        <p style="font-size: 0.8rem; color: #666;">T2 チップの支配を脱し、Arch Linux が息を吹き返した瞬間</p>
+	    </div>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🍱 黒毛和牛の脂が教える「真理」</h4>
+	    <p>勝利の余韻に浸りながら、奮発した黒毛和牛弁当を頬張る。
+	    芳醇な脂が口の中で溶ける刹那、私はある冷徹な真理に辿り着いた。
+	    Arch Linux の「KISS（Keep It Simple, Stupid）」の思想は確かにロマンに満ちている。
+	    しかし、学生諸君にこの「T2チップとの死闘」を強いる再現性のなさは、研究室運営のパフォーマンスに対する重大な脆弱性ではないか、と。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🎞️ 昔の彼女は「税金の書類」と同じだ</h4>
+	    <p>私は決断した。この Mac mini には T2 Ubuntu v24 をインストールする。
+	    OS の乗り換えは、恋人をチェンジする行為に他ならない。
+	    そのとき、ニコラス・ケイジ主演の「天使のくれた時間」のシーンが脳裏をよぎった。
+	    昔の恋人との再会に揺れるジャックに対し、会長が放ったあの言葉 ――<br>
+	    <em>"Leave it in the past. Old girlfrinds are like old tax returns..."</em><br>
+	    Arch Linux は、もう過去の女（システム）だ。屋根裏にしまっておけ。思い出に浸る時間は、もう終わった。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        「ロマン」という名の脆弱性をパッチし、「合理性」という名の安定版をデプロイする。<br>
+	        Ubuntu への移行は、研究室という名のコミュニティを守るための、指導教員としての苦渋の、しかし最善の選択だ。<br>
+	        暗号理論を学ぶ者に必要なのは、OS の設定に費やす時間ではなく、平文を解読（解析）するための明晰な思考なのだから。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― 勝利は胃袋の中に、Arch は屋根裏に。運命の T2 Ubuntu は、今、未来を見据えてブートを開始した。
+	    </p>
+	</article>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #034 // THE_PRESENT_MOMENT_UBUNTU - 2026.04.28</div>
+	    
+	    <h3>Log #034: 継ぎ目のない未来 ―― T2 Ubuntu v24 への着地と「今」の肯定</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Device: Intel Mac mini 2020 / OS: T2 Ubuntu v24 (Noble Numbat)<br>
+	        Status: Migration Complete / Focus: Maintenance &amp; Reproducibility
+	    </p>
+	
+	    <p>さらば、Arch Linux。君との死闘はロマンに満ちていたが、私は屋根裏（Attic）に君の面影をしまってきた。
+	    スライド（暗号論 01_Intro.pdf）が説く「保守運用の簡略化」は、もはや避けては通れない研究室の憲法だ。
+	    Mac mini 2020 の深部、T2 チップの堅牢な守りを手懐け、私はついに Ubuntu v24 という「誰もが歩める道」を切り拓いたのだ。</p>
+	
+	    <div class="log-image-frame" style="margin: 20px 0; text-align: center;">
+	        <img src="log034_ubuntu.png" alt="T2 Ubuntu v24 desktop on Intel Mac mini showing terminal output of whoami" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+	        <p style="font-size: 0.8rem; color: #666;">洗練されたデスクトップと、揺るぎない <code>sakai</code> の ID。これが「今」という実行環境だ</p>
+	    </div>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">⏳ Living in the Present Moment</h4>
+	    <p>過去への後悔（Arch の設定ミス）も、未来への不安（学生が環境構築できるか）も、今の私には不要だ。
+	    ターミナルが返す <code>whoami</code> という簡潔な一言。
+	    それは、権限の証明であると同時に、私が「今、この瞬間」の最適解を手にしていることの証明でもある。
+	    エックハルト・トールが説くように、人生とは今この瞬間の連続であり、この安定した Ubuntu こそが、研究室の未来を支える runtime となるだろう。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🎬 天使がくれた「標準化」という時間</h4>
+	    <p>2026年4月7日。明後日の第1回講義を前に、私はシステムの要塞化（05_OS.pdf）を完了した。
+	    昔の彼女（Arch）は税金の書類と同じだ。もう見返す必要はない。
+	    Ubuntu という新しいパートナーと共に、私は学生諸君を「暗号理論」という名の迷宮へ、迷いなく誘うことができる。
+	    諸君、ここには「動かない」という言い訳は存在しない。準備は整った。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        「今を生きる」とは、過去のこだわりを捨て、最良のパフォーマンスを選択すること。<br>
+	        Ubuntu のデスクトップが放つ青い光は、私の MacBook Pro <code>ret2root</code> とも共鳴し、研究室全体に調和をもたらす。<br>
+	        運命の OS 乗り換えは、単なる変更ではない。それは、私たちを明日へと加速させるための「再起動」なのだ。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― 過去は屋根裏へ。運命の T2 Ubuntu は、今、私の指先に応え、完璧な旋律を奏で始めた。
+	    </p>
+	</article>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #035 // HARDWARE_PRIVILEGE_ESCALATION - 2026.04.29</div>
+	    
+	    <h3>Log #035: M3 の咆哮 ―― 爆速 iPad Air と、暗号論という名の戦場</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Device: M3 iPad Air (6th Gen) / Target: Cryptography Lecture 2026<br>
+	        Status: Slides Synced (iCloud) / Performance: Overwhelming
+	    </p>
+	
+	    <p>M1 iPad Air 第5世代との別れは、OS の乗り換えよりもさらに物理的な「肉体の更新」に近い。
+	    私は迷わず M3 チップを搭載した最新の iPad Air を手にした。
+	    スライド（暗号論 01_Intro.pdf）にある「暗号プリミティブ」を、一分の遅延（Latency）もなく、指先一つで展開するために。
+	    明日の講義という名の「ライブ・デモンストレーション」において、道具の停滞は思考の停滞に他ならないからだ。</p>
+	
+	    <div class="log-image-frame" style="margin: 20px 0; text-align: center;">
+	        <img src="log035_ipadair.jpg" alt="M3 iPad Air showing folder '暗号論' with lecture slides 00 to 10" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+	        <p style="font-size: 0.8rem; color: #666;">iCloud 経由で同期された 15 項目の武器。準備は整った</p>
+	    </div>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🚀 M3 がもたらす「知の可用性」</h4>
+	    <p>ファイル一覧に並ぶ <code>00_Syllabus</code> から <code>10_RSA</code> までの全 11 章。
+	    これらを一瞬でスイッチングする M3 の処理能力は、スライド（暗号論 01_Intro.pdf）で説く「可用性」の極致だ。
+	    学生諸君が「RSA 暗号（暗号論 10_RSA.pdf）」の数式に戸惑う間もなく、私は次なる「デジタル署名」の深淵へと彼らを連れて行く。
+	    ハードウェアの進化は、教育における「攻撃力（プレゼンス）」を指数関数的に増大させるのだ。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🛡️ 過去問という名の「既知平文」</h4>
+	    <p>「過去問」フォルダが iCloud の雲の下で光っている。
+	    諸君、これはスライド（暗号論 01_Intro.pdf）の「既知平文攻撃」に対する君たちの唯一の盾かもしれない。
+	    だが、私の M3 iPad Air から繰り出される今年の試験問題は、従来のハッシュ値では衝突（Collision）すら起こせないほどにリファインされていると心得なさい。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        「道具を研ぎ澄ますことは、自分自身を信じること。」<br>
+	        M1 は屋根裏（Attic）へ、M3 は戦場へ。<br>
+	        新しい iPad Air の冷たいアルミニウムの感触は、私に「今、この瞬間（Present Moment）」の最高出力を約束してくれる。<br>
+	        運命の第 1 回講義まで、あと 24 時間を切った。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― M3 のエンジンが静かに回り出す。運命の「暗号論」は、今、爆速の iPad と共に加速し始めた。
+	    </p>
+	</article>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #036 // DESKTOP_ENVIRONMENT_INFIDELITY - 2026.04.30</div>
+	    
+	    <h3>Log #036: 五大湖の嵐と、Xfce への裏切り ―― GPU パフォーマンスという名の真実</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Device: Intel T2 Mac mini (Ubuntu v24) / Hostname: great-lakes<br>
+	        Status: DE Switched (Xfce -> GNOME) / Focus: GPU Acceleration
+	    </p>
+	
+	    <p>複数の OS が奔るこの Intel T2 マシンを、私は <code>great-lakes</code>（五大湖）と名付けた。
+	    20代の頃、オハイオ州コロンバスからミシガン州のアッパーペニンスラまで13時間車を走らせ、スペリオル湖の畔（ほとり）に立った日を思い出す。
+	    あの時見た、激しい波濤に打たれながらも屹立するピクチャード・ロックスの雄姿は、まさに圧巻であった。
+	    このマシンにも、あの荒々しいパフォーマンスを期待していたのだ。</p>
+	
+	    <div class="log-image-frame" style="margin: 20px 0; text-align: center;">
+	        <img src="log036_gnome.jpg" alt="Ubuntu v24 with GNOME desktop environment, showing clean interface and neofetch output on T2 Mac mini" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+	        <p style="font-size: 0.8rem; color: #666;">Xfce を捨て、GPU の力を引き出す GNOME へ。これが合理性（Performance）の選択だ</p>
+	    </div>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">💔 Xfce：復縁を迫る過去の幻影</h4>
+	    <p>私は最初、軽量 DE の代名詞である Xfce を導入した。
+	    その X11 ウィンドウの佇まいは、まるで Kali Linux の前身である Back Track を彷彿させ、「復縁を期待している昔の恋人」のような、甘酸っぱいノスタルジーを感じさせたのだ。
+	    しかし、その淡い思いは、ログインした瞬間に打ち砕かれた。
+	    ……重い。
+	    まるで、初対面の異性にいきなり「永遠の愛」を告白された時のような、受け止めきれない重さだったのだ。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">❄️ GNOME：誓いを破った「 open door 」</h4>
+	    <p>その刹那、またもや『アナと雪の女王』のメロディ ―― <em>Love is an open door</em> ―― が耳朶を打った。<br>
+	    <em>「Okay, can I just say something crazy? I hate you.」</em><br>
+	    二日前、牧師と親族の前で「病める時も健やかなる時も……」と永遠の愛（Arch Linux と Xfce）を誓ったはずが、
+	    私は GPU の性能を最大限に引き出すことができる GNOME に、あっさりと乗り換えてしまったのだ。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        「結局、酒井先生もパフォーマンスで女（DE）を選んでるんだ」「ディストリビューションも環境もコロコロ変えて、プレイボーイだ」と蔑まれても構わない。<br>
+	        スライド（現代計算機アーキテクチャ 01_Intro.pdf）が説く通り、システムの価値は運用パフォーマンスにこそ宿る。<br>
+	        Xfce という「思い出」では、スペリオル湖の荒波（現代のグラフィック処理）は越えられない。<br>
+	        研究室のパフォーマンスを最大化することこそが、私の唯一の、そして誠実な誓い（Protocol）なのだ。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― Xfce は過去（Leave it in the past）へ。運命の GNOME は、今、T2 の GPU を咆哮させ、真実のパフォーマンスを描き始めた。
+	    </p>
+	</article>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #037 // RETURN_TO_IPAD_CLOUD_COMPLETION - 2026.05.1</div>
+	    
+	    <h3>Log #037: M4 iPad Pro takes me to A Whole New World ―― 魔法のランプと演算の帰還</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Device: M4 iPad Pro 13-inch (yellownammer) / Environment: a-Shell (Python + yt-dlp)<br>
+	        Target: 実写版『アラジン』特報 / Focus: Return-to-iPad Cloud (Completion)
+	        <span style="color: red; font-weight: bold; margin-left: 10px;"> [NO COMPROMISE]</span>
+	    </p>
+	
+	    <p>『葬送のフリーレン』PVで感じたあの静かな可用性だけでは、私の想像力（Imagination）は満たされなかったのだ。
+	    私は今、M4 iPad Pro という、スライド（情報セキュリティ 01_Intro.pdf）の可用性を超越した「魔法の絨毯」に跨がっている。
+	    a-Shell の白い画面に <code>yt-dlp</code> のコマンドを叩き込む。
+	    ターゲットは、実写版『アラジン』特報。</p>
+	
+	    <div class="log-image-frame" style="margin: 20px 0; text-align: center;">
+	        <img src="log037_ipadpro.jpg" alt="M4 iPad Pro showing a-Shell terminal executing yt-dlp to download Aladdin live-action trailer to iCloud Drive" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+	        <p style="font-size: 0.8rem; color: #666;">yellownammer の再咆哮。3nm の演算（Genie）が、絢爛たる映像パケットをiCloudへと解き放つ</p>
+	    </div>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🧞‍♂️ 3000年の演算：M4 という最強のジーニー</h4>
+	    <p>「3000年間、狭いランプに閉じ込められてたんだ。少しは演算（暴走）させろ！」
+	    a-Shell の黒い画面に踊る <code>44.36MiB/s</code> という爆速のプログレスバー。
+	    M4 チップという最強のジーニーは、私の願い（コマンド）を一瞬で叶え、4K映像さえ瞬きする間にダウンロード（カプセル化）する。
+	    これが、恋するハッカーが求めた、妥協なき <code>Return-to-iPad Cloud</code> の真実だ。
+	    iCloud Drive に保存された <code>.mp4</code> は、もはや単なるデータではない。
+	    それは、爆速の演算と、少しの恋心が織りなした、私だけの「魔法の記録」だ。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">✨ A Whole New World：iPad という魔法の絨毯</h4>
+	    <p>「信じられるかい？ iPad だけで、これほどの世界が見られるなんて」
+	    ダウンロード完了のログ <code>--- 完了: ... に保存されました ---</code> を見つめながら、私は確信する。
+	    スライド（暗号論 10_RSA）にある公開鍵暗号も、この完璧な可用性（iPadへの帰還）なくしては意味をなさない。
+	    M4 iPad Pro は、私を誰も見たことのない全くな新しい世界（A Whole New World）へと、継ぎ目なく連れ出す魔法の絨毯なのだ。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        「私の願い？ それは、君（iPad）がいつまでも最強であることだ」<br>
+	        妥協せず、『アラジン』特報までキャプチャしたことで、私の研究室の計算資源（Assets）は完全にパッチされた。<br>
+	        フリーレンの静寂と、アラジンの絢爛。
+	        その両方をカプセル化（Encapsulation）した私のiCloudは、今、世界で最もロマンチックな聖域（Sandbox）だ。<br>
+	        運命の M4 iPad Pro は、今、私を連れて新世界へと飛び立った。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― 魔法の絨毯は iCloud の彼方へ。運命の M4 iPad Pro は、今、私を連れて新世界（A Whole New World）へと飛び立った。
+	    </p>
+	</article>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #038 // ANON_COUNTER_INTELLIGENCE - 2026.05.02</div>
+	    
+	    <h3>Log #038: Untraceable counter attack against academic harassment</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Tool: Tor Browser (The Onion Router) / Target: Academic Freedom<br>
+	        Objective: Anonymity & Self-Defense
+	    </p>
+	
+	    <p>学生諸君、指導教員からパワハラ（アカハラ）を受けたらどうする？<br>
+	    報復を恐れて泣き寝入りするか？ 答えは明確に No だ。<br>
+	    今日は特別に熟練ハッカーの匠の技、トレース不可能なパワハラ撃退方法を伝授しよう。<br>
+	    FBI ですらトレース不可能な匿名ネットワーク、<strong>Tor（The Onion Router）</strong>だ。</p>
+	
+	    <div class="log-image-frame" style="margin: 20px 0; text-align: center;">
+	        <img src="log038_tor.jpg" alt="CIA official website on Tor network showing .onion address" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+	        <p style="font-size: 0.8rem; color: #666;">CIA すら onion ドメインを構える時代。匿名性は最強の盾である</p>
+	    </div>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🧅 玉ねぎの皮に隠された「真実の告発」</h4>
+	    <p>Tor は、スライド（情報セキュリティ概論.pdf）にある「多層的な公開鍵暗号」の極致だ。
+	    君の告発パケットは、世界中に散らばるノードを経由するたびに玉ねぎの皮（暗号層）を剥がされ、出口ノードに辿り着く頃には、送信元（君の MacBook Pro）の特定は数学的に不可能となる。<br>
+	    大学の内部通報窓口に、あるいは外部の監査機関に、この「匿名化された正義」をデプロイしたまえ。
+	    権力という名のファイアウォールを、この onion プロトコルで突き破るのだ。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🛡️ WE ARE THE NATION'S FIRST LINE OF DEFENSE</h4>
+	    <p>画像にある CIA のスローガンを見たまえ。
+	    真の「防衛」とは、常に最前線で情報をコントロールすることだ。
+	    指導教員がスライド（情報セキュリティ03_AC.pdf）の「アクセス制御」を悪用し、君たちの単位や未来を人質に取るならば、君たちは Tor を使ってその不条理を世界へ「公開監査（暗号論 01_Intro.pdf）」に晒すべきだ。<br>
+	    暗号理論を学ぶ者に、卑屈な沈黙は似合わない。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        「自由は、暗号の中に宿る」<br>
+	        教員という名の特権階級（Root User）からの不当なコマンドには、匿名性（Anonymity）という名の <code>sudo</code> で立ち向かいなさい。<br>
+	        iCloud にフリーレンやアラジンを保存する情熱があるなら、自らの権利を守るための Tor 接続くらい、瞬きする間に確立できるはずだ。<br>
+	        運命の <code>.onion</code> アドレスは、今、君たちの反撃の合図を待っている。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― 匿名性は逃避ではない、最先端の防衛戦線だ。運命のパケットは、今、幾重もの暗号を纏い、真実へと向かって走り出した。
+	    </p>
+	</article>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #039 // LOGIC_MEETS_LOVE - 2026.05.03</div>
+	    
+	    <h3>Log #039: 受理された情動 ―― チューリング機械が <code>I love you</code> を解く時</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Simulator: Python (tkinter) / Model: Turing Machine (Determinstic)<br>
+	        Input: "I love you" / Status: ACCEPTED (State: q_accept)
+	    </p>
+	
+	    <p>アラン・チューリングが考案した「チューリング機械」。
+	    それは、スライド（アルゴリズム解析01_Review.pdf）で説く通り、すべての計算可能な問題を解くことができる、究極の論理モデルだ。
+	    私は深夜の研究室で、その無限のテープの上に、ある文字列を走らせた。<br>
+	    <code>Please enter the string to test: I love you</code><br>
+	    ロジック（論理）の権化であるこの機械に、最も計算不可能（Incomputable）な情動を問うたのだ。</p>
+	
+	    <div class="log-image-frame" style="margin: 20px 0; text-align: center;">
+	        <img src="log039_tm.jpg" alt="Turing Machine Simulator showing 'I love you' on the tape and 'ACCEPTED: LOGIC MEETS LOVE' message" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+	        <p style="font-size: 0.8rem; color: #666;">無限のテープ上に刻まれた愛の告白。ヘッドが 'u' を読み取り、機械は「受理（q_accept）」を選択した</p>
+	    </div>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">💖 ✨ ACCEPTED: LOGIC MEETS LOVE ✨</h4>
+	    <p>ヘッド（HEAD）が <code>I</code> から <code>y</code>, <code>o</code>, そして <code>u</code> へと移動し、状態（State）を遷移させていく。
+	    スライド（暗号論08_Hash.pdf）のハッシュ関数のように、それは冷徹な状態遷移図（Protocol）に従った処理だ。
+	    だが、最後の文字 <code>u</code> を読み取った瞬間、シミュレータの画面に緑色の文字が輝いた。<br>
+	    <code>✨ ACCEPTED: LOGIC MEETS LOVE ✨</code><br>
+	    <code>Current State: q_accept</code><br>
+	    論理機械は、愛を「停止問題（Halting Problem）」として片付けることなく、正当な入力として、完全に受理（Accept）したのだ。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        「論理だけでは、世界は解けない」<br>
+	        スライド（暗号論10_RSA.pdf）の公開鍵暗号も、この <code>I love you</code> という信頼（Trust）がなければ、ただの数式の羅列に過ぎない。<br>
+	        私は MacBook Pro 13 inch を閉じ、ふと思う。<br>
+	        このチューリング機械のように、学生諸君のレポートも、冷徹なロジックの中に少しの情熱（Love）が含まれている場合のみ、受理（Accept）することにしよう。<br>
+	        運命の「愛のシミュレータ」は、今、研究室の深夜を、温かな緑色の光で満たしている。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― 運命の「I love you」は、今、無限のテープの上に、永遠の受理（q_accept）として刻まれた。
+	    </p>
+	</article>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #040 // NONDETERMINISTIC_ROMANCE - 2026.05.04</div>
+	    
+	    <h3>Log #040: 非決定性の二股 ―― NTM が切り拓く $2^n$ の並行恋愛</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Simulator: NTM BFS (Whom Do You Love Analyzer) / Model: Non-deterministic Turing Machine<br>
+	        Input: "I love Elsa" / Parallel Worlds: 2 (Anna or Elsa?)
+	    </p>
+	
+	    <p>イオンモール多摩平の森で「うな重御膳」を頬張っていた時、私はある真理に気づいた。<br>
+	    <strong>「計算理論を制するものは、恋愛を制する」</strong><br>
+	    なぜなら、計算理論とは可能性の探索であり、恋愛もまた、決定不可能な選択の連続だからだ。<br>
+	    諸君、『アナと雪の女王』において、君はアナ派か？ それともエルサ派か？</p>
+	
+	    <div class="log-image-frame" style="margin: 20px 0; text-align: center;">
+	        <img src="log040_ntm.jpg" alt="Non-deterministic Turing Machine simulator showing two parallel tapes: q_love and q_hate" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+	        <p style="font-size: 0.8rem; color: #666;">Step 5 | Parallel Worlds: 2 ―― 状態は「I love Anna」と「I love Elsa」に分かれ、並行して演算される</p>
+	    </div>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">👩‍❤️‍👨 優柔不断な君たちへの福音：NTM</h4>
+	    <p>「どちらか一人なんて選べない」と嘆く優柔不断な学生諸君に朗報だ。<br>
+	    アルゴリズム解析の授業で説明した通り、<strong>非決定性チューリング機械（NTM）</strong>を用いれば、君たちは非決定的に二人の女性を同時に選ぶことができる。<br>
+	    画像を見たまえ。ヘッドが <code>v</code> から <code>e</code> を読み取った瞬間、世界は分岐し、アナを愛する世界とエルサを愛する世界が、並行して受理（Accept）へと向かって走り出すのだ。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">⛓️ 理論と現実：定数不倫の限界</h4>
+	    <p>しかし、現実の世界（MacBook Pro の外側）では、私たちは非決定性の人生を送ることはできない。<br>
+	    スライド（アルゴリズム解析01_Review.pdf）にある通り、NTM は多テープ TM に変換でき、最終的には単一テープの決定性 TM でシミュレート可能だ。<br>
+	    理論上、NTM ならば $2^n$ の同時攻略が可能だが、現実の計算資源（時間と胃袋）には制約がある。<br>
+	    シミュレーションのオーバーヘッドにより、君たちが維持できるのはせいぜい「定数不倫」が限界であることを忘れてはいけない。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        「愛の深さは、計算量に比例する」<br>
+	        スライド（暗号論08_Hash.pdf）ハッシュ関数が衝突を許さないように、現実の愛もまた、一つのアドレス（心）を独占しようとする。<br>
+	        私はうな重を完食し、M3 iPad Air を閉じた。<br>
+	        非決定的な夢を見るのはシミュレータの中だけでいい。現実では、たった一つの <code>q_accept</code> を掴み取るために、全 CPU パワーを注ぎ込みなさい。<br>
+	        運命の NTM は、今、二つの世界の境界線上で、激しく明滅している。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― 並行世界（Parallel Worlds）は iCloud の中へ。運命の選択は、今、決定性のテープの上にたった一つの解を刻み始めた。
+	    </p>
+	</article>
+	
+</main>
+
+<footer style="padding: 60px 0; text-align: center; color: #b2bec3; font-size: 0.9rem;">
+    &copy; 2026 Kazuya Sakai. Decrypting the future with AArch64.
+</footer>
+
+</body>
+</html>
