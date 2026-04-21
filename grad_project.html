@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>研究プロジェクト演習 | 酒井研究室</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono:wght@700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="project_style.css">
+</head>
+<body>
+
+    <div class="cover-page">
+        <div class="header-label">GRADUATE RESEARCH PROJECT LAB</div>
+        <h1>LLM 敵対的攻撃とセキュリティ機構</h1>
+
+        <div class="professor-profile">
+            <div class="profile-image">
+                <img src="images/profile.jpg" alt="酒井 和哉">
+            </div>
+            <div class="profile-text">
+                <h2 class="professor-name">酒井 和哉</h2>
+                <p class="professor-bio">
+                    （米）オハイオ州立大学より Ph.D. を取得。2014年より東京都立大学にて教鞭を執り、現在は准教授を務める。
+                    専門はネットワークセキュリティ、AIセキュリティ、及び分散コンピューティング。
+                    2016年にIEEE Computer Society Japan Chapter Young Author Awardを受賞。
+                    世界水準の学術的バックボーンを基盤に、次世代のセキュリティエンジニア・研究者の育成に注力している。
+                </p>
+                <div class="lab-meta">
+                    <p><strong>研究室：</strong>日野キャンパス 2号館 802室</p>
+                    <p><strong>Web：</strong><a href="https://kazuyasakai.github.io/" target="_blank">https://kazuyasakai.github.io/</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <h2 class="section-title">2. プロジェクトの概要</h2>
+        <div class="content-card wide-card">
+                <div class="card-meta">OBJECTIVE</div>
+            <p>
+                深層学習（DNN）の急速な普及に伴い、モデルの脆弱性を突く「敵対的攻撃（Adversarial Attacks）」の脅威が深刻化している。
+                本プロジェクトでは、入力データへの微細な摂動がモデルの推論結果に与える影響を分析し、
+                攻撃の検知およびモデルの堅牢化（Robustness）を実現する技術を確立することを目的とする。
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">3. 事前準備とプロジェクト内容</h2>
+        <div class="content-grid">
+            <div class="content-card">
+                <div class="card-meta">PREPARATION</div>
+                <p><strong>開発環境：</strong> WindowsでもMacbookでも構いません。Anacondaに頼らず、Pythonの仮想環境（venv）でシンプルに構築します。</p>
+                <p><strong>必要な知識：</strong> Pythonの基礎知識。AIやセキュリティの深淵は、この航海の中で学びます。</p>
+            </div>
+            <div class="content-card">
+                <div class="card-meta">CONTENTS</div>
+                <ul style="padding-left: 20px; font-size: 0.9rem;">
+                    <li>Python仮想環境の構築</li>
+                    <li>学習済みモデルのロードと推論</li>
+                    <li>FGSM等による敵対的攻撃</li>
+                    <li>検知器（Detector）による防御</li>
+                    <li>デジタル署名による真正性保証</li>
+                    <li>Tkinterを用いたGUIアプリ開発</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+		
+<section>
+        <h2 class="section-title">4. 脆弱性分析・環境構築【1ヶ月目】</h2>
+        <div class="content-card wide-card">
+            <h3>研究の目的と脆弱性分析の概要</h3>
+            <p>
+                本フェーズでは、深層学習（DNN）モデルに対する「敵対的摂動（Adversarial Perturbation）」の影響を定量的に評価するための基盤を構築する。
+                具体的には、学習済みモデルに対し、FGSM（Fast Gradient Sign Method）等の勾配に基づいた攻撃手法を適用し、モデルの推論結果がどのように変化するか（誤認識率の変化）を分析する。
+            </p>
+
+            <div class="joke-sub-box">
+                <strong>環境構築の基本方針：</strong>
+                Anaconda等のパッケージマネージャに依存せず、Python標準の <code>venv</code> を用いて、独立した再現性の高い仮想環境を構築すること。
+            </div>
+
+            <h3>具体的な環境構築手順</h3>
+            
+            <div class="story-table-wrapper">
+                <table class="story-table">
+                    <thead>
+                        <tr>
+                            <th>対象OS</th>
+                            <th>実行コマンド・手順</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+						<tr>
+                            <td><strong>GitHub</strong><br>(bash)</td>
+                            <td>
+                                <pre style="background: #1a202c; color: #e2e8f0; padding: 15px; border-radius: 5px; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">
+# 仮想環境の作成と有効化
+$ git clone https://github.com/kazuyasakai/sakailab-grad-proj-llmsec.git
+$ cd sakailab-grad-proj-llmsec
+$ ls  # Windowsの場合は dir
+
+# GitHub から直接ダウンロードまたは最新版に更新する場合
+$ git pull origin main</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>macOS</strong><br>(bash)</td>
+                            <td>
+                                <pre style="background: #1a202c; color: #e2e8f0; padding: 15px; border-radius: 5px; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">
+# 仮想環境の作成と有効化
+$ python3 -m venv .venv
+$ source .venv/bin/activate
+
+# ライブラリの一括インストール
+$ pip install --upgrade pip
+$ pip install torch torchvision cryptography adversarial-robustness-toolbox matplotlib</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Windows + WSL</strong><br>(Ubuntu)</td>
+                            <td>
+                                <pre style="background: #1a202c; color: #e2e8f0; padding: 15px; border-radius: 5px; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">
+# venvパッケージの導入と構築
+$ sudo apt update &amp;&amp; sudo apt install python3-venv
+$ python3 -m venv .venv
+$ source .venv/bin/activate
+
+# ライブラリの一括インストール
+$ pip install --upgrade pip
+$ pip install torch torchvision cryptography adversarial-robustness-toolbox matplotlib</pre>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+			
+			<h3>1. ログの保存（JSON形式）</h3>
+            <p>
+                実験結果は、後続の「検知器実装」の教師データとして利用するため、以下のコマンドを用いてJSON形式で構造化して保存すること。
+            </p>
+            <pre style="background: #1a202c; color: #e2e8f0; padding: 15px; border-radius: 5px; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">
+# 実行例：イプシロンを指定して結果を記録
+$ python step1_adversarial_attack.py --eps 0.1 --output result_1.json</pre>
+
+            <h3>2. 調査対象とする &epsilon; (イプシロン) の値</h3>
+            <p>
+                以下の7つの強度において攻撃を実行し、モデルの推論精度（Accuracy）がどのように遷移するかを調査せよ。
+            </p>
+            <div class="story-table-wrapper">
+                <table class="story-table">
+                    <thead>
+                        <tr>
+                            <th>&epsilon; 値</th>
+                            <th>攻撃の強度と視認性</th>
+                            <th>分析のポイント</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0.00</td>
+                            <td>ベースライン（攻撃なし）</td>
+                            <td>クリーンな状態での正解率を計測。</td>
+                        </tr>
+                        <tr>
+                            <td>0.01 ～ 0.05</td>
+                            <td>微細な摂動</td>
+                            <td>人間には判別不能。AIがいつ誤認を始めるか。</td>
+                        </tr>
+                        <tr>
+                            <td>0.10</td>
+                            <td>標準的な攻撃</td>
+                            <td>薄らとノイズが乗る。今回の演習の基準値。</td>
+                        </tr>
+                        <tr>
+                            <td>0.20 ～ 0.30</td>
+                            <td>強攻撃（高ノイズ）</td>
+                            <td>画像がザラつき、人間でも違和感を覚える。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>3. 達成目標と成果物</h3>
+            <ul>
+                <li><strong>基盤確立：</strong> 指定されたすべてのライブラリが仮想環境内で正常にインポートできること。</li>
+                <li><strong>攻撃の実証：</strong> 既存の画像分類モデル（ResNet等）に対し、ARTを用いて生成した敵対的サンプルを入力し、意図した誤分類が発生することをログ（CSVまたはJSON形式）として記録すること。</li>
+                <li><strong>定量的評価：</strong> 摂動の大きさ（&epsilon;=0.0, 0.01, 0.05, 0.1, 0.15, 0.2, 0.3 の7点）の変化に伴う、モデルの推論精度の推移グラフを作成すること。このときX軸は&epsilon;、Y軸はAccuracy（100% - SuccessRate）とすること。</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">5. 防御（検知）ロジックの実装【2ヶ月目】</h2>
+        <div class="content-card wide-card">
+            <p>
+                本フェーズでは、1ヶ月目に実証した敵対的摂動（Adversarial Perturbation）を「異常」として検知する防御アルゴリズムを構築する。
+                未知の入力が「クリーン」か「攻撃」かを判定するバイナリ検知器（Detector）の実装が目標である。
+            </p>
+
+            <div class="joke-sub-box">
+                <strong>防御の鉄則：</strong><br>
+                「完璧な防御は存在しない。重要なのは、正常な運用を妨げず（低誤検知率）、かつ攻撃の試みを最大限に捕捉する（高検知率）最適な閾値を見極めることにある。」
+            </div>
+
+            <h3>1. 検知手法：再構成誤差（Reconstruction Error）</h3>
+            <p>
+                入力画像に対して特定の変換（平滑化、圧縮、あるいはAEによる再構成）を施し、変換前後での画素値の乖離（L2ノルム等）を算出せよ。
+                攻撃画像は正常画像よりも再構成時の誤差が大きくなる特性を利用し、閾値 &tau; による判定を行う。
+            </p>
+
+            <h3>2. 評価指標の定義</h3>
+            <div class="story-table-wrapper">
+                <table class="story-table">
+                    <thead>
+                        <tr>
+                            <th>指標</th>
+                            <th>定義</th>
+                            <th>セキュリティ上の意味</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>True Positive (TP)</strong></td>
+                            <td>攻撃を正しく「攻撃」と判定</td>
+                            <td>検知成功。インシデント対応の起点。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>False Positive (FP)</strong></td>
+                            <td>正常を誤って「攻撃」と判定</td>
+                            <td>過検知。正当なユーザーを拒絶するリスク。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Precision / Recall</strong></td>
+                            <td>適合率と再現率</td>
+                            <td>検知システムの信頼性と網羅性を表す。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>3. 達成目標と成果物</h3>
+            <ul>
+                <li><strong>検知スクリプト：</strong> 閾値を引数として受け取り、検知率を算出する Python コード。</li>
+                <li><strong>ROC曲線：</strong> 摂動の大きさ（&epsilon;=0.01, 0.05, 0.1, 0.2, 0.3 の5点）と閾値（&tau;=0.010, 0.012, 0.014, 0.016, 0.018, 0.020 の6点） を変化させた際の「検知率 vs 誤検知率」の推移グラフ。</li>
+                <li><strong>考察レポート：</strong> 検知を回避するような「より巧妙な攻撃」の可能性についての数理的考察。</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">6. 安全な認証プロトコルの構築【3ヶ月目】</h2>
+        <div class="content-card wide-card">
+            <p>
+                本プロジェクトの最終段階として、これまでに開発した「検知ロジック」を、実際のシステム運用を想定した「認証プロトコル」へと統合する。
+                単なる検知で終わらせず、不正な入力を物理的に遮断し、その足跡を監査ログとして記録する堅牢なシステムを完成させよ。
+            </p>
+
+            <div class="joke-sub-box">
+                <strong>セキュリティ・バイ・デザイン：</strong><br>
+                「優れたシステムは、攻撃を受けてから対処するのではない。攻撃がAIの心臓部（推論エンジン）に触れることさえ許さない設計（プロトコル）によって守られるのである。」
+            </div>
+
+            <h3>1. 実装ミッション：SecureAILoginProtocol</h3>
+            <p>
+                提供されたスケルトンコードの <code>verify_request</code> メソッド内を完成させ、以下の「多層防御」を実現せよ。
+            </p>
+            <ul>
+                <li><strong>検知フェーズ：</strong> 2ヶ月目の再構成誤差ロジックを用い、入力の「健全性」を診断する。</li>
+                <li><strong>制御フェーズ（重要）：</strong> 攻撃と判定された場合、AIモデルの <code>predict</code> を実行せずに即座に拒絶（REJECT）せよ。</li>
+                <li><strong>監査フェーズ：</strong> 判定結果、異常スコア、および（許可時のみ）推論結果を構造化ログとして記録せよ。</li>
+            </ul>
+
+            <h3>2. 感度分析と最適化（最終レポート課題）</h3>
+            <p>
+                攻撃強度 &epsilon; と検知閾値 &tau; の相関関係を実験により明らかにせよ。
+            </p>
+            <div class="story-table-wrapper">
+                <table class="story-table">
+                    <thead>
+                        <tr>
+                            <th>実験項目</th>
+                            <th>評価の観点</th>
+                            <th>目標</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>&epsilon; スイープ実験</strong></td>
+                            <td>攻撃がどの程度「微細」になると検知をすり抜けるか？</td>
+                            <td>システムの防御限界を特定する。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>&tau; 最適化実験</strong></td>
+                            <td>正常なアクセスを誤認（FP）せず、攻撃を逃さない（FN）境界線はどこか？</td>
+                            <td>運用上のベストプラクティスを提案する。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>3. 達成目標と成果物</h3>
+            <ul>
+                <li><strong>認証プロトコル・プログラム：</strong> 攻撃を自動遮断し、監査ログを出力する Python コード。</li>
+                <li><strong>運用シミュレーション結果：</strong> 正常/攻撃それぞれのアクセス試行に対するログの妥当性証明。</li>
+                <li><strong>感度分析グラフ：</strong> &epsilon; （0.01, 0.05, 0.1, 0.2, 0.3 の5点）と &tau;（0.010, 0.012, 0.014, 0.016, 0.018, 0.020 の6点）の変化に伴う検知率の推移図。</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">07. 統合評価システムの構築（4ヶ月目）</h2>
+        <div class="content-card wide-card">
+            <p>
+                本プロジェクトの最終月として、これまでの個別技術（攻撃・検知・プロトコル）を統合し、AIセキュリティの「安全性」を客観的なデータで証明する評価システムを完成させる。
+            </p>
+			
+            <h3>1. セキュリティ・パフォーマンスマップの作成</h3>
+            <p>
+                攻撃強度 &epsilon; と検知閾値 &tau; の全組み合わせを自動シミュレーションする <code>SecurityEvaluator</code> クラスを実装し、以下の「ヒートマップ」を出力せよ。
+            </p>
+            <ul>
+                <li><strong>スイープ実験：</strong> ループ処理を用いて、複数のパラメータ条件下での検知率（Recall）を網羅的に算出する。</li>
+                <li><strong>データの可視化：</strong> 実験結果をヒートマップとして描画し、システムが安全に稼働できる「安全圏」を特定せよ。</li>
+            </ul>
+
+            <h3>2. 達成目標と成果物（プロジェクト修了要件）</h3>
+            <ul>
+                <li><strong>総合評価システムの結果：</strong> パフォーマンスマップ（ヒートマップ）と、それに基づく最適パラメータの考察。</li>
+                <li><strong>レポート提出：</strong> LLMセキュリティの概要。プロジェクト内で実装したこと。実行結果と考察。 </li>
+            </ul>
+        </div>
+    </section>
+
+	
+    <footer style="text-align: center; padding: 40px; color: #7f8c8d; font-size: 0.9rem;">
+        <p>&copy; 2026 Sakai Lab, Tokyo Metropolitan University.</p>
+    </footer>
+
+</body>
+</html>
