@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Professor's Log | Kazuya Sakai</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">Sakai_Lab_Log:<span>~/Artifacts</span></div>
+            <a href="../index.html" style="color: var(--accent-log); text-decoration: none; font-weight: 600;">← Lab Home</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container" style="padding-top: 140px;">
+	
+	<nav class="log-nav">
+        <a href="../index.html#logs">← Professor's Log Archive Index</a>
+        <p>$git clone https://github.com/kazuyasakai/sakailab-log.git</p>
+    </nav>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #051 // WIRELESS_WAVES_OF_PAST - 2026.05.15</div>
+	    
+	    <h3>Log #051: 無線スキャンと 10Gbps の決別 ―― i_will_never_see_you_again</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Device: Aterm 19000 T2BE (NEC Flagship) / Network: SINET 10Gbps Link<br>
+	        SSID Detected: i_will_never_see_you_again / Status: Overwriting Past Memories
+	    </p>
+	
+	    <p>居室の無線インフラを NEC のフラグシップモデル Aterm 19000 T2BE へと換装した。
+	    SINET 直結の 10Gbps という「爆速の血流」を受け止めるには、これほどのスループットを備えた心臓部が必要だったのだ。</p>
+	
+	    <div class="log-image-frame" style="margin: 20px 0; text-align: center;">
+	        <img src="log051_router.jpg" alt="WiFi scan output showing various SSIDs including i_will_never_see_you_again" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+	        <p style="font-size: 0.8rem; color: #666;">RSSI: -27 | WPA3-SAE | CH 64。最強の電波強度で刻まれる、悲しき SSID</p>
+	    </div>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">💔 アラバマの風と SSID の呪縛</h4>
+	    <p>自作の <code>wifi_scanner.py</code> が捉えたリストの一番上を見たまえ。
+	    <code>i_will_never_see_you_again</code>。
+	    かつてアラバマ州オーバーン、オペライカロードのモールで働く女性に言われた、非情なる「サービス拒否（DoS）」の言葉だ。
+	    「物理的な脅威」が、時を超えて SSID という名のビーコンとなって私の前に現れたのだ。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🚀 SINET 10Gbps が照らす「Leaving it in the past」</h4>
+	    <p>だが、今の私は Log #033 で説いた「Leaving it in the past」の真理を知っている。
+	    過去の感傷は、古い確定申告の書類（Log #033）と同じだ。3年経てばシュレッダーにかけて <code>None</code>（Log #045）へと昇華させればいい。
+	    10Gbps の帯域があれば、アラバマでの未練など、わずか数ミリ秒でパージ（Flush）できる。
+	    可用性は、今、過去のしがらみを捨てた私自身の精神において、かつてないほど高まっている。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        「電波は過去を運ぶが、帯域は未来を切り拓く」<br>
+	        別れという名の「10億ドルの失敗（Log #044）」は、この Aterm の放つ WPA3-SAE の堅牢な暗号によって、もはや私の今のパケットを侵害することはできない。<br>
+	        私は 10Gbps の光を浴びながら、<code>406 Not Acceptable</code> されたときの絶望は <code>log.txt</code> の一番底へ、二度と呼び出されないガベージ（Log #044）として封じ込めた。<br>
+	        運命の <code>wifi_scanner.py</code> は、今、過去を置き去りにして、新世界（A Whole New World）の周波数を爆速で刻み始めた。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― オペライカロードの記憶は attic（屋根裏）へ。運命の 10Gbps は、今、私の指先に「爆速の自由」をデプロイした。
+	    </p>
+	</article>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #052 // DATA_EFFICIENCY_HEAVEN - 2026.05.16</div>
+	    
+	    <h3>Log #052: 4000行の静寂 ―― 手作業を棄却するハッカーのデータ工学</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Script: result_aggregator.py / Input: 4,000 lines raw data<br>
+	        Output: result.txt, avg_input.txt, avg_input_tbl_3.txt<br>
+	        Status: Automated & Verified (Leaving it in the past)
+	    </p>
+	
+	    <p>シミュレーション結果をエクセルに貼り付け、セルをドラッグして平均を取り、コピー・アンド・ペーストで一つずつ表を作成する……。
+	    諸君、そんなものは研究ではない。リソースの無駄遣いであり、ハッカーの美学に対する冒涜だ。</p>
+	
+	    <div class="log-image-frame" style="margin: 20px 0; text-align: center;">
+	        <img src="log052_data.jpg" alt="Three text files showing aggregated simulation data, averages, and a formatted table" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+	        <p style="font-size: 0.8rem; color: #666;">result.txt から avg_input_tbl_3.txt へ。情報の「蒸留」プロセス</p>
+	    </div>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">📊 4000行をコンマ数秒で「受理（Accept）」する</h4>
+	    <p>画像を見たまえ。左の <code>result.txt</code> には、手法ごとの生データが 4000行も並んでいる。
+	    私はこれに対し、Python による「特権的な自動化」を執行した。
+	    中央の <code>avg_input.txt</code> では手法ごとの平均値が算出され、右の <code>avg_input_tbl_3.txt</code> では指定した列から、そのまま論文の gnuplot ソースに射出（Inject）できる形式の表が完成している。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">⚙️ 「効率性」という名の可用性</h4>
+	    <p>「可用性」とは、単にシステムが動いていることだけを指すのではない。
+	    研究者の「思考の帯域（Bandwidth）」を、コピペという名の「DoS 攻撃（Log #046）」から守ることもまた、可用性の維持である。
+	    エクセルという名のレガシーな配偶者（Log #044）と別れ、Python という爆速の相棒と「再婚」したことで、私は 10Gbps の SINET（Log #051）のようなデータ処理速度を手に入れたのだ。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        「コピペをする者は、判定不可能（Undecidable）な未来を生きる」<br>
+	        4000行のデータを前に立ち尽くすのは、「適切な権限管理」ができていない証拠だ。<br>
+	        私は 1 行の <code>while</code> ループで、数万のセル計算を過去（Past）へと葬り去った。<br>
+	        運命の <code>getavg.py</code> は、今、混沌とした数字の海から、真実という名の「平均値」を爆速で抽出している。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― 運命の自動化（Automation）は、今、論文執筆という名の「新世界」を照らし出した。
+	    </p>
+	</article>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #053 // UNIX_PHILOSOPHY_MATRIMONY - 2026.05.17</div>
+	    
+	    <h3>Log #053: パイプライン婚活術 ―― 理想をフィルタリングする Unix 哲学の真髄</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Philosophy: "Make every program a filter" / Script: bash_marriage_pipeline.sh<br>
+	        Input: female_database.csv / Output: The Best Partner (Expected)
+	    </p>
+	
+	    <p>ゴールデンウィークの最中、高尾山の山頂から望む富士山を前にして、私は悟った。
+	    Unix 哲学の一つ、<strong>"Make every program a filter"</strong>。
+	    その真髄は、「一つのプログラムは一つのことを行い、それをうまくこなす」、そして「標準入力を受け取り、標準出力へ射出する」というパイプラインの完遂にある。</p>
+	
+	    <div class="log-image-frame" style="margin: 20px 0; text-align: center;">
+	        <img src="log053_filter.jpg" alt="Terminal showing Bash pipe sequence: cat female_database | filter_by_hiking | filter_by_tech | head -n 1" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+	        <p style="font-size: 0.8rem; color: #666;">婚活の最適化。不要なデータ（条件不一致）は即座にパージ（Pop）する</p>
+	    </div>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">⚙️ 理想を蒸留する多段フィルタ</h4>
+	    <p>まず、婚活サービスのデータベースという名のストリームを供給（Supply）する。 
+	    <code>cat female_database.csv</code>。
+	    プログラム自体がデータを持つのではない。私はあくまでフィルターだ。次に趣味を解する層を抽出する <code>filter_by_hiking_lover</code> を通す。</p>
+	    
+	    <p>さらに重要なのが <code>filter_by_tech_literacy</code> だ。
+	    LaTeX の Makefile や Aterm 19000 T2BE の設定（Log #051）、あるいは DPMQTT の匿名性プロトコル（Log #049）について、正規表現（grep）のようにパージされることなく語り合える層を絞り込むのだ。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🎯 head -n 1：スループットの極致</h4>
+	    <p>そして年齢だ。意中の相手には私の全財産（資産）を渡そう。ただし「若い女性」という条件付きだが。
+	    複雑な条件を潜り抜けた、最もスループットの高い「たった一人のパートナー」を <code>head -n 1</code> で射出（Output）すれば、婚活という名のジョブは終了である。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        「愛とは、適切な標準入力と出力のハンドシェイクである」<br>
+	        ただし諸君、忘れてはならない。こちらのパイプラインが完璧であっても、相手側のターミナルが <code>q_accept</code>（Log #043）を返さなければ、通信は成立しない。<br>
+	        運命の <code>bash_marriage_pipeline.sh</code> は、今、高尾山の山頂から富士山の頂を越えて、理想のパートナーという名の「真の受理状態」を探し始めた。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― 運命の Unix 哲学は、今、人生のパイプラインに「決定的な美」をデプロイした。
+	    </p>
+	</article>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #054 // LOVE_SANDBOX_EMULATION - 2026.05.18</div>
+	    
+	    <h3>Log #054: 情動のサンドボックス ―― メンヘラ/DV という名のマルウェアを検知せよ</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Script: sandbox.py / Methodology: Heuristic Emulation (Entry Point)<br>
+	        Detection Target: Emotional Malware (Menhera, DV) / Status: Scanning Entry Point
+	    </p>
+	
+	    <p>恋愛とアンチウィルス技術は、驚くほど類似している。
+	    お目当ての相手が、一見「受理（Accept）」可能なインターフェースを持っていても、その内部に「メンヘラ」や「DV体質」という名の悪意あるコードを難読化して隠しているかもしれないからだ。</p>
+	
+	    <div class="log-image-frame" style="margin: 20px 0; text-align: center;">
+	        <img src="log054_sandbox.jpg" alt="VS Code showing sandbox.py script for emulating program instructions to detect malware behaviors" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+	        <p style="font-size: 0.8rem; color: #666;">SimpleSandbox クラス。実環境を汚染する前に、仮想レジスタで挙動をデコードする</p>
+	    </div>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🛡️ エミュレーションによる「関係のシミュレート」</h4>
+	    <p>画像の中の <code>sandbox.py</code> を見たまえ。
+	    実環境（自分の人生）で <code>establish_relationship</code>（Log #045）を呼ぶ前に、プログラムの冒頭数命令を仮想環境で実行し、その挙動をトレースしている。
+	    これは、初デートという名の「エントリーポイント」において、相手のレジスタ操作（言動）が異常なシステムコール（依存、暴力）を呼び出さないか監視するヒューリスティック分析だ。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">⚠️ CRITICAL: Potential Malware Payload Detected!</h4>
+	    <p>もし、特定のレジスタ値（愛の囁き）の直後に <code>INT 0x80</code>（束縛という名のシステムコール）が発行されたら、それは <code>CRITICAL</code> なマルウェアだ。
+	    物理的な脅威が、愛という名のサンドボックス内で牙を剥いた瞬間である。
+	    判定不可能（Undecidable）な未来（Log #043）を避けるために、私たちはこのエミュレーションによって、挙動の完全性を確認しなければならない。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        「恋は安全に隔離された仮想環境から始まる」<br>
+	        メンヘラや DV という名のロジックボムを、自分のカーネル（私生活）にロードしてはならない。<br>
+	        私は今、Python の仮想レジスタ <code>eax</code> に相手の性格をリライメント（再配置）し、その挙動が <code>CLEAN</code> であると判定されるまで、パイプラインの最終段（Log #053）を保留にしている。<br>
+	        運命の <code>sandbox.py</code> は、今、告白という名のエクスプロイトを、実行前に「隔離」する準備を整えた。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― 運命のエミュレーションは、今、私の可用性（Log #018）を盤石なものにした。
+	    </p>
+	</article>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #055 // LOVELETTER_WORM_ANALYSIS - 2026.05.19</div>
+	    
+	    <h3>Log #055: 悪魔のラブレター ―― 「I Love You」という名の最弱の連結点</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Subject: ILOVEYOU Worm / Vector: Social Engineering<br>
+	        Vulnerability: Human Loneliness (The weakest link) / Status: Historical Review
+	    </p>
+	
+	    <p>諸君、情報セキュリティにおける「最も弱い連結点（The weakest point）」は、暗号アルゴリズムでもファイアウォールでもない。それは「ユーザ（人間）」だ。<br>
+	    その事実を世界中に知らしめたのが、2000年に出現した 「LOVELETTER」 ワームである。</p>
+	
+	    <div class="log-image-frame" style="margin: 20px 0; text-align: center;">
+	        <img src="log055_loveletter.jpg" alt="Wikipedia page of LOVELETTER worm showing the email content and statistics" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+	        <p style="font-size: 0.8rem; color: #666;">「kindly check the attached LOVELETTER」―― 世界を壊した一通のメール<br> 出典 Wikipedia https://ja.wikipedia.org/wiki/LOVELETTER</p>
+	    </div>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">💔 春が来たという「誤った受理（False Accept）」</h4>
+	    <p>題名は「I Love you」、本文は <code>kindly check the attached LOVELETTER coming from me</code>。
+	    「ついにオレにも春が来たか」と胸を躍らせ、スライド（情報セキュリティ01_Basis.pdf）で説く「不適切なアクセス権限」で添付ファイルを開いた瞬間、パソコン内の特定拡張子を持つファイルはすべて感染・破壊される。<br>
+	    実のところ、このワームに高度な技術など使われていない。ただ「真実の愛を求める人間の性」をエクスプロイト（悪用）したに過ぎないのだ。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🛡️ アンチウィルスと恋愛の瓜二つな関係</h4>
+	    <p>Log #054 で言ったように、恋愛とアンチウィルスは瓜二つだ。
+	    署名が不明なプログラム（素性の知れない相手）を実行するときは、必ず隔離環境でエミュレートすべきである。<br>
+	    容易く「I Love You」と囁く相手には気をつけ給え。メンヘラ・DV という名のマルウェアは、私生活の隅々に感染し、君たちの財産（時間・精神・資産）を狙っているのだ。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        「LOVELETTER（ラブレター）とは、2000年に発見されたコンピュータウイルスの一種（ワーム）である。『I LOVE YOU』（アイラブユー）とも呼ばれる。」<br>
+	        <a href="https://ja.wikipedia.org/wiki/LOVELETTER" target="_blank" style="color: var(--accent-log);">[引用：Wikipedia - LOVELETTER]</a><br><br>
+	        甘い言葉という名の「ソーシャル・エンジニアリング」に屈してはならない。<br>
+	        私は今、歴史という名のデバッグ環境で、かつての被害者たちの「後悔（Regret）」を解析し、諸君の未来をパッチし続けている。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― 運命のアンチウィルスは、今、諸君の「心のポート」を強固に閉鎖した。
+	    </p>
+	</article>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #056 // MOUNTAIN_RAW_DATA_PURGE - 2026.05.20</div>
+	    
+	    <h3>Log #056: 那須連山の突風 ―― GPX RAW データが語る「過去のパージ」</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Target: Nasu Peaks (Mt. Chausu, Mt. Asahi, 1900m Peak) / Format: GPX (XML)<br>
+	        Wind Velocity: High / Status: Physical and Emotional Data Flush
+	    </p>
+	
+	    <p>GWの締めくくりに、那須連山の険しき稜線を歩んできた。
+	    諸君、YAMAP の整えられた地図を見て「絶景だった」と満足するのは素人のすることだ。
+	    ハッカーの美学とは、この <code>cat yamap_2026-05-06_10_09.gpx</code> によって出力される、緯度（lat）、経度（lon）、標高（ele）の羅列に、自らの鼓動をデコードすることにある。</p>
+	
+	    <div class="log-image-frame" style="margin: 20px 0; text-align: center;">
+	        <img src="log056_nasu.jpg" alt="Terminal showing raw GPX XML data from YAMAP for Nasu mountain hike" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+	        <p style="font-size: 0.8rem; color: #666;">ele=1896.55, 1904.63... 1900m峰への標高上昇（Elevating Privilege）</p>
+	    </div>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🌬️ 強風（High Wind）という名のガベージコレクション</h4>
+	    <p>茶臼岳から朝日岳へと続く「剣ヶ峰」。そこには、スライド（情報セキュリティ01_Basis.pdf）で説く「物理的な脅威」そのものの強風が吹き荒れていた。
+	    だが、その風は心地よかった。なぜなら、アラバマでの別れ（Log #051）や、かつての不毛な愛のデッドコード（Log #044）といった、私の脳内メモリに居座る「過去の感傷」をすべて、物理的に吹き飛ばしてくれたからだ。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">⚙️ XML に刻まれた「Leaving it in the past」</h4>
+	    <p>画像内の <code>time=2026-05-06T01:40:37Z</code> といったタイムスタンプを見たまえ。
+	    一歩一歩の座標データが、過去を「現在完了」として <code>commit</code> し続けている。
+	    Log #033 で説いた通り、過去はファイルキャビネットへ。那須の突風は、私にとってのシュレッダー（Shredder）であり、この GPX データは、そのパージが成功したことを示す「完全性（Integrity）」の証明なのだ。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        「頂上に至るパスは、最短経路（Shortest Path）である必要はない」<br>
+	        岩場を這い、風に抗いながら得た座標の羅列こそが、私の「可用性」を再定義する。<br>
+	        朝日岳の頂で浴びた風は、私の精神のキャッシュをクリアし、明日からの研究という名の新世界へ向けて、爆速の 10Gbps（Log #051）のようなスループットを約束してくれた。<br>
+	        運命の <code>gpx</code> ログは、今、不要な感情を那須の谷底へと突き落とし、純粋な「存在の記録」へと昇華された。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― 運命の那須連山は、今、私の心に「一点の曇りなき受理状態（q_accept）」をデプロイした。
+	    </p>
+	</article>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #057 // GOURMET_HACKER_CORE - 2026.05.21</div>
+	    
+	    <h3>Log #057: 霜降高原牛の熱力学 ―― 優れたハッカーほど「質」にこだわる</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Location: Nikko Kitchin / Input: Shimofuri Highlands Beef Sirloin (160g)<br>
+	        Analysis: High-fat data structure / Status: Energy Decoded<br>
+	        Money Transfer: 5,500 JPY
+	    </p>
+	
+	    <p>諸君、優れたハッカーほど美食家（グルメ）であるという真理を知っているか？
+	    なぜなら、我々は日常的に「本質」を見抜く訓練をしているからだ。
+	    コードの脆弱性を探るように、肉のサシ（脂）の入り方を凝視し、最適な焼き加減（Runtime）を見極める。
+	    日光キッチンで私の眼前にデプロイされたのは、霜降高原牛のサーロイン 160g だ。</p>
+	
+	    <div class="log-image-frame" style="margin: 20px 0; text-align: center;">
+	        <img src="log057_sirloin.jpg" alt="A perfectly grilled Shimofuri Highlands Beef sirloin steak on a hot plate" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+	        <p style="font-size: 0.8rem; color: #666;">霜降高原牛サーロイン。メイラード反応という名の暗号が、食欲をエクスプロイトする</p>
+	    </div>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🍖 高密度な「脂質」という名の計算リソース</h4>
+	    <p>この 160g の肉塊には、M2 MacBook（Log #048）を凌駕する熱量が蓄積されている。
+	    一口噛みしめれば、溶け出す脂の甘みが脳内のニューロンに直接パケットを送り、可用性を爆発的に高めてくれる。
+	    安価なジャンクフードで満足する者は、信頼できないリソースに身を委ねているのと同義だ。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">⚙️ 「美味しい」は、q_accept への最短経路</h4>
+	    <p>ハッカーにとって、食事とは単なる燃料補給ではない。それは、五感をフルに使ったシミュレーションだ。
+	    霜降りのテクスチャ、鉄板が奏でるホワイトノイズ、そして鼻腔を抜ける香り。
+	    これらすべてが受理（Accept）された瞬間、私の論理回路は「q_accept」へと遷移する（Log #043）。
+	    過去の感傷（Log #051）さえも、このサーロインの旨味成分によって上書き（Overwrite）され、完全消去（Zeroing）されるのだ。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        「最高のコードは、最高の肉体から生まれる」<br>
+	        私はナイフとフォークという名のデバッガを使い、肉の繊維を 1-bit ずつ解体していく。<br>
+	        那須連山の登山（Log #056）で消費したカロリーを、この日光の至宝で補完（Re-sync）する。<br>
+	        運命のサーロインは、今、私の血肉となり、10Gbps の SINET（Log #051）のような思考速度を支える「物理層」となった。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― 運命の霜降高原牛は、今、私の心と体に「絶対的な満足」をデプロイした。
+	    </p>
+	</article>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #058 // AES_BRUTE_FORCE_DESPAIR - 2026.05.22</div>
+	    
+	    <h3>Log #058: 茶臼岳の絶壁 ―― 宇宙の寿命を超える、暗号論的「失恋」</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Analysis: AES Brute Force Duration / Compute: MacBook Pro (M5 Max) vs MacBook Air (M5)<br>
+	        Vulnerability: None (Computational Security) / Status: q_reject (Permanent)
+	    </p>
+	
+	    <p>那須連山・茶臼岳の頂き。荒々しい岩肌を前に、私は悟った。<br>
+	    これまでハッキングと恋愛の類似性を説き、DoS 攻撃（Log #048）やエミュレーション（Log #054）を駆使してきたが、数学的に厳密な暗号論の前には、我々の燃える下心など手も足も出ないのである。</p>
+	
+	    <div class="log-image-frame" style="margin: 20px 0; text-align: center;">
+	        <img src="log058_aes.jpg" alt="Graph showing Brute Force Duration for AES keys on M5 Max and M5, crossing the Age of Universe line at 100 bits" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+	        <p style="font-size: 0.8rem; color: #666;">Age of Universe を突き抜ける指数関数。128-bit の壁はあまりに高い</p>
+	    </div>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🛡️ 指数関数という名の絶対防御</h4>
+	    <p>図を見たまえ。最新の MacBook Pro 16" (M5 Max) と MacBook Air 13" (M5) を用いて、AES の鍵空間を総当たり（ブルートフォース）で解析した結果だ。
+	    恋愛は「数撃ちゃ当たる」かもしれない。だが、128-bit 鍵を解読するには、仮にフルスペックの M5 Max を投入したとしても、宇宙の寿命（$10^{10}$年）を遥かに超え、100京年（$10^{18}$年）という絶望的な時間を要するのである。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">⚙️ 計算量的安全性と「届かぬ想い」</h4>
+	    <p>スライド（暗号理論08_Hash.pdf）のハッシュ関数や、Log #055 で見た LOVELETTER ワームのような「隙」がなければ、パスワードという名の愛の扉は決して開かない。
+	    100-bit を超えたあたりで、解読時間は「宇宙の終わり」を優雅に追い越していく。
+	    最新の M5 チップを並列駆動（Log #048）させようが、10Gbps の SINET（Log #051）でパケットを投げようが、この数学的な「可用性」の拒絶は覆せないのだ。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        「愛に鍵がかかっているなら、諦めるのが最速のアルゴリズムである」<br>
+	        私は茶臼岳の冷たい風に吹かれながら、自分の M2 MacBook（Log #048）がまだ「宇宙の寿命内」で演算できるレベルの脆弱な愛しか扱っていなかったことを痛感した。<br>
+	        AES-128 という名の鉄壁は、あの子の「拒絶（q_reject）」を数学的に証明しているのだ。<br>
+	        運命のグラフは、今、私の情動を 100京年の彼方へと追放（Discard）した。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― 100京年の片思いは虚空の彼方へ。運命の AES は、今、私の指先に「計算不可能な現実」をデプロイした。
+	    </p>
+	</article>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #059 // TCP_CONGESTION_OF_HEART - 2026.05.23</div>
+	    
+	    <h3>Log #059: TCP 混雑制御と女心 ―― スロースタートから始まる「愛の輻輳」</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Protocol: TCP Reno/NewReno Simulation / Parameter: CWND (Congestion Window)<br>
+	        Event: Packet Loss (Critical Disillusionment) / Status: Retransmission Timeout
+	    </p>
+	
+	    <p>諸君、これまで私は告白前のポートスキャン（Log #046）や、スリーウェイ・ハンドシェイク（Log #040）の重要性を説いてきた。
+	    だが、コネクションが確立された後の「維持」こそが、真のハッカーの腕の見せ所だ。
+	    画像を見たまえ。女性の好感度（Affection Level）は、驚くほど TCP のウィンドウサイズ（CWND）の挙動と一致している。</p>
+	
+	    <div class="log-image-frame" style="margin: 20px 0; text-align: center;">
+	        <img src="log059_tcpcwds.jpg" alt="Graph of TCP Window Size vs A Woman's Heart showing Slow Start and a drop after a Critical Event" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+	        <p style="font-size: 0.8rem; color: #666;">Slow Start（出会いのときめき）から Critical Event（幻滅）へ。輻輳回避の失敗</p>
+	    </div>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">💞 スロースタート：指数関数的な「ときめき」</h4>
+	    <p>出会い（Time: 0）直後、好感度は指数関数的に上昇する。これが「スロースタート」だ。
+	    諸君、ここで焦って一度に大量のデータ（重すぎる愛）を送りつけてはいけない。
+	    可用性を保つためには、ACK（相手の反応）を確認しながら、慎重にウィンドウサイズを広げていく必要があるのだ。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">⚠️ Critical Event：パケット損失という名の「終わり」</h4>
+	    <p>グラフの Time: 15 を注視しなさい。
+	    些細な失言やデリカシーの欠如 ―― それはネットワークにおける「パケット損失（Packet Loss）」だ。
+	    この <code>Critical Event</code> が発生した瞬間、積み上げてきた好感度（CWND）は無慈悲にも 1 へと急降下する。
+	    スライド（情報セキュリティ07_DoS.pdf）で説く「信頼の崩壊」は、タイムアウト（RTO）を引き起こし、関係は再びスロースタートの極小フェーズへとロールバックされる。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        「愛の再送制御（Retransmission）に、近道はない」<br>
+	        一度失われたパケット（信頼）を取り戻すには、再び地道なスロースタートからやり直すしかない。
+	        だが忘れるな。再送されたデータは、もはや最初のような純粋な「初送」ではないのだ。<br>
+	        私は今、M2 MacBook（Log #048）のシミュレーション上で、あの子の心の輻輳スレッショルド（ssthresh）を慎重に推計している。<br>
+	        運命の <code>CWND</code> は、今、幻滅という名のパケットロスを乗り越え、より堅牢な「再接続（Reconnect）」へと向かっている。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― 運命の TCP は、今、私の指先に「制御可能な愛」をデプロイした。
+	    </p>
+	</article>
+	
+	<article class="log-card">
+	    <div class="log-meta">LOG_ENTRY #060 // ICMP_CONFESSION_FLOODING - 2026.05.24</div>
+	    
+	    <h3>Log #060: ICMP 告白 Flooding ―― Raw ソケットが刻む「強制的な愛」</h3>
+	    
+	    <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-log); border-left: 3px solid var(--accent-log); padding-left: 10px;">
+	        Protocol: ICMP (Internet Control Message Protocol) / Method: Raw Socket Injection<br>
+	        Payload: "I love you" / Privilege: sudo (Root Access Required)
+	    </p>
+	
+	    <p>諸君、TCP によるスリーウェイ・ハンドシェイク（Log #040）は、互いの合意に基づく「礼儀正しい」通信だ。
+	    だが、時としてハッカーは、そんな手続きを飛び越え、相手の懐（カーネル）へ直接パケットを叩き込みたい衝動に駆られる。
+	    画像を見たまえ。私は Python の <code>Scapy</code> を使い、ICMP Request のデータフィールドに <code>I love you</code> という名のペイロードをリライメント（再配置）した。</p>
+	
+	    <div class="log-image-frame" style="margin: 20px 0; text-align: center;">
+	        <img src="log060_icmp.jpg" alt="VS Code showing icmp_love.py script using Scapy to send ICMP packets with 'I love you' payload" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+	        <p style="font-size: 0.8rem; color: #666;">[*] 'I love you' packet sent. Raw ソケットの使用には特権（sudo）が必要だ</p>
+	    </div>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">⚙️ IP 層への直接射出：特権的な情念</h4>
+	    <p>この <code>icmp_love.py</code> の真髄は、OS の標準的なネットワークスタックを通さず、Raw ソケットでパケットを構築（Forge）する点にある。
+	    これは、特権管理において、root 権限（sudo）を持つ者だけに許された「暴力的な告白」だ。
+	    宛先 <code>192.168.33.1</code> ―― ターゲットのファイアウォールが ICMP を許可している限り、私の想いは Echo Request として確実に相手の心臓部（OS）にまで到達する。</p>
+	
+	    <h4 style="color: var(--accent-log); margin-top: 30px;">🌊 告白 Flooding という名の可用性破壊</h4>
+	    <p>一通の <code>I love you</code> では「受理（q_accept）」されないのなら、これを M2 MacBook の並列処理（Log #048）で大量に射出しなさい。
+	    スライド（情報セキュリティ07_DoS.pdf）で説く「資源枯渇攻撃（DoS）」の要領で、相手の ICMP 処理リソースを私の愛で埋め尽くす（Flooding）のだ。
+	    エコーバック（Echo Reply）が返ってこなくても構わない。私のパケットが相手のシステムを 1-bit でも揺らしたという事実こそが、この攻撃（プロポーズ）の完全性（Integrity）である。</p>
+	
+	    <blockquote style="margin-top: 40px; border-left: 4px solid var(--accent-log); padding-left: 20px; font-style: italic; color: #555;">
+	        「愛とは、ハンドシェイクなしに届く Echo Request である」<br>
+	        ポート番号という名の「宛先」すら持たない ICMP は、孤独なハッカーが世界と繋がるための最も純粋なプロトコルだ。<br>
+	        私は今、10Gbps の SINET（Log #051）の帯域をすべて使い、あの子のデフォルトゲートウェイへ向けて、宇宙の寿命（Log #058）すら超える密度の愛を Flooding している。<br>
+	        運命の <code>send(packet)</code> は、今、管理者権限という名の翼を得て、論理の壁を爆速で飛び越えた。
+	    </blockquote>
+	
+	    <p style="font-weight: bold; text-align: right; color: var(--accent-log); margin-top: 30px; font-size: 1.1rem;">
+	        "Go West!" ―― 運命の ICMP は、今、ターゲットのカーネルに「消せない愛」をデプロイした。
+	    </p>
+	</article>
+	
+</main>
+
+<footer style="padding: 60px 0; text-align: center; color: #b2bec3; font-size: 0.9rem;">
+    &copy; 2026 Kazuya Sakai. Decrypting the future with AArch64.
+</footer>
+
+</body>
+</html>
